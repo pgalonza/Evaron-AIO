@@ -58,6 +58,7 @@ prepare_homebrew() {
     mkdir $BUILD_DIR/switch/linkalho
     curl -O -L https://f38d61784492.hosting.myjino.ru/NintendoSwitch/linkalho-v2.0.1.zip --output-dir $TMP_DIR
     unzip $TMP_DIR/linkalho-*.zip -d $BUILD_DIR/switch/linkalho
+
 }
 
 patch_atmosphere() {
@@ -83,6 +84,8 @@ patch_home_menu() {
 
 patch_homebrew() {
     cp $SRC_HOMEBREW/dbi/dbi.config $BUILD_DIR/switch/DBI/dbi.config
+    mkdir $BUILD_DIR/config/aio-switch-updater
+    cp $SRC_HOMEBREW/aio-switch-updater/custom_packs.json $BUILD_DIR/aio-switch-updater/custom_packs.json
 }
 
 
