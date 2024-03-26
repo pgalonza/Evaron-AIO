@@ -101,3 +101,4 @@ patch_hekate
 patch_home_menu
 patch_homebrew
 
+cd ./build && zip -r ../Evaron-AIO.zip *
