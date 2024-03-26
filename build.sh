@@ -85,7 +85,7 @@ patch_home_menu() {
 patch_homebrew() {
     cp $SRC_HOMEBREW/dbi/dbi.config $BUILD_DIR/switch/DBI/dbi.config
     mkdir $BUILD_DIR/config/aio-switch-updater
-    cp $SRC_HOMEBREW/aio-switch-updater/custom_packs.json $BUILD_DIR/aio-switch-updater/custom_packs.json
+    cp $SRC_HOMEBREW/aio-switch-updater/custom_packs.json $BUILD_DIR/config/aio-switch-updater/custom_packs.json
 }
 
 
