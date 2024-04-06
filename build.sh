@@ -13,7 +13,7 @@ SRC_HOMEBREW="./homebrew"
 
 HEKATE_VERSION="6.1.0"
 ATMOSPERE_VERSION="1.6.2"
-DEAPSEA_VERSION="4.9.0"
+DEEPSEA_VERSION="4.9.0"
 
 prepare_hekate() {
     curl -O -L https://github.com/CTCaer/hekate/releases/download/v6.1.0/hekate_ctcaer_6.1.0_Nyx_1.6.0.zip --output-dir $TMP_DIR
@@ -25,7 +25,7 @@ prepare_atmosphere() {
     unzip $TMP_DIR/atmosphere-*.zip -d $BUILD_DIR
 }
 
-prepare_deapsea() {
+prepare_deesea() {
     curl -O -L https://github.com/Team-Neptune/DeepSea/releases/download/v4.9.0/deepsea-advanced_v4.9.0.zip --output-dir $TMP_DIR
     unzip $TMP_DIR/deepsea-advanced_*.zip -d $BUILD_DIR
 }
@@ -94,7 +94,7 @@ patch_homebrew() {
 
 
 mkdir $TMP_DIR $BUILD_DIR
-prepare_deapsea
+prepare_deesea
 prepare_sigpatches
 prepare_sx_gear
 prepare_payload
