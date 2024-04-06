@@ -99,6 +99,7 @@ prepare_sigpatches
 prepare_sx_gear
 prepare_payload
 prepare_homebrew
+prepare_syspatch
 
 patch_atmosphere
 patch_hekate
