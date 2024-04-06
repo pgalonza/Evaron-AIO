@@ -11,6 +11,10 @@ SRC_ATMOSPHERE="./atmosphere"
 SRC_HOME_MENU="./home-menu"
 SRC_HOMEBREW="./homebrew"
 
+HEKATE_VERSION="6.1.0"
+ATMOSPERE_VERSION="1.6.2"
+DEAPSEA_VERSION="4.9.0"
+
 prepare_hekate() {
     curl -O -L https://github.com/CTCaer/hekate/releases/download/v6.1.0/hekate_ctcaer_6.1.0_Nyx_1.6.0.zip --output-dir $TMP_DIR
     unzip $TMP_DIR/hekate_ctcaer_*.zip -d $BUILD_DIR
