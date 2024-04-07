@@ -46,8 +46,12 @@ prepare_sx_gear() {
 }
 
 prepare_payload() {
-    curl -O -L https://f38d61784492.hosting.myjino.ru/NintendoSwitch/Lockpick_RCM.zip --output-dir $TMP_DIR
-    unzip $TMP_DIR/Lockpick_RCM.zip -d $BUILD_DIR/bootloader/payloads/
+    # curl -O -L https://f38d61784492.hosting.myjino.ru/NintendoSwitch/Lockpick_RCM.zip --output-dir $TMP_DIR
+    # unzip $TMP_DIR/Lockpick_RCM.zip -d $BUILD_DIR/bootloader/payloads/
+
+    curl -O -L https://sigmapatches.su/Lockpick_RCM_v1.9.12.zip --output-dir $TMP_DIR
+    unzip $TMP_DIR/Lockpick_RCM_v1.9.12.zip -d $TMP_DIR/
+    cp $TMP_DIR/Lockpick_RCM.bin $BUILD_DIR/bootloader/payloads/
 
     curl -O -L https://f38d61784492.hosting.myjino.ru/NintendoSwitch/mod_chip_toolbox.zip --output-dir $TMP_DIR
     unzip $TMP_DIR/mod_chip_toolbox.zip -d $BUILD_DIR/bootloader/payloads/
