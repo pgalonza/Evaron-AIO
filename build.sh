@@ -15,46 +15,48 @@ HEKATE_VERSION="6.1.0"
 ATMOSPERE_VERSION="1.6.2"
 DEEPSEA_VERSION="4.9.0"
 
+UNZIP_COMMAND="unzip -o"
+
 prepare_hekate() {
     curl -O -L https://github.com/CTCaer/hekate/releases/download/v6.1.0/hekate_ctcaer_6.1.0_Nyx_1.6.0.zip --output-dir $TMP_DIR
-    unzip $TMP_DIR/hekate_ctcaer_*.zip -d $BUILD_DIR
+    $UNZIP_COMMAND $TMP_DIR/hekate_ctcaer_*.zip -d $BUILD_DIR
 }
 
 prepare_atmosphere() {
     curl -O -L https://github.com/Atmosphere-NX/Atmosphere/releases/download/1.6.2/atmosphere-1.6.2-master-f7bf379cf+hbl-2.4.4+hbmenu-3.6.0.zip --output-dir $TMP_DIR
-    unzip $TMP_DIR/atmosphere-*.zip -d $BUILD_DIR
+    $UNZIP_COMMAND $TMP_DIR/atmosphere-*.zip -d $BUILD_DIR
 }
 
 prepare_deesea() {
     curl -O -L https://github.com/Team-Neptune/DeepSea/releases/download/v4.9.0/deepsea-advanced_v4.9.0.zip --output-dir $TMP_DIR
-    unzip $TMP_DIR/deepsea-advanced_*.zip -d $BUILD_DIR
+    $UNZIP_COMMAND $TMP_DIR/deepsea-advanced_*.zip -d $BUILD_DIR
 }
 
 prepare_sigpatches() {
     curl -O -L https://sigmapatches.su/sigpatches.zip --output-dir $TMP_DIR
-    unzip $TMP_DIR/sigpatches.zip -d $BUILD_DIR
+    $UNZIP_COMMAND $TMP_DIR/sigpatches.zip -d $BUILD_DIR
 }
 
 prepare_syspatch() {
     curl -O -L https://sigmapatches.su/sys-patch.zip --output-dir $TMP_DIR
-    unzip $TMP_DIR/sys-patch.zip -d $BUILD_DIR
+    $UNZIP_COMMAND $TMP_DIR/sys-patch.zip -d $BUILD_DIR
 }
 
 prepare_sx_gear() {
     curl -O -L https://f38d61784492.hosting.myjino.ru/NintendoSwitch/SX_Gear_v1.1.zip --output-dir $TMP_DIR
-    unzip $TMP_DIR/SX_Gear_*.zip -d $BUILD_DIR
+    $UNZIP_COMMAND $TMP_DIR/SX_Gear_*.zip -d $BUILD_DIR
 }
 
 prepare_payload() {
     # curl -O -L https://f38d61784492.hosting.myjino.ru/NintendoSwitch/Lockpick_RCM.zip --output-dir $TMP_DIR
-    # unzip $TMP_DIR/Lockpick_RCM.zip -d $BUILD_DIR/bootloader/payloads/
+    # $UNZIP_COMMAND $TMP_DIR/Lockpick_RCM.zip -d $BUILD_DIR/bootloader/payloads/
 
     curl -O -L https://sigmapatches.su/Lockpick_RCM_v1.9.12.zip --output-dir $TMP_DIR
-    unzip $TMP_DIR/Lockpick_RCM_v1.9.12.zip -d $TMP_DIR/
+    $UNZIP_COMMAND $TMP_DIR/Lockpick_RCM_v1.9.12.zip -d $TMP_DIR/
     cp $TMP_DIR/Lockpick_RCM.bin $BUILD_DIR/bootloader/payloads/
 
     curl -O -L https://f38d61784492.hosting.myjino.ru/NintendoSwitch/mod_chip_toolbox.zip --output-dir $TMP_DIR
-    unzip $TMP_DIR/mod_chip_toolbox.zip -d $BUILD_DIR/bootloader/payloads/
+    $UNZIP_COMMAND $TMP_DIR/mod_chip_toolbox.zip -d $BUILD_DIR/bootloader/payloads/
 }
 
 prepare_homebrew() {
@@ -65,7 +67,7 @@ prepare_homebrew() {
 
     mkdir $BUILD_DIR/switch/linkalho
     curl -O -L https://f38d61784492.hosting.myjino.ru/NintendoSwitch/linkalho-v2.0.1.zip --output-dir $TMP_DIR
-    unzip $TMP_DIR/linkalho-*.zip -d $BUILD_DIR/switch/linkalho
+    $UNZIP_COMMAND $TMP_DIR/linkalho-*.zip -d $BUILD_DIR/switch/linkalho
 
 }
 
@@ -87,7 +89,7 @@ patch_hekate() {
 patch_home_menu() {
     mkdir $BUILD_DIR/games
     curl -O -L "https://f38d61784492.hosting.myjino.ru/NintendoSwitch/hbmenu_0104444444440000.zip" --output-dir $TMP_DIR
-    unzip $TMP_DIR/hbmenu_*zip -d $BUILD_DIR/games/
+    $UNZIP_COMMAND $TMP_DIR/hbmenu_*zip -d $BUILD_DIR/games/
 }
 
 patch_homebrew() {
