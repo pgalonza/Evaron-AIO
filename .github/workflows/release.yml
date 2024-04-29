@@ -39,14 +39,19 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
-    - name: Download artifact
-      uses: actions/download-artifact@v4
-      with:
-        name: evaron-aio-artifact
-        path: "./"
-    - name: Create release
-      uses: ncipollo/release-action@v1
-      with:
-        artifacts: "./Evaron-AIO.zip"
-        bodyFile: "./build-information.md"
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 0
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: evaron-aio-artifact
+          path: "./"
+      - name: Create release
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: "./Evaron-AIO.zip"
+          bodyFile: "./build-information.md"
 
