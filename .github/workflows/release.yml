@@ -1,0 +1,49 @@
+name: Create release
+
+on:
+  push:
+    tags:
+      - '[0-9]+.[0-9]+.[0-9]+'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: "release"
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 0
+      - name: Create pack
+        run: chmod +x ./build.sh;./build.sh
+      - name: Archive hugo artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: evaron-aio-artifact
+          path: "./Evaron-AIO.zip"
+
+  create-release:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+    - name: Download artifact
+      uses: actions/download-artifact@v4
+      with:
+        name: evaron-aio-artifact
+        path: "./"
+    - name: Create release
+      uses: ncipollo/release-action@v1
+      with:
+        artifacts: "./Evaron-AIO.zip"
+
