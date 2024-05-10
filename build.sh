@@ -19,7 +19,7 @@ prepare_hekate() {
 }
 
 prepare_atmosphere() {
-    curl -O -L https://github.com/Atmosphere-NX/Atmosphere/releases/download/1.6.2/atmosphere-1.6.2-master-f7bf379cf+hbl-2.4.4+hbmenu-3.6.0.zip --output-dir $TMP_DIR
+    curl -O -L https://github.com/Atmosphere-NX/Atmosphere/releases/download/1.7.0-prerelease/atmosphere-1.7.0-master-35d93a7c4+hbl-2.4.4+hbmenu-3.6.0.zip --output-dir $TMP_DIR
     $UNZIP_COMMAND $TMP_DIR/atmosphere-*.zip -d $BUILD_DIR
 }
 
