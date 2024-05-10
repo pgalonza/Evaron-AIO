@@ -28,6 +28,11 @@ prepare_deesea() {
     $UNZIP_COMMAND $TMP_DIR/deepsea-advanced_*.zip -d $BUILD_DIR
 }
 
+prepare_kefir() {
+    curl -O -L https://github.com/rashevskyv/kefir/releases/download/734/kefir734.zip --output-dir $TMP_DIR
+    $UNZIP_COMMAND $TMP_DIR/kefir_*.zip -d $BUILD_DIR
+}
+
 prepare_sigpatches() {
     curl -O -L https://sigmapatches.su/sigpatches.zip --output-dir $TMP_DIR
     $UNZIP_COMMAND $TMP_DIR/sigpatches.zip -d $BUILD_DIR
