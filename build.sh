@@ -53,6 +53,11 @@ prepare_shallowsea) {
     $UNZIP_COMMAND $TMP_DIR/ShallowSea-*.zip -d $BUILD_DIR
 }
 
+prepare_shallowsea) {
+    curl -O -L https://github.com/rashevskyv/4IFIR/releases/download/24.04.13.07/4IFIR-Wizard-update-*.zip --output-dir $TMP_DIR
+    $UNZIP_COMMAND $TMP_DIR/4IFIR-*.zip -d $BUILD_DIR
+}
+
 prepare_scripts() {
     curl -O -L https://raw.githubusercontent.com/Atmosphere-NX/Atmosphere/master/utilities/insert_splash_screen.py --output-dir $TMP_DIR
     git clone git@github.com:friedkeenan/switch-logo-patcher.git
