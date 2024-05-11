@@ -48,12 +48,12 @@ prepare_next() {
     $UNZIP_COMMAND $TMP_DIR/Next.zip -d $BUILD_DIR
 }
 
-prepare_shallowsea) {
+prepare_shallowsea() {
     curl -O -L https://codeberg.org/carcaschoi/Shallowsea/releases/download/v2.22.1/ShallowSea-ams.zip --output-dir $TMP_DIR
     $UNZIP_COMMAND $TMP_DIR/ShallowSea-*.zip -d $BUILD_DIR
 }
 
-prepare_shallowsea) {
+prepare_shallowsea() {
     curl -O -L https://github.com/rashevskyv/4IFIR/releases/download/24.04.13.07/4IFIR-Wizard-update-*.zip --output-dir $TMP_DIR
     $UNZIP_COMMAND $TMP_DIR/4IFIR-*.zip -d $BUILD_DIR
 }
