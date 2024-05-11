@@ -48,6 +48,11 @@ prepare_next() {
     $UNZIP_COMMAND $TMP_DIR/Next.zip -d $BUILD_DIR
 }
 
+prepare_shallowsea) {
+    curl -O -L https://codeberg.org/carcaschoi/Shallowsea/releases/download/v2.22.1/ShallowSea-ams.zip --output-dir $TMP_DIR
+    $UNZIP_COMMAND $TMP_DIR/ShallowSea-*.zip -d $BUILD_DIR
+}
+
 prepare_scripts() {
     curl -O -L https://raw.githubusercontent.com/Atmosphere-NX/Atmosphere/master/utilities/insert_splash_screen.py --output-dir $TMP_DIR
     git clone git@github.com:friedkeenan/switch-logo-patcher.git
