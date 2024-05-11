@@ -51,8 +51,8 @@ prepare_shallowsea() {
     $UNZIP_COMMAND $TMP_DIR/ShallowSea-*.zip -d $BUILD_DIR
 }
 
-prepare_shallowsea() {
-    curl -O -L https://github.com/rashevskyv/4IFIR/releases/download/24.04.13.07/4IFIR-Wizard-update-*.zip --output-dir $TMP_DIR
+prepare_4ifir() {
+    curl -O -L https://github.com/rashevskyv/4IFIR/releases/download/24.04.13.07/4IFIR-Wizard-update-24.04.13.07.zip --output-dir $TMP_DIR
     $UNZIP_COMMAND $TMP_DIR/4IFIR-*.zip -d $BUILD_DIR
 }
 
