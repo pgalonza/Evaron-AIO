@@ -43,6 +43,11 @@ prepare_ultra() {
     $UNZIP_COMMAND $TMP_DIR/Ultra.zip -d $BUILD_DIR
 }
 
+prepare_next() {
+    curl -O -L https://codeberg.org/vampitech/NeXT/releases/download/3.11/NeXT.zip --output-dir $TMP_DIR
+    $UNZIP_COMMAND $TMP_DIR/Next.zip -d $BUILD_DIR
+}
+
 prepare_scripts() {
     curl -O -L https://raw.githubusercontent.com/Atmosphere-NX/Atmosphere/master/utilities/insert_splash_screen.py --output-dir $TMP_DIR
     git clone git@github.com:friedkeenan/switch-logo-patcher.git
