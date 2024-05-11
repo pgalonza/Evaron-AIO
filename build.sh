@@ -161,11 +161,11 @@ patch_bootlogo_exefs() {
 patch_icons() {
     label=icon
     mkdir $TMP_DIR/res
-    for png_file in $SRC_ASSETS_DIR/icons/* ; do
-        convert $SRC_ASSETS_DIR/icons/$png_file -resize 192x192 -depth 8 -type TrueColorAlpha $TMP_DIR/res/$label\_${png_file%.*}.bmp
+    for png_file in "$SRC_ASSETS_DIR"/icons/*.png ; do
+        convert $SRC_ASSETS_DIR/icons/$png_file -resize 192x192 -depth 8 -type TrueColorAlpha $TMP_DIR/res/"$label"_"${png_file%.*}".bmp
     done
     mkdir $BUILD_DIR/bootloader/res
-    cp -f $TMP_DIR/res/* $BUILD_DIR/bootloader/res
+    cp -f $TMP_DIR/res/*.bmp $BUILD_DIR/bootloader/res/
 }
 
 
