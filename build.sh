@@ -23,11 +23,6 @@ prepare_atmosphere() {
     $UNZIP_COMMAND $TMP_DIR/atmosphere-*.zip -d $BUILD_DIR
 }
 
-prepare_scripts() {
-    curl -O -L https://raw.githubusercontent.com/Atmosphere-NX/Atmosphere/master/utilities/insert_splash_screen.py --output-dir $TMP_DIR
-    git clone git@github.com:friedkeenan/switch-logo-patcher.git
-}
-
 prepare_deesea() {
     curl -O -L https://github.com/Team-Neptune/DeepSea/releases/download/v4.9.0/deepsea-advanced_v4.9.0.zip --output-dir $TMP_DIR
     $UNZIP_COMMAND $TMP_DIR/deepsea-advanced_*.zip -d $BUILD_DIR
@@ -37,6 +32,18 @@ prepare_kefir() {
     curl -O -L https://github.com/rashevskyv/kefir/releases/download/734/kefir734.zip --output-dir $TMP_DIR
     $UNZIP_COMMAND $TMP_DIR/kefir_*.zip -d $BUILD_DIR
 }
+
+prepare_gnx() {
+    curl -O -L https://github.com/vncsmnl/GNX/releases/download/18.0.1-00/2024.03.30.GNX.v18.0.1-00.zip --output-dir $TMP_DIR
+    $UNZIP_COMMAND $TMP_DIR/*.GNC.*.zip -d $BUILD_DIR
+}
+
+prepare_scripts() {
+    curl -O -L https://raw.githubusercontent.com/Atmosphere-NX/Atmosphere/master/utilities/insert_splash_screen.py --output-dir $TMP_DIR
+    git clone git@github.com:friedkeenan/switch-logo-patcher.git
+}
+
+
 
 prepare_sigpatches() {
     curl -O -L https://sigmapatches.su/sigpatches.zip --output-dir $TMP_DIR
