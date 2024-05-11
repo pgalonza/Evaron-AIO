@@ -58,6 +58,10 @@ prepare_shallowsea) {
     $UNZIP_COMMAND $TMP_DIR/4IFIR-*.zip -d $BUILD_DIR
 }
 
+prepare_hats() {
+    curl -O -L https://f38d61784492.hosting.myjino.ru/NintendoSwitch/HATS-1.7.0-3.zip --output-dir $TMP_DIR
+    $UNZIP_COMMAND $TMP_DIR/HATS-*.zip -d $BUILD_DIR
+
 prepare_scripts() {
     curl -O -L https://raw.githubusercontent.com/Atmosphere-NX/Atmosphere/master/utilities/insert_splash_screen.py --output-dir $TMP_DIR
     git clone git@github.com:friedkeenan/switch-logo-patcher.git
