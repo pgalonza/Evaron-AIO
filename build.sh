@@ -5,10 +5,8 @@ set -o xtrace
 
 TMP_DIR="./tmp"
 BUILD_DIR="./build"
-SRC_BOOT_DIR="./bootloader"
 SRC_HEKATE_DIR="./hekate"
 SRC_ATMOSPHERE="./atmosphere"
-SRC_HOME_MENU="./home-menu"
 SRC_HOMEBREW="./homebrew"
 
 UNZIP_COMMAND="unzip -o"
