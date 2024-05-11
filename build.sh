@@ -38,12 +38,15 @@ prepare_gnx() {
     $UNZIP_COMMAND $TMP_DIR/*.GNC.*.zip -d $BUILD_DIR
 }
 
+prepare_ultra() {
+    curl -O -L https://github.com/Ultra-NX/Ultra/releases/download/2.1-RC3/Ultra.zip --output-dir $TMP_DIR
+    $UNZIP_COMMAND $TMP_DIR/Ultra.zip -d $BUILD_DIR
+}
+
 prepare_scripts() {
     curl -O -L https://raw.githubusercontent.com/Atmosphere-NX/Atmosphere/master/utilities/insert_splash_screen.py --output-dir $TMP_DIR
     git clone git@github.com:friedkeenan/switch-logo-patcher.git
 }
-
-
 
 prepare_sigpatches() {
     curl -O -L https://sigmapatches.su/sigpatches.zip --output-dir $TMP_DIR
