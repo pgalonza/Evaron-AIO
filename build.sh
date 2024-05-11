@@ -61,6 +61,7 @@ prepare_shallowsea) {
 prepare_scripts() {
     curl -O -L https://raw.githubusercontent.com/Atmosphere-NX/Atmosphere/master/utilities/insert_splash_screen.py --output-dir $TMP_DIR
     git clone git@github.com:friedkeenan/switch-logo-patcher.git
+    git clone git@github.com:zqb-all/convertfb.git
 }
 
 prepare_sigpatches() {
