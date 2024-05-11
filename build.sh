@@ -5,6 +5,7 @@ set -o xtrace
 
 TMP_DIR="./tmp"
 BUILD_DIR="./build"
+SRC_ASSETS_DIR="./assets"
 SRC_HEKATE_DIR="./hekate"
 SRC_ATMOSPHERE="./atmosphere"
 SRC_HOMEBREW="./homebrew"
@@ -131,6 +132,40 @@ patch_homebrew() {
     cp $SRC_HOMEBREW/dbi/dbi.config $BUILD_DIR/switch/DBI/dbi.config
     mkdir $BUILD_DIR/config/aio-switch-updater
     cp $SRC_HOMEBREW/aio-switch-updater/custom_packs.json $BUILD_DIR/config/aio-switch-updater/custom_packs.json
+}
+
+patch_splash_screen_package3() {
+    label=paskage3
+    convert $SRC_ASSETS_DIR/bootlogo-$label.png -rotate 270 $TMP_DIR/bootlogo-$label.png
+    convert $TMP_DIR/bootlogo-$label.png -resize 720x1280 -depth 8 -type TrueColorAlpha $TMP_DIR/bootlogo-$label.bmp
+
+    python3 $TMP_DIR/insert_splash_screen.py $TMP_DIR/bootlogo-$label.bmp $BUILD_DIR/atmosphere/package3
+}
+
+patch_splash_hekate() {
+    label=hekate
+    convert $SRC_ASSETS_DIR/bootlogo-$label.png -rotate 270 $TMP_DIR/bootlogo-$label.png
+    convert $TMP_DIR/bootlogo-$label.png -resize 720x1280 -depth 8 -type TrueColorAlpha $TMP_DIR/bootlogo-$label.bmp
+    cp -f $TMP_DIR/bootlogo-$label.bmp $BUILD_DIR/bootloader/bootlogo.bmp
+}
+
+patch_bootlogo_exefs() {
+    label=exefs
+    convert $SRC_ASSETS_DIR/bootlogo-$label.png  -rotate 270 $TMP_DIR/bootlogo-$label.png
+    convert $TMP_DIR/bootlogo-$label.png -resize 308x350 -depth 8 -type TrueColorAlpha $TMP_DIR/bootlogo-$label.bmp
+
+    mkdir -p $BUILD_DIR/atmosphere/exefs_patches/bootlogo
+    python3 $BUILD_DIR/switch-logo-patcher/gen_patches.py $BUILD_DIR/atmosphere/exefs_patches/bootlogo $TMP_DIR/bootlogo_$label.bmp
+}
+
+patch_icons() {
+    label=icon
+    mkdir $TMP_DIR/res
+    for png_file in $SRC_ASSETS_DIR/icons/* ; do
+        convert $SRC_ASSETS_DIR/icons/$png_file -resize 192x192 -depth 8 -type TrueColorAlpha $TMP_DIR/res/$label\_${png_file%.*}.bmp
+    done
+    mkdir $BUILD_DIR/bootloader/res
+    cp -f $TMP_DIR/res/* $BUILD_DIR/bootloader/res
 }
 
 
