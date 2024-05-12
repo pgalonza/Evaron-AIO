@@ -74,8 +74,9 @@ prepare_sigpatches() {
 }
 
 prepare_overlays() {
-    curl -O -L https://sigmapatches.su/sys-patch.zip --output-dir $TMP_DIR
-    $UNZIP_COMMAND $TMP_DIR/sys-patch.zip -d $BUILD_DIR
+    # curl -O -L https://sigmapatches.su/sys-patch.zip --output-dir $TMP_DIR
+    curl -O -L https://f38d61784492.hosting.myjino.ru/NintendoSwitch/sys-patch-1.5.1.zip --output-dir $TMP_DIR
+    $UNZIP_COMMAND $TMP_DIR/sys-patch-*.zip -d $BUILD_DIR
 }
 
 prepare_sx_gear() {
