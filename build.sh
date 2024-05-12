@@ -22,7 +22,7 @@ prepare_atmosphere() {
     $UNZIP_COMMAND $TMP_DIR/atmosphere-*.zip -d $BUILD_DIR
 }
 
-prepare_deesea() {
+prepare_deepsea() {
     curl -O -L https://github.com/Team-Neptune/DeepSea/releases/download/v4.10.0/deepsea-advanced_v4.10.0.zip --output-dir $TMP_DIR
     $UNZIP_COMMAND $TMP_DIR/deepsea-advanced_*.zip -d $BUILD_DIR
 }
@@ -170,7 +170,7 @@ patch_icons() {
 
 
 mkdir $TMP_DIR $BUILD_DIR
-prepare_deesea
+prepare_deepsea
 prepare_sigpatches
 prepare_sx_gear
 prepare_payload
