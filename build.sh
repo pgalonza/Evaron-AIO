@@ -111,6 +111,9 @@ prepare_homebrew() {
     curl -O -L https://f38d61784492.hosting.myjino.ru/NintendoSwitch/linkalho-v2.0.1.zip --output-dir $TMP_DIR
     $UNZIP_COMMAND $TMP_DIR/linkalho-*.zip -d $BUILD_DIR/switch/linkalho
 
+    mkdir $BUILD_DIR/switch/sigpatch-updater
+    curl -O -L https://bitbucket.org/e1ite007/sigpatch-updater/downloads/sigpatch-updater.nro --output-dir $TMP_DIR
+    cp $TMP_DIR/sigpatch-updater.nro $BUILD_DIR/switch/sigpatch-updater/
 }
 
 patch_atmosphere() {
