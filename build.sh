@@ -107,7 +107,6 @@ prepare_homebrew() {
     curl -O -L https://github.com/rashevskyv/dbi/releases/download/658/DBI.nro --output-dir $TMP_DIR
     cp $TMP_DIR/DBI.nro $BUILD_DIR/switch/DBI/
 
-
     mkdir $BUILD_DIR/switch/linkalho
     curl -O -L https://f38d61784492.hosting.myjino.ru/NintendoSwitch/linkalho-v2.0.1.zip --output-dir $TMP_DIR
     $UNZIP_COMMAND $TMP_DIR/linkalho-*.zip -d $BUILD_DIR/switch/linkalho
@@ -115,6 +114,13 @@ prepare_homebrew() {
     mkdir $BUILD_DIR/switch/sigpatch-updater
     curl -O -L https://bitbucket.org/e1ite007/sigpatch-updater/downloads/sigpatch-updater.nro --output-dir $TMP_DIR
     cp $TMP_DIR/sigpatch-updater.nro $BUILD_DIR/switch/sigpatch-updater/
+
+    mkdir $BUILD_DIR/switch/atmo-pack-updater
+    curl -O -L https://github.com/PoloNX/AtmoPackUpdater/releases/download/2.0.1/AtmoPackUpdater.nro --output-dir $TMP_DIR
+    cp $TMP_DIR/AtmoPackUpdater.nro $BUILD_DIR/switch/atmo-pack-updater/
+
+    # curl -O -L https://github.com/HamletDuFromage/aio-switch-updater/releases/download/2.23.2/aio-switch-updater.zip --output-dir $TMP_DIR
+    # UNZIP_COMMAND $TMP_DIR/aio-switch-updater.zip -d $BUILD_DIR
 }
 
 patch_atmosphere() {
