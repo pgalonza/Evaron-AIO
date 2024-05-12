@@ -73,7 +73,7 @@ prepare_sigpatches() {
     $UNZIP_COMMAND $TMP_DIR/sigpatches.zip -d $BUILD_DIR
 }
 
-prepare_syspatch() {
+prepare_overlays() {
     curl -O -L https://sigmapatches.su/sys-patch.zip --output-dir $TMP_DIR
     $UNZIP_COMMAND $TMP_DIR/sys-patch.zip -d $BUILD_DIR
 }
@@ -177,7 +177,7 @@ prepare_sigpatches
 prepare_sx_gear
 prepare_payload
 prepare_homebrew
-prepare_syspatch
+prepare_overlays
 
 patch_atmosphere
 patch_hekate
