@@ -115,8 +115,8 @@ patch_atmosphere() {
     cp -f $SRC_ATMOSPHERE/config/override_config.ini $BUILD_DIR/atmosphere/config/override_config.ini
     cp -f $SRC_ATMOSPHERE/config/system_settings.ini $BUILD_DIR/atmosphere/config/system_settings.ini
     cp -f $SRC_ATMOSPHERE/hosts/* $BUILD_DIR/atmosphere/hosts
-    curl -O -L https://github.com/Atmosphere-NX/Atmosphere/releases/download/1.6.2/fusee.bin --output-dir $TMP_DIR
-    cp $TMP_DIR/fusee.bin $BUILD_DIR/bootloader/payloads/fusee.bin
+    # curl -O -L https://github.com/Atmosphere-NX/Atmosphere/releases/download/1.6.2/fusee.bin --output-dir $TMP_DIR
+    # cp $TMP_DIR/fusee.bin $BUILD_DIR/bootloader/payloads/fusee.bin
 }
 
 patch_hekate() {
