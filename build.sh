@@ -23,7 +23,7 @@ prepare_atmosphere() {
 }
 
 prepare_deesea() {
-    curl -O -L https://github.com/Team-Neptune/DeepSea/releases/download/v4.9.0/deepsea-advanced_v4.9.0.zip --output-dir $TMP_DIR
+    curl -O -L https://github.com/Team-Neptune/DeepSea/releases/download/v4.10.0/deepsea-advanced_v4.10.0.zip --output-dir $TMP_DIR
     $UNZIP_COMMAND $TMP_DIR/deepsea-advanced_*.zip -d $BUILD_DIR
 }
 
