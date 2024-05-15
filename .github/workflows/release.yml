@@ -37,6 +37,7 @@ jobs:
 
   create-release:
     runs-on: ubuntu-latest
+    container: ghcr.io/${{ github.repository_owner }}/aio-build:latest
     needs: build
     steps:
       - name: Checkout
@@ -54,4 +55,3 @@ jobs:
         with:
           artifacts: "./Evaron-AIO.zip"
           bodyFile: "./build-information.md"
-
