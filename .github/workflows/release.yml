@@ -27,7 +27,7 @@ jobs:
           fetch-depth: 0
       - name: Create pack
         run: chmod +x ./build.sh;./build.sh
-      - name: Archive hugo artifacts
+      - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
           retention-days: 1
