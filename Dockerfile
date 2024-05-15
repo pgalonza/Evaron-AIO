@@ -4,7 +4,7 @@ WORKDIR /app/
 
 COPY ./requirements.txt /opt/requirements.txt
 
-RUN apk add curl jq git bash && \
+RUN apk add curl jq git bash zip && \
     rm -rf /var/cache/apk/*
 
 RUN pip install --no-cache-dir -r /opt/requirements.txt
