@@ -54,4 +54,4 @@ jobs:
         uses: ncipollo/release-action@v1
         with:
           artifacts: "./Evaron-AIO.zip"
-          bodyFile: "./build-information.md"
+          bodyFile: "./CHANGELOG.md"
