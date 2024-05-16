@@ -22,6 +22,11 @@ prepare_atmosphere() {
     $UNZIP_COMMAND $TMP_DIR/atmosphere-*.zip -d $BUILD_DIR
 }
 
+prepare_evaron_atmosphere() {
+    curl -O -L https://github.com/pgalonza/Evaron-Atmosphere/releases/download/0.1.0/atmosphere-1.7.0-notbranch-dd29b60c3-hbl-2.4.4+hbmenu-3.6.0.zip --output-dir $TMP_DIR
+    $UNZIP_COMMAND $TMP_DIR/atmosphere-*.zip -d $BUILD_DIR
+}
+
 prepare_deepsea() {
     curl -O -L https://github.com/Team-Neptune/DeepSea/releases/download/v4.10.0/deepsea-advanced_v4.10.0.zip --output-dir $TMP_DIR
     $UNZIP_COMMAND $TMP_DIR/deepsea-advanced_*.zip -d $BUILD_DIR
