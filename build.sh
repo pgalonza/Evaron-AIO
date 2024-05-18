@@ -132,6 +132,7 @@ patch_atmosphere() {
     cp $SRC_ATMOSPHERE/exosphere.ini $BUILD_DIR/exosphere.ini
     cp -f $SRC_ATMOSPHERE/config/override_config.ini $BUILD_DIR/atmosphere/config/override_config.ini
     cp -f $SRC_ATMOSPHERE/config/system_settings.ini $BUILD_DIR/atmosphere/config/system_settings.ini
+    mkdir $BUILD_DIR/atmosphere/hosts || true
     cp -f $SRC_ATMOSPHERE/hosts/* $BUILD_DIR/atmosphere/hosts
     # curl -O -L https://github.com/Atmosphere-NX/Atmosphere/releases/download/1.6.2/fusee.bin --output-dir $TMP_DIR
     # cp $TMP_DIR/fusee.bin $BUILD_DIR/bootloader/payloads/fusee.bin
@@ -151,7 +152,7 @@ patch_home_menu() {
 
 patch_homebrew() {
     cp $SRC_HOMEBREW/dbi/dbi.config $BUILD_DIR/switch/DBI/dbi.config
-    mkdir $BUILD_DIR/config/aio-switch-updater
+    mkdir -p $BUILD_DIR/config/aio-switch-updater
     cp $SRC_HOMEBREW/aio-switch-updater/custom_packs.json $BUILD_DIR/config/aio-switch-updater/custom_packs.json
 }
 
