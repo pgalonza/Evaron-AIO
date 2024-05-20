@@ -17,4 +17,4 @@ sudo parted --script /dev/"$DEVICE_BLOCK" rm 2 || true
 sudo parted --script /dev/"$DEVICE_BLOCK" mkpart primary fat32 "${OFFSET}B" "$(python -c "print(($SD_SIZE-$EMUNAND_SIZE_BYTES) - (1+($OFFSET*2)))")B"
 sudo parted --script /dev/"$DEVICE_BLOCK" mkpart primary fat32 "$(python -c "print($SD_SIZE-($EMUNAND_SIZE_BYTES+$OFFSET))")B" "$(python -c "print($SD_SIZE-$OFFSET)")B"
 
-sudo mkfs.fat /dev/"${DEVICE_BLOCK}1"
+sudo mkfs.fat -s "$(python -c "print(int((64*1024)/512))")" -F 32 /dev/"${DEVICE_BLOCK}1"
