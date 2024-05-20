@@ -4,10 +4,10 @@ set -o errexit
 set -o xtrace
 
 sudo parted -l
-read -p -r "SELECT DEVICE: " DEVICE_BLOCK
+read -r -p "SELECT DEVICE: " DEVICE_BLOCK
 SD_SIZE=$(sudo blockdev --getsize64 /dev/"$DEVICE_BLOCK")
 OFFSET=$(python -c "print(1 * (1024**2))")
-read -p -r "EmuNAND Size in GB: " EMUNAND_SIZE_GB
+read -r -p "EmuNAND Size in GB: " EMUNAND_SIZE_GB
 EMUNAND_SIZE_BYTES=$(python -c "print($EMUNAND_SIZE_GB*(1024**3))")
 
 sudo umount /dev/"${DEVICE_BLOCK}"1 || true
