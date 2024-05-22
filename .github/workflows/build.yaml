@@ -22,16 +22,8 @@ jobs:
     container: ghcr.io/${{ github.repository_owner }}/aio-build:latest
     needs: shellcheck
     steps:
-      - name: check
-        run: |
-          ls -l ./
-          pwd
       - name: Checkout
         uses: actions/checkout@v4
-      - name: check
-        run: |
-          ls -l ./
-          pwd
       - name: Create pack
         run: |
           chmod +x ./build.sh
