@@ -139,9 +139,9 @@ patch_atmosphere() {
 }
 
 patch_hekate() {
-    cp $BUILD_DIR/hekate_ctcaer_*.bin $BUILD_DIR/payload.bin
-    rm $BUILD_DIR/hekate_ctcaer_*.bin
-    cp $SRC_HEKATE_DIR/hekate_ipl.ini $BUILD_DIR/bootloader/hekate_ipl.ini
+    cp $BUILD_DIR/hekate_ctcaer_*.bin $BUILD_DIR/payload.bin || true
+    rm $BUILD_DIR/hekate_ctcaer_*.bin || true
+    cp -f $SRC_HEKATE_DIR/hekate_ipl.ini $BUILD_DIR/bootloader/hekate_ipl.ini
 }
 
 patch_home_menu() {
