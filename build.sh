@@ -70,6 +70,11 @@ prepare_hats() {
     $UNZIP_COMMAND $TMP_DIR/HATS-*.zip -d $BUILD_DIR
 }
 
+prepare_santa_atmo() {
+    curl -O -L https://santa-atmo.ru/nintendo/atmo-1.7.0-130524.zip --output-dir $TMP_DIR
+    $UNZIP_COMMAND $TMP_DIR/atmo-*.zip -d $BUILD_DIR
+}
+
 prepare_scripts() {
     curl -O -L https://raw.githubusercontent.com/Atmosphere-NX/Atmosphere/master/utilities/insert_splash_screen.py --output-dir $TMP_DIR
     git clone git@github.com:friedkeenan/switch-logo-patcher.git
