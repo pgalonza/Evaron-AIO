@@ -20,6 +20,9 @@ prepare_hekate() {
 prepare_atmosphere() {
     curl -O -L https://github.com/Atmosphere-NX/Atmosphere/releases/download/1.7.0-prerelease/atmosphere-1.7.0-master-35d93a7c4+hbl-2.4.4+hbmenu-3.6.0.zip --output-dir $TMP_DIR
     $UNZIP_COMMAND $TMP_DIR/atmosphere-*.zip -d $BUILD_DIR
+
+    curl -O -L https://github.com/Atmosphere-NX/Atmosphere/releases/download/1.7.0-prerelease/fusee.bin --output-dir $TMP_DIR
+    cp $TMP_DIR/fusee.bin $BUILD_DIR/bootloader/payloads/fusee.bin
 }
 
 prepare_evaron_atmosphere() {
@@ -142,8 +145,6 @@ patch_atmosphere() {
     cp -f $SRC_ATMOSPHERE/config/system_settings.ini $BUILD_DIR/atmosphere/config/system_settings.ini
     mkdir $BUILD_DIR/atmosphere/hosts || true
     cp -f $SRC_ATMOSPHERE/hosts/* $BUILD_DIR/atmosphere/hosts
-    # curl -O -L https://github.com/Atmosphere-NX/Atmosphere/releases/download/1.6.2/fusee.bin --output-dir $TMP_DIR
-    # cp $TMP_DIR/fusee.bin $BUILD_DIR/bootloader/payloads/fusee.bin
 }
 
 patch_hekate() {
