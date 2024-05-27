@@ -97,6 +97,11 @@ prepare_overlays() {
     curl -O -L https://f38d61784492.hosting.myjino.ru/NintendoSwitch/sys-patch-1.5.1.zip --output-dir $TMP_DIR
     $UNZIP_COMMAND $TMP_DIR/sys-patch-*.zip -d $BUILD_DIR
     rm $BUILD_DIR/atmosphere/contents/420000000000000B/flags/boot2.flag
+
+    curl -O -L https://github.com/WerWolv/nx-ovlloader/releases/download/v1.0.7/nx-ovlloader.zip --output-dir $TMP_DIR
+    $UNZIP_COMMAND $TMP_DIR/nx-ovlloader.zip -d $BUILD_DIR
+    curl -O -L https://github.com/ppkantorski/Ultrahand-Overlay/releases/download/v1.6.2/ovlmenu.ovl --output-dir $TMP_DIR
+    cp -f $TMP_DIR/ovlmenu.ovl $BUILD_DIR/switch/.overlays/ovlmenu.ovl
 }
 
 prepare_sx_gear() {
