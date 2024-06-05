@@ -26,10 +26,10 @@ prepare_atmosphere() {
 }
 
 prepare_evaron_atmosphere() {
-    curl -O -L https://github.com/pgalonza/Evaron-Atmosphere/releases/download/0.1.0/atmosphere-1.7.0-notbranch-dd29b60c3-hbl-2.4.4+hbmenu-3.6.0.zip --output-dir $TMP_DIR
+    curl -O -L https://github.com/pgalonza/ns-Atmosphere/releases/download/0.1.0/atmosphere-1.7.0-notbranch-dd29b60c3-hbl-2.4.4+hbmenu-3.6.0.zip --output-dir $TMP_DIR
     $UNZIP_COMMAND $TMP_DIR/atmosphere-*.zip -d $BUILD_DIR
 
-    curl -O -L https://github.com/pgalonza/Evaron-Atmosphere/releases/download/0.1.0/fusee.bin --output-dir $TMP_DIR
+    curl -O -L https://github.com/pgalonza/ns-Atmosphere/releases/download/0.1.0/fusee.bin --output-dir $TMP_DIR
     cp $TMP_DIR/fusee.bin $TMP_DIR/bootloader/payloads/fusee.bin
 }
 
