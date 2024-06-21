@@ -97,7 +97,7 @@ prepare_sigpatches() {
     # curl -O -L https://sigmapatches.su/sigpatches.zip --output-dir $TMP_DIR
     # $UNZIP_COMMAND $TMP_DIR/sigpatches.zip -d $BUILD_DIR
 
-    curl -O -L https://f38d61784492.hosting.myjino.ru/NintendoSwitch/Hekate+AMS-package3-sigpatches-1.7.0p-cfw-18.0.1.zip --output-dir $TMP_DIR
+    curl -O -L https://f38d61784492.hosting.myjino.ru/NintendoSwitch/Hekate+AMS-package3-sigpatches-1.7.1-cfw-18.1.0V2.zip --output-dir $TMP_DIR
     $UNZIP_COMMAND $TMP_DIR/Hekate+AMS-package3-sigpatches*.zip -d $BUILD_DIR
 }
 
