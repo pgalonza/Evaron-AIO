@@ -13,15 +13,15 @@ SRC_HOMEBREW="./homebrew"
 UNZIP_COMMAND="unzip -o"
 
 prepare_hekate() {
-    curl -O -L https://github.com/CTCaer/hekate/releases/download/v6.1.1/hekate_ctcaer_6.1.1_Nyx_1.6.1.zip --output-dir $TMP_DIR
+    curl -O -L https://github.com/CTCaer/hekate/releases/download/v6.2.0/hekate_ctcaer_6.2.0_Nyx_1.6.2_v4.zip --output-dir $TMP_DIR
     $UNZIP_COMMAND $TMP_DIR/hekate_ctcaer_*.zip -d $BUILD_DIR
 }
 
 prepare_atmosphere() {
-    curl -O -L https://github.com/Atmosphere-NX/Atmosphere/releases/download/1.7.0-prerelease/atmosphere-1.7.0-master-35d93a7c4+hbl-2.4.4+hbmenu-3.6.0.zip --output-dir $TMP_DIR
+    curl -O -L https://github.com/Atmosphere-NX/Atmosphere/releases/download/1.7.1/atmosphere-1.7.1-master-39c201e37+hbl-2.4.4+hbmenu-3.6.0.zip --output-dir $TMP_DIR
     $UNZIP_COMMAND $TMP_DIR/atmosphere-*.zip -d $BUILD_DIR
 
-    curl -O -L https://github.com/Atmosphere-NX/Atmosphere/releases/download/1.7.0-prerelease/fusee.bin --output-dir $TMP_DIR
+    curl -O -L https://github.com/Atmosphere-NX/Atmosphere/releases/download/1.7.1/fusee.bin --output-dir $TMP_DIR
     cp $TMP_DIR/fusee.bin $BUILD_DIR/bootloader/payloads/fusee.bin
 }
 
@@ -39,12 +39,12 @@ prepare_deepsea() {
 }
 
 prepare_kefir() {
-    curl -O -L https://github.com/rashevskyv/kefir/releases/download/734/kefir734.zip --output-dir $TMP_DIR
+    curl -O -L https://github.com/rashevskyv/kefir/releases/download/741/kefir741.zip --output-dir $TMP_DIR
     $UNZIP_COMMAND $TMP_DIR/kefir_*.zip -d $BUILD_DIR
 }
 
 prepare_gnx() {
-    curl -O -L https://github.com/vncsmnl/GNX/releases/download/18.0.1-00/2024.03.30.GNX.v18.0.1-00.zip --output-dir $TMP_DIR
+    curl -O -L https://github.com/vncsmnl/GNX/releases/download/18.1.0-01/2024.06.11.GNX.v18.1.0-01.zip --output-dir $TMP_DIR
     $UNZIP_COMMAND $TMP_DIR/*.GNC.*.zip -d $BUILD_DIR
 }
 
@@ -54,32 +54,32 @@ prepare_ultra() {
 }
 
 prepare_next() {
-    curl -O -L https://codeberg.org/vampitech/NeXT/releases/download/3.11/NeXT.zip --output-dir $TMP_DIR
+    curl -O -L https://codeberg.org/vampitech/NeXT/releases/download/3.12/NeXT.zip --output-dir $TMP_DIR
     $UNZIP_COMMAND $TMP_DIR/Next.zip -d $BUILD_DIR
 }
 
 prepare_shallowsea() {
-    curl -O -L https://codeberg.org/carcaschoi/Shallowsea/releases/download/v2.22.1/ShallowSea-ams.zip --output-dir $TMP_DIR
+    curl -O -L https://codeberg.org/carcaschoi/Shallowsea/releases/download/v2.23.0/ShallowSea-ams.zip --output-dir $TMP_DIR
     $UNZIP_COMMAND $TMP_DIR/ShallowSea-*.zip -d $BUILD_DIR
 }
 
 prepare_4ifir() {
-    curl -O -L https://github.com/rashevskyv/4IFIR/releases/download/24.04.13.07/4IFIR-Wizard-update-24.04.13.07.zip --output-dir $TMP_DIR
+    curl -O -L https://github.com/rashevskyv/4IFIR/releases/download/24.06.10.08/4IFIR-Wizard-update-24.06.10.08.zip --output-dir $TMP_DIR
     $UNZIP_COMMAND $TMP_DIR/4IFIR-*.zip -d $BUILD_DIR
 }
 
 prepare_hats() {
-    curl -O -L https://f38d61784492.hosting.myjino.ru/NintendoSwitch/HATS-1.7.0-3.zip --output-dir $TMP_DIR
+    curl -O -L https://www.mediafire.com/file_premium/sn86n4y800zkvaz/HATS-1.71-1.zip/file --output-dir $TMP_DIR
     $UNZIP_COMMAND $TMP_DIR/HATS-*.zip -d $BUILD_DIR
 }
 
 prepare_santa_atmo() {
-    curl -O -L https://santa-atmo.ru/nintendo/atmo-1.7.0-130524.zip --output-dir $TMP_DIR
+    curl -O -L https://santa-atmo.ru/nintendo/atmo-1.7.1-150624.zip --output-dir $TMP_DIR
     $UNZIP_COMMAND $TMP_DIR/atmo-*.zip -d $BUILD_DIR
 }
 
 prepare_venom() {
-    curl -O -L https://github.com/CatcherITGF/NX-Venom/releases/download/4.4.5/NXVenom.zip --output-dir $TMP_DIR
+    curl -O -L https://github.com/CatcherITGF/NX-Venom/releases/download/4.6.0/NXVenom.zip --output-dir $TMP_DIR
     $UNZIP_COMMAND $TMP_DIR/NXVenom.zip -d $BUILD_DIR
 }
 
@@ -103,13 +103,14 @@ prepare_sigpatches() {
 
 prepare_overlays() {
     # curl -O -L https://sigmapatches.su/sys-patch.zip --output-dir $TMP_DIR
-    curl -O -L https://f38d61784492.hosting.myjino.ru/NintendoSwitch/sys-patch-1.5.1.zip --output-dir $TMP_DIR
+    # curl -O -L https://f38d61784492.hosting.myjino.ru/NintendoSwitch/sys-patch-1.5.1.zip --output-dir $TMP_DIR
+    curl -O -L https://github.com/impeeza/sys-patch/releases/download/v1.5.2/sys-patch-1.5.2-88297f8.zip --output-dir $TMP_DIR
     $UNZIP_COMMAND $TMP_DIR/sys-patch-*.zip -d $BUILD_DIR
     rm $BUILD_DIR/atmosphere/contents/420000000000000B/flags/boot2.flag
 
     curl -O -L https://github.com/WerWolv/nx-ovlloader/releases/download/v1.0.7/nx-ovlloader.zip --output-dir $TMP_DIR
     $UNZIP_COMMAND $TMP_DIR/nx-ovlloader.zip -d $BUILD_DIR
-    curl -O -L https://github.com/ppkantorski/Ultrahand-Overlay/releases/download/v1.6.2/ovlmenu.ovl --output-dir $TMP_DIR
+    curl -O -L https://github.com/ppkantorski/Ultrahand-Overlay/releases/download/v1.6.4/ovlmenu.ovl --output-dir $TMP_DIR
     cp -f $TMP_DIR/ovlmenu.ovl $BUILD_DIR/switch/.overlays/ovlmenu.ovl
 }
 
