@@ -49,7 +49,7 @@ prepare_gnx() {
 }
 
 prepare_ultra() {
-    curl -O -L https://github.com/Ultra-NX/Ultra/releases/download/2.1-RC3/Ultra.zip --output-dir $TMP_DIR
+    curl -O -L https://github.com/Ultra-NX/Ultra-Resources/releases/download/Test/Ultra.zip --output-dir $TMP_DIR
     $UNZIP_COMMAND $TMP_DIR/Ultra.zip -d $BUILD_DIR
 }
 
