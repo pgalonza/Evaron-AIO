@@ -105,7 +105,9 @@ prepare_overlays() {
     # curl -O -L https://sigmapatches.su/sys-patch.zip --output-dir $TMP_DIR
     # curl -O -L https://f38d61784492.hosting.myjino.ru/NintendoSwitch/sys-patch-1.5.1.zip --output-dir $TMP_DIR
     curl -O -L https://github.com/impeeza/sys-patch/releases/download/v1.5.2/sys-patch-1.5.2-88297f8.zip --output-dir $TMP_DIR
-    $UNZIP_COMMAND $TMP_DIR/sys-patch-*.zip -d $BUILD_DIR
+    # $UNZIP_COMMAND $TMP_DIR/sys-patch-*.zip -d $BUILD_DIR
+    $UNZIP_COMMAND $TMP_DIR/sys-patch-*.zip -d $TMP_DIR
+    $UNZIP_COMMAND $TMP_DIR/sys-patch.zip -d $BUILD_DIR
     rm $BUILD_DIR/atmosphere/contents/420000000000000B/flags/boot2.flag
 
     curl -O -L https://github.com/WerWolv/nx-ovlloader/releases/download/v1.0.7/nx-ovlloader.zip --output-dir $TMP_DIR
