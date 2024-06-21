@@ -83,6 +83,10 @@ prepare_venom() {
     $UNZIP_COMMAND $TMP_DIR/NXVenom.zip -d $BUILD_DIR
 }
 
+prepare_switchcraft() {
+    curl -O -L OC_Switchcraft_1.3.1_-_atmosphere_1.7.1.zip --output-dir $TMP_DIR
+}
+
 prepare_scripts() {
     curl -O -L https://raw.githubusercontent.com/Atmosphere-NX/Atmosphere/master/utilities/insert_splash_screen.py --output-dir $TMP_DIR
     git clone git@github.com:friedkeenan/switch-logo-patcher.git
