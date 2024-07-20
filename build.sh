@@ -84,7 +84,7 @@ prepare_venom() {
 }
 
 prepare_switchcraft() {
-    curl -O -L OC_Switchcraft_1.3.1_-_atmosphere_1.7.1.zip --output-dir $TMP_DIR
+    curl -O -L OC_Switchcraft_1.3.3_-_atmosphere_1.7.1.zip --output-dir $TMP_DIR
 }
 
 prepare_scripts() {
