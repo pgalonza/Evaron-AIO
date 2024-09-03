@@ -13,7 +13,7 @@ SRC_HOMEBREW="./homebrew"
 UNZIP_COMMAND="unzip -o"
 
 prepare_hekate() {
-    curl -O -L https://github.com/CTCaer/hekate/releases/download/v6.2.0/hekate_ctcaer_6.2.0_Nyx_1.6.2_v4.zip --output-dir $TMP_DIR
+    curl -O -L https://github.com/CTCaer/hekate/releases/download/v6.2.1/hekate_ctcaer_6.2.1_Nyx_1.6.3.zip --output-dir $TMP_DIR
     $UNZIP_COMMAND $TMP_DIR/hekate_ctcaer_*.zip -d $BUILD_DIR
 }
 
@@ -34,27 +34,27 @@ prepare_evaron_atmosphere() {
 }
 
 prepare_deepsea() {
-    curl -O -L https://github.com/Team-Neptune/DeepSea/releases/download/v4.10.0/deepsea-advanced_v4.10.0.zip --output-dir $TMP_DIR
+    curl -O -L https://github.com/Team-Neptune/DeepSea/releases/download/v4.11.0/deepsea-advanced_v4.11.0.zip --output-dir $TMP_DIR
     $UNZIP_COMMAND $TMP_DIR/deepsea-advanced_*.zip -d $BUILD_DIR
 }
 
 prepare_kefir() {
-    curl -O -L https://github.com/rashevskyv/kefir/releases/download/741/kefir741.zip --output-dir $TMP_DIR
+    curl -O -L https://github.com/rashevskyv/kefir/releases/download/746/kefir746.zip --output-dir $TMP_DIR
     $UNZIP_COMMAND $TMP_DIR/kefir_*.zip -d $BUILD_DIR
 }
 
 prepare_gnx() {
-    curl -O -L https://github.com/vncsmnl/GNX/releases/download/18.1.0-01/2024.06.11.GNX.v18.1.0-01.zip --output-dir $TMP_DIR
+    curl -O -L https://github.com/vncsmnl/GNX/releases/download/18.1.0-02/2024.07.06.GNX.v18.1.0-02.zip --output-dir $TMP_DIR
     $UNZIP_COMMAND $TMP_DIR/*.GNC.*.zip -d $BUILD_DIR
 }
 
 prepare_ultra() {
-    curl -O -L https://github.com/Ultra-NX/Ultra-Resources/releases/download/Test/Ultra.zip --output-dir $TMP_DIR
+    curl -O -L https://github.com/Ultra-NX/Ultra/releases/download/2.2-R4%2B/Ultra.zip --output-dir $TMP_DIR
     $UNZIP_COMMAND $TMP_DIR/Ultra.zip -d $BUILD_DIR
 }
 
 prepare_next() {
-    curl -O -L https://codeberg.org/vampitech/NeXT/releases/download/3.12/NeXT.zip --output-dir $TMP_DIR
+    curl -O -L https://codeberg.org/vampitech/NeXT/releases/download/3.20/NeXT.zip --output-dir $TMP_DIR
     $UNZIP_COMMAND $TMP_DIR/Next.zip -d $BUILD_DIR
 }
 
@@ -64,12 +64,12 @@ prepare_shallowsea() {
 }
 
 prepare_4ifir() {
-    curl -O -L https://github.com/rashevskyv/4IFIR/releases/download/24.06.10.08/4IFIR-Wizard-update-24.06.10.08.zip --output-dir $TMP_DIR
+    curl -O -L https://github.com/rashevskyv/4IFIR/releases/download/24.08.16.08/4IFIR-Wizard-update-24.08.16.08.zip --output-dir $TMP_DIR
     $UNZIP_COMMAND $TMP_DIR/4IFIR-*.zip -d $BUILD_DIR
 }
 
 prepare_hats() {
-    curl -O -L https://www.mediafire.com/file_premium/sn86n4y800zkvaz/HATS-1.71-1.zip/file --output-dir $TMP_DIR
+    curl -O -L https://www.mediafire.com/file_premium/p6vnazz54xwl31n/HATS-1.71-5.zip/file --output-dir $TMP_DIR
     $UNZIP_COMMAND $TMP_DIR/HATS-*.zip -d $BUILD_DIR
 }
 
@@ -79,12 +79,13 @@ prepare_santa_atmo() {
 }
 
 prepare_venom() {
-    curl -O -L https://github.com/CatcherITGF/NX-Venom/releases/download/4.6.0/NXVenom.zip --output-dir $TMP_DIR
+    curl -O -L https://github.com/CatcherITGF/NX-Venom/releases/download/4.9.1/NXVenom.zip --output-dir $TMP_DIR
     $UNZIP_COMMAND $TMP_DIR/NXVenom.zip -d $BUILD_DIR
 }
 
 prepare_switchcraft() {
-    curl -O -L OC_Switchcraft_1.3.3_-_atmosphere_1.7.1.zip --output-dir $TMP_DIR
+    curl -O -L https://f38d61784492.hosting.myjino.ru/NintendoSwitch/OC_Switchcraft_EOS_1.4.1_atmosphere_1.7.1.zip
+    curl -O -L OC_Switchcraft_EOS_*.zip --output-dir $TMP_DIR
 }
 
 prepare_scripts() {
@@ -112,7 +113,7 @@ prepare_overlays() {
 
     curl -O -L https://github.com/WerWolv/nx-ovlloader/releases/download/v1.0.7/nx-ovlloader.zip --output-dir $TMP_DIR
     $UNZIP_COMMAND $TMP_DIR/nx-ovlloader.zip -d $BUILD_DIR
-    curl -O -L https://github.com/ppkantorski/Ultrahand-Overlay/releases/download/v1.6.4/ovlmenu.ovl --output-dir $TMP_DIR
+    curl -O -L https://github.com/ppkantorski/Ultrahand-Overlay/releases/download/v1.7.2/ovlmenu.ovl --output-dir $TMP_DIR
     cp -f $TMP_DIR/ovlmenu.ovl $BUILD_DIR/switch/.overlays/ovlmenu.ovl
 }
 
@@ -137,8 +138,10 @@ prepare_payload() {
 
 prepare_homebrew() {
     mkdir $BUILD_DIR/switch/DBI
-    curl -O -L https://github.com/rashevskyv/dbi/releases/download/658/DBI.nro --output-dir $TMP_DIR
-    cp $TMP_DIR/DBI.nro $BUILD_DIR/switch/DBI/
+    # curl -O -L https://github.com/rashevskyv/dbi/releases/download/658/DBI.nro --output-dir $TMP_DIR
+    # cp $TMP_DIR/DBI.nro $BUILD_DIR/switch/DBI/
+    curl -O -L https://f38d61784492.hosting.myjino.ru/NintendoSwitch/DBI.694.ru.zip --output-dir $TMP_DIR
+    $UNZIP_COMMAND $TMP_DIR/DBI.694.ru.zip -d $BUILD_DIR/switch/DBI/
 
     mkdir $BUILD_DIR/switch/linkalho
     curl -O -L https://f38d61784492.hosting.myjino.ru/NintendoSwitch/linkalho-v2.0.1.zip --output-dir $TMP_DIR
