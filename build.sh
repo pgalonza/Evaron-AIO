@@ -155,8 +155,16 @@ prepare_homebrew() {
     curl -O -L https://github.com/PoloNX/AtmoPackUpdater/releases/download/2.0.1/AtmoPackUpdater.nro --output-dir $TMP_DIR
     cp $TMP_DIR/AtmoPackUpdater.nro $BUILD_DIR/switch/atmo-pack-updater/
 
-    # curl -O -L https://github.com/HamletDuFromage/aio-switch-updater/releases/download/2.23.2/aio-switch-updater.zip --output-dir $TMP_DIR
-    # UNZIP_COMMAND $TMP_DIR/aio-switch-updater.zip -d $BUILD_DIR
+    curl -O -L https://github.com/HamletDuFromage/aio-switch-updater/releases/download/2.23.2/aio-switch-updater.zip --output-dir $TMP_DIR
+    $UNZIP_COMMAND $TMP_DIR/aio-switch-updater.zip -d $BUILD_DIR
+}
+
+prepare_cheat() {
+    curl -O -L https://github.com/tomvita/Breeze-Beta/releases/download/beta92f/Breeze.zip --output-dir $TMP_DIR
+    $UNZIP_COMMAND $TMP_DIR/Breeze.zip -d $BUILD_DIR
+
+    curl -O -L https://github.com/proferabg/EdiZon-Overlay/releases/download/v1.0.8/ovlEdiZon.ovl --output-dir $TMP_DIR
+    cp -f $TMP_DIR/ovlEdiZon.ovl $BUILD_DIR/switch/.overlays/ovlEdiZon.ovl
 }
 
 patch_atmosphere() {
@@ -227,6 +235,7 @@ prepare_sx_gear
 prepare_payload
 prepare_homebrew
 prepare_overlays
+prepare_cheat
 
 patch_atmosphere
 patch_hekate
