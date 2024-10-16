@@ -99,7 +99,7 @@ prepare_sigpatches() {
     # $UNZIP_COMMAND $TMP_DIR/sigpatches.zip -d $BUILD_DIR
 
     curl -O -L https://f38d61784492.hosting.myjino.ru/NintendoSwitch/sigpatch-atmosphere1.8.0-prerelease-c6014b533.zip --output-dir $TMP_DIR
-    $UNZIP_COMMAND $TMP_DIR/Hekate+AMS-package3-sigpatches*.zip -d $BUILD_DIR
+    $UNZIP_COMMAND $TMP_DIR/sigpatch*.zip -d $BUILD_DIR
 }
 
 prepare_overlays() {
