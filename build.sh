@@ -135,7 +135,7 @@ prepare_payload() {
 
 prepare_homebrew() {
     mkdir $BUILD_DIR/switch/DBI
-    curl -O -L https://github.com/rashevskyv/dbi/releases/download/707/DBI.nro --output-dir $TMP_DIR
+    curl -O -L https://github.com/rashevskyv/dbi/releases/download/710/DBI.nro --output-dir $TMP_DIR
     cp $TMP_DIR/DBI.nro $BUILD_DIR/switch/DBI/
     # curl -O -L https://f38d61784492.hosting.myjino.ru/NintendoSwitch/DBI.694.ru.zip --output-dir $TMP_DIR
     # $UNZIP_COMMAND $TMP_DIR/DBI.694.ru.zip -d $BUILD_DIR/switch/DBI/
