@@ -84,7 +84,7 @@ prepare_venom() {
 }
 
 prepare_switchcraft() {
-    curl -O -L https://f38d61784492.hosting.myjino.ru/NintendoSwitch/OC_Switchcraft_EOS_1.4.1_atmosphere_1.7.1.zip
+    curl -O -L https://f38d61784492.hosting.myjino.ru/NintendoSwitch/OC_Switchcraft_EOS-1.5.0-atmosphere-1.8.0-prerelease.zip
     curl -O -L OC_Switchcraft_EOS_*.zip --output-dir $TMP_DIR
 }
 
@@ -98,7 +98,7 @@ prepare_sigpatches() {
     # curl -O -L https://sigmapatches.su/sigpatches.zip --output-dir $TMP_DIR
     # $UNZIP_COMMAND $TMP_DIR/sigpatches.zip -d $BUILD_DIR
 
-    curl -O -L https://f38d61784492.hosting.myjino.ru/NintendoSwitch/Hekate+AMS-package3-sigpatches-1.7.1-cfw-18.1.0V2.zip --output-dir $TMP_DIR
+    curl -O -L https://f38d61784492.hosting.myjino.ru/NintendoSwitch/sigpatch-atmosphere1.8.0-prerelease-c6014b533.zip --output-dir $TMP_DIR
     $UNZIP_COMMAND $TMP_DIR/Hekate+AMS-package3-sigpatches*.zip -d $BUILD_DIR
 }
 
@@ -113,7 +113,7 @@ prepare_overlays() {
 
     curl -O -L https://github.com/WerWolv/nx-ovlloader/releases/download/v1.0.7/nx-ovlloader.zip --output-dir $TMP_DIR
     $UNZIP_COMMAND $TMP_DIR/nx-ovlloader.zip -d $BUILD_DIR
-    curl -O -L https://github.com/ppkantorski/Ultrahand-Overlay/releases/download/v1.7.2/ovlmenu.ovl --output-dir $TMP_DIR
+    curl -O -L https://github.com/ppkantorski/Ultrahand-Overlay/releases/download/v1.7.8/ovlmenu.ovl --output-dir $TMP_DIR
     cp -f $TMP_DIR/ovlmenu.ovl $BUILD_DIR/switch/.overlays/ovlmenu.ovl
 }
 
@@ -123,14 +123,11 @@ prepare_sx_gear() {
 }
 
 prepare_payload() {
-    # curl -O -L https://f38d61784492.hosting.myjino.ru/NintendoSwitch/Lockpick_RCM.zip --output-dir $TMP_DIR
-    # $UNZIP_COMMAND $TMP_DIR/Lockpick_RCM.zip -d $BUILD_DIR/bootloader/payloads/
+    curl -O -L https://f38d61784492.hosting.myjino.ru/NintendoSwitch/Lockpick_RCM-v1.9.13-FW-19-master_key_12.zip --output-dir $TMP_DIR
+    $UNZIP_COMMAND $TMP_DIR/Lockpick_RCM.zip -d $BUILD_DIR/bootloader/payloads/
 
     # curl -O -L https://sigmapatches.su/Lockpick_RCM_v1.9.12.zip --output-dir $TMP_DIR
     # $UNZIP_COMMAND $TMP_DIR/Lockpick_RCM_v1.9.12.zip -d $TMP_DIR/
-
-    curl -O -L https://github.com/Decscots/Lockpick_RCM/releases/download/v1.9.12/Lockpick_RCM.bin --output-dir $TMP_DIR
-    cp $TMP_DIR/Lockpick_RCM.bin $BUILD_DIR/bootloader/payloads/
 
     curl -O -L https://f38d61784492.hosting.myjino.ru/NintendoSwitch/mod_chip_toolbox.zip --output-dir $TMP_DIR
     $UNZIP_COMMAND $TMP_DIR/mod_chip_toolbox.zip -d $BUILD_DIR/bootloader/payloads/
@@ -138,18 +135,18 @@ prepare_payload() {
 
 prepare_homebrew() {
     mkdir $BUILD_DIR/switch/DBI
-    # curl -O -L https://github.com/rashevskyv/dbi/releases/download/658/DBI.nro --output-dir $TMP_DIR
-    # cp $TMP_DIR/DBI.nro $BUILD_DIR/switch/DBI/
-    curl -O -L https://f38d61784492.hosting.myjino.ru/NintendoSwitch/DBI.694.ru.zip --output-dir $TMP_DIR
-    $UNZIP_COMMAND $TMP_DIR/DBI.694.ru.zip -d $BUILD_DIR/switch/DBI/
+    curl -O -L https://github.com/rashevskyv/dbi/releases/download/707/DBI.nro --output-dir $TMP_DIR
+    cp $TMP_DIR/DBI.nro $BUILD_DIR/switch/DBI/
+    # curl -O -L https://f38d61784492.hosting.myjino.ru/NintendoSwitch/DBI.694.ru.zip --output-dir $TMP_DIR
+    # $UNZIP_COMMAND $TMP_DIR/DBI.694.ru.zip -d $BUILD_DIR/switch/DBI/
 
     mkdir $BUILD_DIR/switch/linkalho
     curl -O -L https://f38d61784492.hosting.myjino.ru/NintendoSwitch/linkalho-v2.0.1.zip --output-dir $TMP_DIR
     $UNZIP_COMMAND $TMP_DIR/linkalho-*.zip -d $BUILD_DIR/switch/linkalho
 
-    mkdir $BUILD_DIR/switch/sigpatch-updater
-    curl -O -L https://bitbucket.org/e1ite007/sigpatch-updater/downloads/sigpatch-updater.nro --output-dir $TMP_DIR
-    cp $TMP_DIR/sigpatch-updater.nro $BUILD_DIR/switch/sigpatch-updater/
+    # mkdir $BUILD_DIR/switch/sigpatch-updater
+    # curl -O -L https://bitbucket.org/e1ite007/sigpatch-updater/downloads/sigpatch-updater.nro --output-dir $TMP_DIR
+    # cp $TMP_DIR/sigpatch-updater.nro $BUILD_DIR/switch/sigpatch-updater/
 
     mkdir $BUILD_DIR/switch/atmo-pack-updater
     curl -O -L https://github.com/PoloNX/AtmoPackUpdater/releases/download/2.0.1/AtmoPackUpdater.nro --output-dir $TMP_DIR
@@ -160,7 +157,7 @@ prepare_homebrew() {
 }
 
 prepare_cheat() {
-    curl -O -L https://github.com/tomvita/Breeze-Beta/releases/download/beta92f/Breeze.zip --output-dir $TMP_DIR
+    curl -O -L https://github.com/tomvita/Breeze-Beta/releases/download/beta95d/Breeze.zip --output-dir $TMP_DIR
     $UNZIP_COMMAND $TMP_DIR/Breeze.zip -d $BUILD_DIR
 
     curl -O -L https://github.com/proferabg/EdiZon-Overlay/releases/download/v1.0.8/ovlEdiZon.ovl --output-dir $TMP_DIR
