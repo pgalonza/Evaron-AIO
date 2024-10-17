@@ -115,6 +115,9 @@ prepare_overlays() {
     $UNZIP_COMMAND $TMP_DIR/nx-ovlloader.zip -d $BUILD_DIR
     curl -O -L https://github.com/ppkantorski/Ultrahand-Overlay/releases/download/v1.7.8/ovlmenu.ovl --output-dir $TMP_DIR
     cp -f $TMP_DIR/ovlmenu.ovl $BUILD_DIR/switch/.overlays/ovlmenu.ovl
+
+    curl -O -L https://github.com/masagrator/SaltyNX/releases/download/0.9.4/SaltyNX-0.9.4.zip --output-dir $TMP_DIR
+    $UNZIP_COMMAND $TMP_DIR/SaltyNX-*.zip -d $BUILD_DIR
 }
 
 prepare_sx_gear() {
