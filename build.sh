@@ -84,7 +84,8 @@ prepare_venom() {
 }
 
 prepare_switchcraft() {
-    curl -O -L https://f38d61784492.hosting.myjino.ru/NintendoSwitch/OC_Switchcraft_EOS-1.5.0-atmosphere-1.8.0-prerelease.zip
+    # curl -O -L https://f38d61784492.hosting.myjino.ru/NintendoSwitch/OC_Switchcraft_EOS-1.5.0-atmosphere-1.8.0-prerelease.zip
+    curl -O -L https://github.com/halop/OC-Switchcraft-EOS/releases/download/1.5.0/OC_Switchcraft_EOS.1.5.0.-.atmosphere.1.8.0.prerelease.zip
     curl -O -L OC_Switchcraft_EOS_*.zip --output-dir $TMP_DIR
 }
 
@@ -137,6 +138,9 @@ prepare_payload() {
 
     curl -O -L https://f38d61784492.hosting.myjino.ru/NintendoSwitch/mod_chip_toolbox.zip --output-dir $TMP_DIR
     $UNZIP_COMMAND $TMP_DIR/mod_chip_toolbox.zip -d $BUILD_DIR/bootloader/payloads/
+
+    curl -O -L https://github.com/suchmememanyskill/TegraExplorer/releases/download/4.2.0/TegraExplorer.bin --output-dir $TMP_DIR
+    cp $TMP_DIR/TegraExplorer.bin  -d $BUILD_DIR/bootloader/payloads/TegraExplorer.bin
 }
 
 prepare_homebrew() {
