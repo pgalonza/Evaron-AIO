@@ -116,6 +116,11 @@ prepare_overlays() {
     $UNZIP_COMMAND $TMP_DIR/nx-ovlloader.zip -d $BUILD_DIR
     curl -O -L https://github.com/ppkantorski/Ultrahand-Overlay/releases/download/v1.7.9/ovlmenu.ovl --output-dir $TMP_DIR
     cp -f $TMP_DIR/ovlmenu.ovl $BUILD_DIR/switch/.overlays/ovlmenu.ovl
+    curl -O -L https://github.com/ppkantorski/EdiZon-Overlay/releases/download/v1.0.9/ovlEdiZon.ovl --output-dir $TMP_DIR
+    cp -f $TMP_DIR/ovlEdiZon.ovl $BUILD_DIR/switch/.overlays/ovlEdiZon.ovl
+    curl -O -L https://github.com/ppkantorski/ovl-sysmodules/releases/download/v1.3.1%2B/ovlSysmodules.ovl --output-dir $TMP_DIR
+    cp -f $TMP_DIR/ovlSysmodules.ovl $BUILD_DIR/switch/.overlays/ovlSysmodules.ovl
+
 
     curl -O -L https://github.com/masagrator/SaltyNX/releases/download/0.9.4/SaltyNX-0.9.4.zip --output-dir $TMP_DIR
     $UNZIP_COMMAND $TMP_DIR/SaltyNX-*.zip -d $BUILD_DIR
@@ -176,8 +181,8 @@ prepare_cheat() {
     curl -O -L https://github.com/tomvita/Breeze-Beta/releases/download/beta95d/Breeze.zip --output-dir $TMP_DIR
     $UNZIP_COMMAND $TMP_DIR/Breeze.zip -d $BUILD_DIR
 
-    curl -O -L https://github.com/proferabg/EdiZon-Overlay/releases/download/v1.0.8/ovlEdiZon.ovl --output-dir $TMP_DIR
-    cp -f $TMP_DIR/ovlEdiZon.ovl $BUILD_DIR/switch/.overlays/ovlEdiZon.ovl
+    # curl -O -L https://github.com/proferabg/EdiZon-Overlay/releases/download/v1.0.8/ovlEdiZon.ovl --output-dir $TMP_DIR
+    # cp -f $TMP_DIR/ovlEdiZon.ovl $BUILD_DIR/switch/.overlays/ovlEdiZon.ovl
 
     curl -O -L https://github.com/tomvita/EdiZon-SE/releases/download/3.8.37/EdiZon.zip --output-dir $TMP_DIR
     $UNZIP_COMMAND $TMP_DIR/EdiZon.zip -d $BUILD_DIR
