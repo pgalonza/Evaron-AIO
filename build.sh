@@ -160,10 +160,16 @@ prepare_homebrew() {
 
     mkdir $BUILD_DIR/switch/atmo-pack-updater
     curl -O -L https://github.com/PoloNX/AtmoPackUpdater/releases/download/2.0.1/AtmoPackUpdater.nro --output-dir $TMP_DIR
-    cp $TMP_DIR/AtmoPackUpdater.nro $BUILD_DIR/switch/atmo-pack-updater/
+    cp $TMP_DIR/AtmoPackUpdater.nro $BUILD_DIR/switch/atmo-pack-updater/AtmoPackUpdater.nro
 
     curl -O -L https://github.com/HamletDuFromage/aio-switch-updater/releases/download/2.23.2/aio-switch-updater.zip --output-dir $TMP_DIR
     $UNZIP_COMMAND $TMP_DIR/aio-switch-updater.zip -d $BUILD_DIR
+
+    # curl -O -L https://github.com/switchbrew/nx-hbloader/releases/download/v2.4.4/hbl.nsp --output-dir $TMP_DIR
+    # cp $TMP_DIR/hbl.nsp $BUILD_DIR/atmosphere/hbl.nsp
+
+    # curl -O -L https://github.com/switchbrew/nx-hbmenu/releases/download/v3.6.0/nx-hbmenu_v3.6.0.zip --output-dir $TMP_DIR
+    # $UNZIP_COMMAND $TMP_DIR/nx-hbmenu_* $BUILD_DIR
 }
 
 prepare_cheat() {
@@ -172,6 +178,9 @@ prepare_cheat() {
 
     curl -O -L https://github.com/proferabg/EdiZon-Overlay/releases/download/v1.0.8/ovlEdiZon.ovl --output-dir $TMP_DIR
     cp -f $TMP_DIR/ovlEdiZon.ovl $BUILD_DIR/switch/.overlays/ovlEdiZon.ovl
+
+    curl -O -L https://github.com/tomvita/EdiZon-SE/releases/download/3.8.37/EdiZon.zip --output-dir $TMP_DIR
+    $UNZIP_COMMAND $TMP_DIR/EdiZon.zip -d $BUILD_DIR
 }
 
 patch_atmosphere() {
