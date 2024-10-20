@@ -99,8 +99,8 @@ prepare_sigpatches() {
     # curl -O -L https://sigmapatches.su/sigpatches.zip --output-dir $TMP_DIR
     # $UNZIP_COMMAND $TMP_DIR/sigpatches.zip -d $BUILD_DIR
 
-    curl -O -L https://f38d61784492.hosting.myjino.ru/NintendoSwitch/sigpatch-atmosphere1.8.0-prerelease-c6014b533.zip --output-dir $TMP_DIR
-    $UNZIP_COMMAND $TMP_DIR/sigpatch*.zip -d $BUILD_DIR
+    curl -O -L https://f38d61784492.hosting.myjino.ru/NintendoSwitch/Hekate+AMS-package3-sigpatches-1.8.0P2-cfw-19.0.0_V4.zip --output-dir $TMP_DIR
+    $UNZIP_COMMAND $TMP_DIR/Hekate+AMS-package3-sigpatches-*.zip -d $BUILD_DIR
 }
 
 prepare_overlays() {
@@ -150,7 +150,7 @@ prepare_payload() {
 
 prepare_homebrew() {
     mkdir $BUILD_DIR/switch/DBI
-    curl -O -L https://github.com/rashevskyv/dbi/releases/download/710ru/DBI.nro --output-dir $TMP_DIR
+    curl -O -L https://github.com/rashevskyv/dbi/releases/download/712ru/DBI.nro --output-dir $TMP_DIR
     cp $TMP_DIR/DBI.nro $BUILD_DIR/switch/DBI/
     # curl -O -L https://f38d61784492.hosting.myjino.ru/NintendoSwitch/DBI.694.ru.zip --output-dir $TMP_DIR
     # $UNZIP_COMMAND $TMP_DIR/DBI.694.ru.zip -d $BUILD_DIR/switch/DBI/
