@@ -24,7 +24,7 @@ jobs:
         uses: orhun/git-cliff-action@v3
         with:
           config: ./configs/cliff.toml
-          args: --verbose
+          args: --verbose --current
       - name: Download artifact
         uses: actions/download-artifact@v4
         with:
