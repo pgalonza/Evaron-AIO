@@ -10,7 +10,6 @@ permissions:
 
 jobs:
   build-workflow:
-    needs: shellcheck
     uses: ./.github/workflows/build-jobs.yaml
   create-release:
     runs-on: ubuntu-latest
