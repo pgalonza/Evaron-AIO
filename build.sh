@@ -205,10 +205,10 @@ patch_hekate() {
 
 patch_home_menu() {
     mkdir $BUILD_DIR/games
-    # curl -O -L "https://f38d61784492.hosting.myjino.ru/NintendoSwitch/hbmenu_0104444444440000.zip" --output-dir $TMP_DIR
-    # $UNZIP_COMMAND $TMP_DIR/hbmenu_*zip -d $BUILD_DIR/games/
-    curl -O -L "https://f38d61784492.hosting.myjino.ru/NintendoSwitch/Homebrew.Menu.nsp" --output-dir $TMP_DIR
-    cp $TMP_DIR/Homebrew.Menu.nsp -d $BUILD_DIR/games/Homebrew.Menu.nsp
+    curl -O -L "https://f38d61784492.hosting.myjino.ru/NintendoSwitch/hbmenu.nsp" --output-dir $TMP_DIR
+    cp $TMP_DIR/hbmenu.nsp -d $BUILD_DIR/games/hbmenu.nsp
+    curl -O -L "https://f38d61784492.hosting.myjino.ru/NintendoSwitch/hbmenu_19.nsp" --output-dir $TMP_DIR
+    cp $TMP_DIR/hbmenu_19.nsp -d $BUILD_DIR/games/hbmenu_19.nsp
 }
 
 patch_homebrew() {
