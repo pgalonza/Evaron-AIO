@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+      - hos_18
     paths-ignore:
       - 'Dockerfile'
 

@@ -105,16 +105,16 @@ prepare_sigpatches() {
 
 prepare_overlays() {
     # curl -O -L https://sigmapatches.su/sys-patch.zip --output-dir $TMP_DIR
-    curl -O -L https://f38d61784492.hosting.myjino.ru/NintendoSwitch/sys-patch-1.5.4.zip --output-dir $TMP_DIR
+    curl -O -L https://f38d61784492.hosting.myjino.ru/NintendoSwitch/sys-patch-1.5.2.zip --output-dir $TMP_DIR
     # curl -O -L https://github.com/impeeza/sys-patch/releases/download/v1.5.2/sys-patch-1.5.2-88297f8.zip --output-dir $TMP_DIR
     $UNZIP_COMMAND $TMP_DIR/sys-patch-*.zip -d $BUILD_DIR
     # $UNZIP_COMMAND $TMP_DIR/sys-patch-*.zip -d $TMP_DIR
     # $UNZIP_COMMAND $TMP_DIR/sys-patch.zip -d $BUILD_DIR
     rm $BUILD_DIR/atmosphere/contents/420000000000000B/flags/boot2.flag
 
-    curl -O -L https://github.com/ppkantorski/nx-ovlloader/releases/download/v1.0.9/nx-ovlloader.zip --output-dir $TMP_DIR
+    curl -O -L https://github.com/ppkantorski/nx-ovlloader/releases/download/v1.0.8/nx-ovlloader.zip --output-dir $TMP_DIR
     $UNZIP_COMMAND $TMP_DIR/nx-ovlloader.zip -d $BUILD_DIR
-    curl -O -L https://github.com/ppkantorski/Ultrahand-Overlay/releases/download/v1.8.0/ovlmenu.ovl --output-dir $TMP_DIR
+    curl -O -L https://github.com/ppkantorski/Ultrahand-Overlay/releases/download/v1.7.8/ovlmenu.ovl --output-dir $TMP_DIR
     cp -f $TMP_DIR/ovlmenu.ovl $BUILD_DIR/switch/.overlays/ovlmenu.ovl
     # curl -O -L https://github.com/ppkantorski/EdiZon-Overlay/releases/download/v1.0.9/ovlEdiZon.ovl --output-dir $TMP_DIR
     curl -O -L https://github.com/proferabg/EdiZon-Overlay/releases/download/v1.0.9/ovlEdiZon.ovl --output-dir $TMP_DIR
