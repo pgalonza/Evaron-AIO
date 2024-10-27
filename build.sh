@@ -146,13 +146,13 @@ prepare_payload() {
     $UNZIP_COMMAND $TMP_DIR/mod_chip_toolbox.zip -d $BUILD_DIR/bootloader/payloads/
 
     curl -O -L https://github.com/suchmememanyskill/TegraExplorer/releases/download/4.2.0/TegraExplorer.bin --output-dir $TMP_DIR
-    cp $TMP_DIR/TegraExplorer.bin  -d $BUILD_DIR/bootloader/payloads/TegraExplorer.bin
+    cp -f $TMP_DIR/TegraExplorer.bin  -d $BUILD_DIR/bootloader/payloads/TegraExplorer.bin
 }
 
 prepare_homebrew() {
     mkdir $BUILD_DIR/switch/DBI
     curl -O -L https://github.com/rashevskyv/dbi/releases/download/716ru/DBI.nro --output-dir $TMP_DIR
-    cp $TMP_DIR/DBI.nro $BUILD_DIR/switch/DBI/
+    cp -f $TMP_DIR/DBI.nro $BUILD_DIR/switch/DBI/DBI.nro
     # curl -O -L https://f38d61784492.hosting.myjino.ru/NintendoSwitch/DBI.694.ru.zip --output-dir $TMP_DIR
     # $UNZIP_COMMAND $TMP_DIR/DBI.694.ru.zip -d $BUILD_DIR/switch/DBI/
 
@@ -166,7 +166,7 @@ prepare_homebrew() {
 
     mkdir $BUILD_DIR/switch/atmo-pack-updater
     curl -O -L https://github.com/PoloNX/AtmoPackUpdater/releases/download/2.0.1/AtmoPackUpdater.nro --output-dir $TMP_DIR
-    cp $TMP_DIR/AtmoPackUpdater.nro $BUILD_DIR/switch/atmo-pack-updater/AtmoPackUpdater.nro
+    cp -f $TMP_DIR/AtmoPackUpdater.nro $BUILD_DIR/switch/atmo-pack-updater/AtmoPackUpdater.nro
 
     curl -O -L https://github.com/HamletDuFromage/aio-switch-updater/releases/download/2.23.2/aio-switch-updater.zip --output-dir $TMP_DIR
     $UNZIP_COMMAND $TMP_DIR/aio-switch-updater.zip -d $BUILD_DIR
@@ -190,7 +190,7 @@ prepare_cheat() {
 }
 
 patch_atmosphere() {
-    cp $SRC_ATMOSPHERE/exosphere.ini $BUILD_DIR/exosphere.ini
+    cp -f $SRC_ATMOSPHERE/exosphere.ini $BUILD_DIR/exosphere.ini
     cp -f $SRC_ATMOSPHERE/config/override_config.ini $BUILD_DIR/atmosphere/config/override_config.ini
     cp -f $SRC_ATMOSPHERE/config/system_settings.ini $BUILD_DIR/atmosphere/config/system_settings.ini
     mkdir $BUILD_DIR/atmosphere/hosts || true
@@ -212,9 +212,9 @@ patch_home_menu() {
 }
 
 patch_homebrew() {
-    cp $SRC_HOMEBREW/dbi/dbi.config $BUILD_DIR/switch/DBI/dbi.config
+    cp -f $SRC_HOMEBREW/dbi/dbi.config $BUILD_DIR/switch/DBI/dbi.config
     mkdir -p $BUILD_DIR/config/aio-switch-updater
-    cp $SRC_HOMEBREW/aio-switch-updater/custom_packs.json $BUILD_DIR/config/aio-switch-updater/custom_packs.json
+    cp -f $SRC_HOMEBREW/aio-switch-updater/custom_packs.json $BUILD_DIR/config/aio-switch-updater/custom_packs.json
 }
 
 patch_splash_screen_package3() {
