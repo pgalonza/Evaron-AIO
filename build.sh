@@ -64,7 +64,7 @@ prepare_shallowsea() {
 }
 
 prepare_4ifir() {
-    curl -O -L https://github.com/rashevskyv/4IFIR/releases/download/24.08.16.08/4IFIR-Wizard-update-24.08.16.08.zip --output-dir $TMP_DIR
+    curl -O -L https://github.com/rashevskyv/4ifir-checker/raw/9791c36/github/4IFIR.zip --output-dir $TMP_DIR
     $UNZIP_COMMAND $TMP_DIR/4IFIR-*.zip -d $BUILD_DIR
 }
 
