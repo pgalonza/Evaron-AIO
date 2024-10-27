@@ -105,7 +105,7 @@ prepare_sigpatches() {
 
 prepare_overlays() {
     # curl -O -L https://sigmapatches.su/sys-patch.zip --output-dir $TMP_DIR
-    curl -O -L https://f38d61784492.hosting.myjino.ru/NintendoSwitch/sys-patch-1.5.3.zip --output-dir $TMP_DIR
+    curl -O -L https://f38d61784492.hosting.myjino.ru/NintendoSwitch/sys-patch-1.5.4.zip --output-dir $TMP_DIR
     # curl -O -L https://github.com/impeeza/sys-patch/releases/download/v1.5.2/sys-patch-1.5.2-88297f8.zip --output-dir $TMP_DIR
     $UNZIP_COMMAND $TMP_DIR/sys-patch-*.zip -d $BUILD_DIR
     # $UNZIP_COMMAND $TMP_DIR/sys-patch-*.zip -d $TMP_DIR
@@ -150,7 +150,7 @@ prepare_payload() {
 
 prepare_homebrew() {
     mkdir $BUILD_DIR/switch/DBI
-    curl -O -L https://github.com/rashevskyv/dbi/releases/download/712ru/DBI.nro --output-dir $TMP_DIR
+    curl -O -L https://github.com/rashevskyv/dbi/releases/download/716ru/DBI.nro --output-dir $TMP_DIR
     cp $TMP_DIR/DBI.nro $BUILD_DIR/switch/DBI/
     # curl -O -L https://f38d61784492.hosting.myjino.ru/NintendoSwitch/DBI.694.ru.zip --output-dir $TMP_DIR
     # $UNZIP_COMMAND $TMP_DIR/DBI.694.ru.zip -d $BUILD_DIR/switch/DBI/
