@@ -114,7 +114,7 @@ prepare_overlays() {
 
     curl -O -L https://github.com/ppkantorski/nx-ovlloader/releases/download/v1.0.9/nx-ovlloader.zip --output-dir $TMP_DIR
     $UNZIP_COMMAND $TMP_DIR/nx-ovlloader.zip -d $BUILD_DIR
-    curl -O -L https://github.com/ppkantorski/Ultrahand-Overlay/releases/download/v1.7.9/ovlmenu.ovl --output-dir $TMP_DIR
+    curl -O -L https://github.com/ppkantorski/Ultrahand-Overlay/releases/download/v1.8.0/ovlmenu.ovl --output-dir $TMP_DIR
     cp -f $TMP_DIR/ovlmenu.ovl $BUILD_DIR/switch/.overlays/ovlmenu.ovl
     # curl -O -L https://github.com/ppkantorski/EdiZon-Overlay/releases/download/v1.0.9/ovlEdiZon.ovl --output-dir $TMP_DIR
     curl -O -L https://github.com/proferabg/EdiZon-Overlay/releases/download/v1.0.9/ovlEdiZon.ovl --output-dir $TMP_DIR
