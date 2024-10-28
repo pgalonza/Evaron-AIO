@@ -136,8 +136,8 @@ prepare_sx_gear() {
 }
 
 prepare_payload() {
-    curl -O -L https://f38d61784492.hosting.myjino.ru/NintendoSwitch/Lockpick_RCM-v1.9.13-FW-19-master_key_12.zip --output-dir $TMP_DIR
-    $UNZIP_COMMAND $TMP_DIR/Lockpick_RCM*.zip -d $BUILD_DIR/bootloader/payloads/
+    curl -O -L https://f38d61784492.hosting.myjino.ru/NintendoSwitch/Lockpick_RCM_1_9_13.bin --output-dir $TMP_DIR
+    cp -f $TMP_DIR/Lockpick_RCM_*.bin -d $BUILD_DIR/bootloader/payloads/Lockpick_RCM.bin
 
     # curl -O -L https://sigmapatches.su/Lockpick_RCM_v1.9.12.zip --output-dir $TMP_DIR
     # $UNZIP_COMMAND $TMP_DIR/Lockpick_RCM_v1.9.12.zip -d $TMP_DIR/
