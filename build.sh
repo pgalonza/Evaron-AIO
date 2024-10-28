@@ -163,10 +163,6 @@ prepare_homebrew() {
     $DOWNLOAD_COMMAND https://f38d61784492.hosting.myjino.ru/NintendoSwitch/linkalho-v2.0.1.zip
     $UNZIP_COMMAND $TMP_DIR/linkalho-*.zip -d $BUILD_DIR/switch/linkalho
 
-    # mkdir $BUILD_DIR/switch/sigpatch-updater
-    # $DOWNLOAD_COMMAND https://bitbucket.org/e1ite007/sigpatch-updater/downloads/sigpatch-updater.nro
-    # cp $TMP_DIR/sigpatch-updater.nro $BUILD_DIR/switch/sigpatch-updater/
-
     mkdir $BUILD_DIR/switch/atmo-pack-updater
     $DOWNLOAD_COMMAND https://github.com/PoloNX/AtmoPackUpdater/releases/download/2.0.1/AtmoPackUpdater.nro
     cp -f $TMP_DIR/AtmoPackUpdater.nro $BUILD_DIR/switch/atmo-pack-updater/AtmoPackUpdater.nro
