@@ -176,6 +176,9 @@ prepare_homebrew() {
 
     # curl -O -L https://github.com/switchbrew/nx-hbmenu/releases/download/v3.6.0/nx-hbmenu_v3.6.0.zip --output-dir $TMP_DIR
     # $UNZIP_COMMAND $TMP_DIR/nx-hbmenu_* $BUILD_DIR
+
+    curl -O -L https://github.com/dslatt/nso-icon-tool/releases/download/v0.4.2/nso-icon-tool.nro --output-dir $TMP_DIR
+    cp -f $TMP_DIR/nso-icon-tool.nro $BUILD_DIR/switch/atmo-pack-updater/nso-icon-tool.nro
 }
 
 prepare_cheat() {
