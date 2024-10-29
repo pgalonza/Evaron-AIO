@@ -11,7 +11,7 @@ SRC_ATMOSPHERE="./atmosphere"
 SRC_HOMEBREW="./homebrew"
 
 UNZIP_COMMAND="unzip -o"
-DOWNLOAD_COMMAND="curl --output --fail --output-dir $TMP_DIR --location"
+DOWNLOAD_COMMAND="curl --remote-name --fail --output-dir $TMP_DIR --location"
 
 prepare_hekate() {
     $DOWNLOAD_COMMAND https://github.com/CTCaer/hekate/releases/download/v6.2.1/hekate_ctcaer_6.2.1_Nyx_1.6.3.zip
