@@ -107,7 +107,7 @@ prepare_sigpatches() {
 prepare_overlays() {
     # $DOWNLOAD_COMMAND https://sigmapatches.su/sys-patch.zip
     # $DOWNLOAD_COMMAND https://github.com/impeeza/sys-patch/releases/download/v1.5.2/sys-patch-1.5.2-88297f8.zip
-    $DOWNLOAD_COMMAND https://f38d61784492.hosting.myjino.ru/NintendoSwitch/sys-patch-1.5.4.zip
+    $DOWNLOAD_COMMAND https://github.com/impeeza/sys-patch/releases/download/v1.5.4/sys-patch-1.5.4.zip
     $UNZIP_COMMAND $TMP_DIR/sys-patch-*.zip -d $BUILD_DIR
     rm $BUILD_DIR/atmosphere/contents/420000000000000B/flags/boot2.flag
 
@@ -186,7 +186,7 @@ prepare_homebrew() {
     cp -f $TMP_DIR/ezremote-client.nro $BUILD_DIR/switch/ezremote-client.nro
 
     $DOWNLOAD_COMMAND https://www.ppsspp.org/files/Switch/Release_PPSSPP_Standalone_11.09.2024.7z
-    7z x $TMP_DIR/Release_PPSSPP_Standalone_11.09.2024.7z -o $BUILD_DIR
+    7z x $TMP_DIR/Release_PPSSPP_Standalone_*.7z -o"$BUILD_DIR" -aoa
     rm $BUILD_DIR/README.txt $BUILD_DIR/LICENSE.txt
 }
 
