@@ -87,7 +87,7 @@ prepare_venom() {
 prepare_switchcraft() {
     # $DOWNLOAD_COMMAND https://f38d61784492.hosting.myjino.ru/NintendoSwitch/OC_Switchcraft_EOS-1.5.0-atmosphere-1.8.0-prerelease.zip
     $DOWNLOAD_COMMAND https://github.com/halop/OC-Switchcraft-EOS/releases/download/1.5.0/OC_Switchcraft_EOS.1.5.0.-.atmosphere.1.8.0.prerelease.zip
-    $DOWNLOAD_COMMAND OC_Switchcraft_EOS_*.zip
+    $UNZIP_COMMAND $TMP_DIR/OC_Switchcraft_EOS_*.zip $BUILD_DIR
 }
 
 prepare_scripts() {
@@ -130,6 +130,9 @@ prepare_overlays() {
 
     $DOWNLOAD_COMMAND https://github.com/ppkantorski/Status-Monitor-Overlay/releases/download/v1.1.4%2B/Status-Monitor-Overlay.ovl
     cp -f $TMP_DIR/Status-Monitor-Overlay.ovl $BUILD_DIR/switch/.overlays/Status-Monitor-Overlay.ovl
+
+    $DOWNLOAD_COMMAND https://github.com/masagrator/FPSLocker/releases/download/2.0.3/FPSLocker.ovl
+    cp -f $TMP_DIR/FPSLocker.ovl $BUILD_DIR/switch/.overlays/FPSLocker.ovl
 }
 
 prepare_sx_gear() {
@@ -177,7 +180,23 @@ prepare_homebrew() {
     # $UNZIP_COMMAND $TMP_DIR/nx-hbmenu_* $BUILD_DIR
 
     $DOWNLOAD_COMMAND https://github.com/dslatt/nso-icon-tool/releases/download/v0.4.2/nso-icon-tool.nro
-    cp -f $TMP_DIR/nso-icon-tool.nro $BUILD_DIR/switch/atmo-pack-updater/nso-icon-tool.nro
+    cp -f $TMP_DIR/nso-icon-tool.nro $BUILD_DIR/switch/nso-icon-tool.nro
+
+    $DOWNLOAD_COMMAND https://github.com/cy33hc/switch-ezremote-client/releases/download/1.05/ezremote-client.nro
+    cp -f $TMP_DIR/ezremote-client.nro $BUILD_DIR/switch/ezremote-client.nro
+
+    $DOWNLOAD_COMMAND https://www.ppsspp.org/files/Switch/Release_PPSSPP_Standalone_11.09.2024.7z
+    7z x $TMP_DIR/Release_PPSSPP_Standalone_*.7z -o"$BUILD_DIR" -aoa
+    rm $BUILD_DIR/README.txt $BUILD_DIR/LICENSE.txt
+}
+
+prepare_emulators() {
+    $DOWNLOAD_COMMAND https://www.ppsspp.org/files/Switch/Release_PPSSPP_Standalone_11.09.2024.7z
+    7z x $TMP_DIR/Release_PPSSPP_Standalone_*.7z -o"$BUILD_DIR" -aoa
+    rm $BUILD_DIR/README.txt $BUILD_DIR/LICENSE.txt
+
+    $DOWNLOAD_COMMAND https://buildbot.libretro.com/stable/1.19.1/nintendo/switch/libnx/RetroArch.7z
+    7z x $TMP_DIR/RetroArch.7z -o"$BUILD_DIR" -aoa
 }
 
 prepare_cheat() {
@@ -211,6 +230,8 @@ patch_home_menu() {
     cp $TMP_DIR/hbmenu.nsp -d $BUILD_DIR/games/hbmenu.nsp
     $DOWNLOAD_COMMAND "https://f38d61784492.hosting.myjino.ru/NintendoSwitch/hbmenu_19.nsp"
     cp $TMP_DIR/hbmenu_19.nsp -d $BUILD_DIR/games/hbmenu_19.nsp
+    $DOWNLOAD_COMMAND https://github.com/cy33hc/switch-ezremote-client/releases/download/1.05/ezremote-client.nsp
+    cp -f $TMP_DIR/ezremote-client.nsp $BUILD_DIR/games/ezremote-client.nsp
 }
 
 patch_homebrew() {
@@ -260,6 +281,7 @@ prepare_sigpatches
 prepare_sx_gear
 prepare_payload
 prepare_homebrew
+prepare_emulators
 prepare_overlays
 prepare_cheat
 
