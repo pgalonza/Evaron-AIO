@@ -190,6 +190,15 @@ prepare_homebrew() {
     rm $BUILD_DIR/README.txt $BUILD_DIR/LICENSE.txt
 }
 
+prepare_emulators() {
+    $DOWNLOAD_COMMAND https://www.ppsspp.org/files/Switch/Release_PPSSPP_Standalone_11.09.2024.7z
+    7z x $TMP_DIR/Release_PPSSPP_Standalone_*.7z -o"$BUILD_DIR" -aoa
+    rm $BUILD_DIR/README.txt $BUILD_DIR/LICENSE.txt
+
+    $DOWNLOAD_COMMAND https://buildbot.libretro.com/stable/1.19.1/nintendo/switch/libnx/RetroArch.7z
+    7z x $TMP_DIR/RetroArch.7z -o"$BUILD_DIR" -aoa
+}
+
 prepare_cheat() {
     $DOWNLOAD_COMMAND https://github.com/tomvita/Breeze-Beta/releases/download/beta95d/Breeze.zip
     $UNZIP_COMMAND $TMP_DIR/Breeze.zip -d $BUILD_DIR
@@ -272,6 +281,7 @@ prepare_sigpatches
 prepare_sx_gear
 prepare_payload
 prepare_homebrew
+prepare_emulators
 prepare_overlays
 prepare_cheat
 
