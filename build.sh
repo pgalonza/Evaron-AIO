@@ -130,6 +130,9 @@ prepare_overlays() {
 
     $DOWNLOAD_COMMAND https://github.com/ppkantorski/Status-Monitor-Overlay/releases/download/v1.1.4%2B/Status-Monitor-Overlay.ovl
     cp -f $TMP_DIR/Status-Monitor-Overlay.ovl $BUILD_DIR/switch/.overlays/Status-Monitor-Overlay.ovl
+
+    $DOWNLOAD_COMMAND https://github.com/masagrator/FPSLocker/releases/download/2.0.3/FPSLocker.ovl
+    cp -f $TMP_DIR/FPSLocker.ovl $BUILD_DIR/switch/.overlays/FPSLocker.ovl
 }
 
 prepare_sx_gear() {
