@@ -184,10 +184,6 @@ prepare_homebrew() {
 
     $DOWNLOAD_COMMAND https://github.com/cy33hc/switch-ezremote-client/releases/download/1.05/ezremote-client.nro
     cp -f $TMP_DIR/ezremote-client.nro $BUILD_DIR/switch/ezremote-client.nro
-
-    $DOWNLOAD_COMMAND https://www.ppsspp.org/files/Switch/Release_PPSSPP_Standalone_11.09.2024.7z
-    7z x $TMP_DIR/Release_PPSSPP_Standalone_*.7z -o"$BUILD_DIR" -aoa
-    rm $BUILD_DIR/README.txt $BUILD_DIR/LICENSE.txt
 }
 
 prepare_emulators() {
@@ -281,7 +277,7 @@ prepare_sigpatches
 prepare_sx_gear
 prepare_payload
 prepare_homebrew
-prepare_emulators
+# prepare_emulators
 prepare_overlays
 prepare_cheat
 
