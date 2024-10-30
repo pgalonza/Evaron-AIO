@@ -87,7 +87,7 @@ prepare_venom() {
 prepare_switchcraft() {
     # $DOWNLOAD_COMMAND https://f38d61784492.hosting.myjino.ru/NintendoSwitch/OC_Switchcraft_EOS-1.5.0-atmosphere-1.8.0-prerelease.zip
     $DOWNLOAD_COMMAND https://github.com/halop/OC-Switchcraft-EOS/releases/download/1.5.0/OC_Switchcraft_EOS.1.5.0.-.atmosphere.1.8.0.prerelease.zip
-    $DOWNLOAD_COMMAND OC_Switchcraft_EOS_*.zip
+    $UNZIP_COMMAND $TMP_DIR/OC_Switchcraft_EOS_*.zip $BUILD_DIR
 }
 
 prepare_scripts() {
