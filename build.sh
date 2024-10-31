@@ -199,9 +199,8 @@ prepare_homebrew() {
     $DOWNLOAD_COMMAND https://github.com/dslatt/nso-icon-tool/releases/download/v0.4.2/nso-icon-tool.nro
     cp -f $TMP_DIR/nso-icon-tool.nro $BUILD_DIR/switch/nso-icon-tool.nro
 
-    mkdir $BUILD_DIR/switch/ezremote-client
     $DOWNLOAD_COMMAND https://github.com/cy33hc/switch-ezremote-client/releases/download/1.05/ezremote-client.nro
-    cp -f $TMP_DIR/ezremote-client.nro $BUILD_DIR/switch/ezremote-client/ezremote-client.nro
+    cp -f $TMP_DIR/ezremote-client.nro $BUILD_DIR/switch/ezremote-client.nro
 }
 
 prepare_emulators() {
@@ -252,6 +251,7 @@ patch_homebrew() {
     cp -f "$SRC_HOMEBREW/dbi/dbi.config" "$BUILD_DIR/switch/DBI/dbi.config"
     mkdir -p $BUILD_DIR/config/aio-switch-updater
     cp -f "$SRC_HOMEBREW/aio-switch-updater/custom_packs.json" "$BUILD_DIR/config/aio-switch-updater/custom_packs.json"
+    mkdir $BUILD_DIR/switch/ezremote-client
     cp -f "$SRC_HOMEBREW/ezremote-client/config.ini" "$BUILD_DIR/switch/ezremote-client/config.ini"
 }
 
