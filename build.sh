@@ -84,10 +84,15 @@ prepare_venom() {
     $UNZIP_COMMAND $TMP_DIR/NXVenom.zip -d $BUILD_DIR
 }
 
-prepare_switchcraft() {
+prepare_overclock() {
     # $DOWNLOAD_COMMAND https://f38d61784492.hosting.myjino.ru/NintendoSwitch/OC_Switchcraft_EOS-1.5.0-atmosphere-1.8.0-prerelease.zip
     $DOWNLOAD_COMMAND https://github.com/halop/OC-Switchcraft-EOS/releases/download/1.5.0/OC_Switchcraft_EOS.1.5.0.-.atmosphere.1.8.0.prerelease.zip
     $UNZIP_COMMAND $TMP_DIR/OC_Switchcraft_EOS_*.zip $BUILD_DIR
+
+    mkdir $TMP_DIR/Ultra
+    $DOWNLOAD_COMMAND https://github.com/Ultra-NX/Ultra-Tuner/releases/download/18-R2/Ultra-Tuner.zip
+    $UNZIP_COMMAND $TMP_DIR/OC_Switchcraft_EOS_*.zip $TMP_DIR/Ultra
+    cp -rf "$TMP_DIR/Ultra/switch/.packages/Ultra Tuner" "$BUILD_DIR/switch/.packages/Ultra Tuner"
 }
 
 prepare_scripts() {
@@ -229,7 +234,7 @@ patch_home_menu() {
     cp $TMP_DIR/hbmenu_19.nsp -d $BUILD_DIR/games/hbmenu_19.nsp
     $DOWNLOAD_COMMAND https://github.com/cy33hc/switch-ezremote-client/releases/download/1.05/ezremote-client.nsp
     cp -f $TMP_DIR/ezremote-client.nsp $BUILD_DIR/games/ezremote-client.nsp
-}
+}o
 
 patch_homebrew() {
     cp -f $SRC_HOMEBREW/dbi/dbi.config $BUILD_DIR/switch/DBI/dbi.config
@@ -288,3 +293,4 @@ patch_home_menu
 patch_homebrew
 
 cd ./build && zip -r ../Evaron-AIO.zip ./*
+o
