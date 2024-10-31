@@ -31,7 +31,7 @@ prepare_evaron_atmosphere() {
     $UNZIP_COMMAND $TMP_DIR/atmosphere-*.zip -d $BUILD_DIR
 
     $DOWNLOAD_COMMAND https://github.com/pgalonza/ns-Atmosphere/releases/download/0.1.0/fusee.bin
-    cp $TMP_DIR/fusee.bin $TMP_DIR/bootloader/payloads/fusee.bin
+    cp $TMP_DIR/fusee.bin $BUILD_DIR/bootloader/payloads/fusee.bin
 }
 
 prepare_deepsea() {
@@ -39,7 +39,7 @@ prepare_deepsea() {
     $UNZIP_COMMAND $TMP_DIR/deepsea-advanced_*.zip -d $BUILD_DIR
 
     $DOWNLOAD_COMMAND https://github.com/Atmosphere-NX/Atmosphere/releases/download/1.7.1/fusee.bin
-    cp $TMP_DIR/fusee.bin $TMP_DIR/bootloader/payloads/fusee.bin
+    cp $TMP_DIR/fusee.bin $BUILD_DIR/bootloader/payloads/fusee.bin
 }
 
 prepare_kefir() {
