@@ -5,10 +5,10 @@ set -o xtrace
 
 TMP_DIR="./tmp"
 BUILD_DIR="./build"
-# SRC_ASSETS_DIR="./assets"
+SRC_ASSETS_DIR="./assets"
 SRC_HEKATE_DIR="./hekate"
 SRC_ATMOSPHERE="./atmosphere"
-# SRC_HOMEBREW="./homebrew"
+SRC_HOMEBREW="./homebrew"
 
 UNZIP_COMMAND="unzip -o"
 DOWNLOAD_COMMAND="curl --remote-name --fail --output-dir $TMP_DIR --location"
