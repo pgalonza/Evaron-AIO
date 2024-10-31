@@ -5,10 +5,10 @@ set -o xtrace
 
 TMP_DIR="./tmp"
 BUILD_DIR="./build"
-SRC_ASSETS_DIR="./assets"
+# SRC_ASSETS_DIR="./assets"
 SRC_HEKATE_DIR="./hekate"
 SRC_ATMOSPHERE="./atmosphere"
-SRC_HOMEBREW="./homebrew"
+# SRC_HOMEBREW="./homebrew"
 
 UNZIP_COMMAND="unzip -o"
 DOWNLOAD_COMMAND="curl --remote-name --fail --output-dir $TMP_DIR --location"
@@ -237,7 +237,7 @@ patch_home_menu() {
     cp $TMP_DIR/hbmenu_19.nsp -d $BUILD_DIR/games/hbmenu_19.nsp
     $DOWNLOAD_COMMAND https://github.com/cy33hc/switch-ezremote-client/releases/download/1.05/ezremote-client.nsp
     cp -f $TMP_DIR/ezremote-client.nsp $BUILD_DIR/games/ezremote-client.nsp
-}o
+}
 
 patch_homebrew() {
     cp -f $SRC_HOMEBREW/dbi/dbi.config $BUILD_DIR/switch/DBI/dbi.config
