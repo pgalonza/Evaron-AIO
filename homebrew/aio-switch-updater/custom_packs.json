@@ -1,8 +1,5 @@
 {
     "ams": {
         "Evaron-AIO": "https://github.com/pgalonza/Evaron-AIO/releases/download/latest/Evaron-AIO.zip"
-    },
-    "misk": {
-        "sig-patches": "https://sigmapatches.su/sigpatches.zip"
     }
 }

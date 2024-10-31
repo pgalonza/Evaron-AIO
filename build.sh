@@ -31,12 +31,15 @@ prepare_evaron_atmosphere() {
     $UNZIP_COMMAND $TMP_DIR/atmosphere-*.zip -d $BUILD_DIR
 
     $DOWNLOAD_COMMAND https://github.com/pgalonza/ns-Atmosphere/releases/download/0.1.0/fusee.bin
-    cp $TMP_DIR/fusee.bin $TMP_DIR/bootloader/payloads/fusee.bin
+    cp $TMP_DIR/fusee.bin $BUILD_DIR/bootloader/payloads/fusee.bin
 }
 
 prepare_deepsea() {
     $DOWNLOAD_COMMAND https://github.com/Team-Neptune/DeepSea/releases/download/v4.11.0/deepsea-advanced_v4.11.0.zip
     $UNZIP_COMMAND $TMP_DIR/deepsea-advanced_*.zip -d $BUILD_DIR
+
+    $DOWNLOAD_COMMAND https://github.com/Atmosphere-NX/Atmosphere/releases/download/1.7.1/fusee.bin
+    cp $TMP_DIR/fusee.bin $BUILD_DIR/bootloader/payloads/fusee.bin
 }
 
 prepare_kefir() {
@@ -84,10 +87,24 @@ prepare_venom() {
     $UNZIP_COMMAND $TMP_DIR/NXVenom.zip -d $BUILD_DIR
 }
 
-prepare_switchcraft() {
+prepare_overclock() {
     # $DOWNLOAD_COMMAND https://f38d61784492.hosting.myjino.ru/NintendoSwitch/OC_Switchcraft_EOS-1.5.0-atmosphere-1.8.0-prerelease.zip
-    $DOWNLOAD_COMMAND https://github.com/halop/OC-Switchcraft-EOS/releases/download/1.5.0/OC_Switchcraft_EOS.1.5.0.-.atmosphere.1.8.0.prerelease.zip
-    $UNZIP_COMMAND $TMP_DIR/OC_Switchcraft_EOS_*.zip $BUILD_DIR
+    # mkdir $TMP_DIR/Switchcraft
+    # $DOWNLOAD_COMMAND https://github.com/halop/OC-Switchcraft-EOS/releases/download/1.5.0/OC_Switchcraft_EOS.1.5.0.-.atmosphere.1.8.0.prerelease.zip
+    # $UNZIP_COMMAND $TMP_DIR/OC_Switchcraft_EOS_*.zip $TMP_DIR/Switchcraft
+    # rm $TMP_DIR/Switchcraft/Copy_to_SD/switch/.overlays/ovlmenu.ovl
+    # cp -rf $TMP_DIR/Switchcraft/Copy_to_SD/* $BUILD_DIR
+
+    # mkdir $TMP_DIR/Ultra
+    # $DOWNLOAD_COMMAND https://github.com/Ultra-NX/Ultra-Tuner/releases/download/18-R2/Ultra-Tuner.zip
+    # $UNZIP_COMMAND $TMP_DIR/OC_Switchcraft_EOS_*.zip $TMP_DIR/Ultra
+    # cp -rf "$TMP_DIR/Ultra/switch/.packages/Ultra Tuner" "$BUILD_DIR/switch/.packages/Ultra Tuner"
+
+    $DOWNLOAD_COMMAND https://github.com/masagrator/FPSLocker/releases/download/2.0.3/FPSLocker.ovl
+    cp -f $TMP_DIR/FPSLocker.ovl $BUILD_DIR/switch/.overlays/FPSLocker.ovl
+
+    $DOWNLOAD_COMMAND https://github.com/retronx-team/sys-clk/releases/download/2.0.1/sys-clk-2.0.1.zip
+    $UNZIP_COMMAND $TMP_DIR/sys-clk-*.zip -d $BUILD_DIR
 }
 
 prepare_scripts() {
@@ -182,8 +199,9 @@ prepare_homebrew() {
     $DOWNLOAD_COMMAND https://github.com/dslatt/nso-icon-tool/releases/download/v0.4.2/nso-icon-tool.nro
     cp -f $TMP_DIR/nso-icon-tool.nro $BUILD_DIR/switch/nso-icon-tool.nro
 
+    mkdir $BUILD_DIR/switch/ezremote-client
     $DOWNLOAD_COMMAND https://github.com/cy33hc/switch-ezremote-client/releases/download/1.05/ezremote-client.nro
-    cp -f $TMP_DIR/ezremote-client.nro $BUILD_DIR/switch/ezremote-client.nro
+    cp -f $TMP_DIR/ezremote-client.nro $BUILD_DIR/switch/ezremote-client/ezremote-client.nro
 }
 
 prepare_emulators() {
@@ -231,14 +249,15 @@ patch_home_menu() {
 }
 
 patch_homebrew() {
-    cp -f $SRC_HOMEBREW/dbi/dbi.config $BUILD_DIR/switch/DBI/dbi.config
+    cp -f "$SRC_HOMEBREW/dbi/dbi.config" "$BUILD_DIR/switch/DBI/dbi.config"
     mkdir -p $BUILD_DIR/config/aio-switch-updater
-    cp -f $SRC_HOMEBREW/aio-switch-updater/custom_packs.json $BUILD_DIR/config/aio-switch-updater/custom_packs.json
+    cp -f "$SRC_HOMEBREW/aio-switch-updater/custom_packs.json" "$BUILD_DIR/config/aio-switch-updater/custom_packs.json"
+    cp -f  $SRC_HOMEBREW/ezremote-client/config.ini" "$BUILD_DIR/switch/ezremote-client/config.ini"
 }
 
 patch_splash_screen_package3() {
     label=paskage3
-    convert $SRC_ASSETS_DIR/bootlogo-$label.png -rotate 270 $TMP_DIR/bootlogo-$label.png
+    convert "$SRC_ASSETS_DIR/bootlogo-$label.png" -rotate 270 "$TMP_DIR/bootlogo-$label.png"
     convert $TMP_DIR/bootlogo-$label.png -resize 720x1280 -depth 8 -type TrueColorAlpha $TMP_DIR/bootlogo-$label.bmp
 
     python3 $TMP_DIR/insert_splash_screen.py $TMP_DIR/bootlogo-$label.bmp $BUILD_DIR/atmosphere/package3
@@ -246,14 +265,14 @@ patch_splash_screen_package3() {
 
 patch_splash_hekate() {
     label=hekate
-    convert $SRC_ASSETS_DIR/bootlogo-$label.png -rotate 270 $TMP_DIR/bootlogo-$label.png
+    convert "$SRC_ASSETS_DIR/bootlogo-$label.png" -rotate 270 "$TMP_DIR/bootlogo-$label.png"
     convert $TMP_DIR/bootlogo-$label.png -resize 720x1280 -depth 8 -type TrueColorAlpha $TMP_DIR/bootlogo-$label.bmp
     cp -f $TMP_DIR/bootlogo-$label.bmp $BUILD_DIR/bootloader/bootlogo.bmp
 }
 
 patch_bootlogo_exefs() {
     label=exefs
-    convert $SRC_ASSETS_DIR/bootlogo-$label.png  -rotate 270 $TMP_DIR/bootlogo-$label.png
+    convert "$SRC_ASSETS_DIR/bootlogo-$label.png"  -rotate 270 "$TMP_DIR/bootlogo-$label.png"
     convert $TMP_DIR/bootlogo-$label.png -resize 308x350 -depth 8 -type TrueColorAlpha $TMP_DIR/bootlogo-$label.bmp
 
     mkdir -p $BUILD_DIR/atmosphere/exefs_patches/bootlogo
@@ -264,7 +283,7 @@ patch_icons() {
     label=icon
     mkdir $TMP_DIR/res
     for png_file in "$SRC_ASSETS_DIR"/icons/*.png ; do
-        convert $SRC_ASSETS_DIR/icons/"$png_file" -resize 192x192 -depth 8 -type TrueColorAlpha $TMP_DIR/res/"$label"_"${png_file%.*}".bmp
+        convert "$SRC_ASSETS_DIR/icons/$png_file" -resize 192x192 -depth 8 -type TrueColorAlpha "$TMP_DIR"/res/"$label"_"${png_file%.*}".bmp
     done
     mkdir $BUILD_DIR/bootloader/res
     cp -f $TMP_DIR/res/*.bmp $BUILD_DIR/bootloader/res/
@@ -280,6 +299,7 @@ prepare_homebrew
 # prepare_emulators
 prepare_overlays
 prepare_cheat
+prepare_overclock
 
 patch_atmosphere
 patch_hekate
