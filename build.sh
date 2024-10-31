@@ -104,7 +104,7 @@ prepare_overclock() {
     cp -f $TMP_DIR/FPSLocker.ovl $BUILD_DIR/switch/.overlays/FPSLocker.ovl
 
     $DOWNLOAD_COMMAND https://github.com/retronx-team/sys-clk/releases/download/2.0.1/sys-clk-2.0.1.zip
-    $UNZIP_COMMAND $TMP_DIR/sys-clk-*.zip $BUILD_DIR
+    $UNZIP_COMMAND $TMP_DIR/sys-clk-*.zip -d $BUILD_DIR
 }
 
 prepare_scripts() {
