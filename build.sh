@@ -86,16 +86,22 @@ prepare_venom() {
 
 prepare_overclock() {
     # $DOWNLOAD_COMMAND https://f38d61784492.hosting.myjino.ru/NintendoSwitch/OC_Switchcraft_EOS-1.5.0-atmosphere-1.8.0-prerelease.zip
-    mkdir $TMP_DIR/Switchcraft
-    $DOWNLOAD_COMMAND https://github.com/halop/OC-Switchcraft-EOS/releases/download/1.5.0/OC_Switchcraft_EOS.1.5.0.-.atmosphere.1.8.0.prerelease.zip
-    $UNZIP_COMMAND $TMP_DIR/OC_Switchcraft_EOS_*.zip $TMP_DIR/Switchcraft
-    rm $TMP_DIR/Switchcraft/Copy_to_SD/switch/.overlays/ovlmenu.ovl
-    cp -rf $TMP_DIR/Switchcraft/Copy_to_SD/* $BUILD_DIR
+    # mkdir $TMP_DIR/Switchcraft
+    # $DOWNLOAD_COMMAND https://github.com/halop/OC-Switchcraft-EOS/releases/download/1.5.0/OC_Switchcraft_EOS.1.5.0.-.atmosphere.1.8.0.prerelease.zip
+    # $UNZIP_COMMAND $TMP_DIR/OC_Switchcraft_EOS_*.zip $TMP_DIR/Switchcraft
+    # rm $TMP_DIR/Switchcraft/Copy_to_SD/switch/.overlays/ovlmenu.ovl
+    # cp -rf $TMP_DIR/Switchcraft/Copy_to_SD/* $BUILD_DIR
 
-    mkdir $TMP_DIR/Ultra
-    $DOWNLOAD_COMMAND https://github.com/Ultra-NX/Ultra-Tuner/releases/download/18-R2/Ultra-Tuner.zip
-    $UNZIP_COMMAND $TMP_DIR/OC_Switchcraft_EOS_*.zip $TMP_DIR/Ultra
-    cp -rf "$TMP_DIR/Ultra/switch/.packages/Ultra Tuner" "$BUILD_DIR/switch/.packages/Ultra Tuner"
+    # mkdir $TMP_DIR/Ultra
+    # $DOWNLOAD_COMMAND https://github.com/Ultra-NX/Ultra-Tuner/releases/download/18-R2/Ultra-Tuner.zip
+    # $UNZIP_COMMAND $TMP_DIR/OC_Switchcraft_EOS_*.zip $TMP_DIR/Ultra
+    # cp -rf "$TMP_DIR/Ultra/switch/.packages/Ultra Tuner" "$BUILD_DIR/switch/.packages/Ultra Tuner"
+
+    $DOWNLOAD_COMMAND https://github.com/masagrator/FPSLocker/releases/download/2.0.3/FPSLocker.ovl
+    cp -f $TMP_DIR/FPSLocker.ovl $BUILD_DIR/switch/.overlays/FPSLocker.ovl
+
+    $DOWNLOAD_COMMAND https://github.com/retronx-team/sys-clk/releases/download/2.0.1/sys-clk-2.0.1.zip
+    $UNZIP_COMMAND $TMP_DIR/sys-clk-*.zip $BUILD_DIR
 }
 
 prepare_scripts() {
@@ -138,9 +144,6 @@ prepare_overlays() {
 
     $DOWNLOAD_COMMAND https://github.com/ppkantorski/Status-Monitor-Overlay/releases/download/v1.1.4%2B/Status-Monitor-Overlay.ovl
     cp -f $TMP_DIR/Status-Monitor-Overlay.ovl $BUILD_DIR/switch/.overlays/Status-Monitor-Overlay.ovl
-
-    $DOWNLOAD_COMMAND https://github.com/masagrator/FPSLocker/releases/download/2.0.3/FPSLocker.ovl
-    cp -f $TMP_DIR/FPSLocker.ovl $BUILD_DIR/switch/.overlays/FPSLocker.ovl
 }
 
 prepare_sx_gear() {
@@ -289,6 +292,7 @@ prepare_homebrew
 # prepare_emulators
 prepare_overlays
 prepare_cheat
+prepare_overclock
 
 patch_atmosphere
 patch_hekate
