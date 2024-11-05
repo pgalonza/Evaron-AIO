@@ -38,7 +38,7 @@ prepare_deepsea() {
     $DOWNLOAD_COMMAND https://github.com/Team-Neptune/DeepSea/releases/download/v4.11.0/deepsea-advanced_v4.11.0.zip
     $UNZIP_COMMAND $TMP_DIR/deepsea-advanced_*.zip -d $BUILD_DIR
 
-    $DOWNLOAD_COMMAND https://github.com/pgalonza/ns-Atmosphere/releases/download/0.2.0/fusee.bin
+    $DOWNLOAD_COMMAND https://github.com/Atmosphere-NX/Atmosphere/releases/download/1.7.1/fusee.bin
     cp $TMP_DIR/fusee.bin $BUILD_DIR/bootloader/payloads/fusee.bin
 }
 
