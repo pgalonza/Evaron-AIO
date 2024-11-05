@@ -198,6 +198,9 @@ prepare_homebrew() {
 
     $DOWNLOAD_COMMAND https://github.com/cy33hc/switch-ezremote-client/releases/download/1.05/ezremote-client.nro
     cp -f $TMP_DIR/ezremote-client.nro $BUILD_DIR/switch/ezremote-client.nro
+
+    $DOWNLOAD_COMMAND https://github.com/J-D-K/JKSV/releases/download/11%2F05%2F2024/JKSV.nro
+    cp -f $TMP_DIR/JKSV.nro $BUILD_DIR/switch/JKSV.nro
 }
 
 prepare_emulators() {
