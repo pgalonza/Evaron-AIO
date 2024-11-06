@@ -107,7 +107,7 @@ prepare_overclock() {
     $UNZIP_COMMAND $TMP_DIR/sys-clk-*.zip -d $BUILD_DIR
 
     $DOWNLOAD_COMMAND https://github.com/masagrator/ReverseNX-Tool/releases/download/3.2.0/ReverseNX-Tool.nro
-    cp -f $TMP_DIR/ReverseNX-Tool.nro $BUILD_DIR/switch/.overlays/ReverseNX-Tool.nro
+    cp -f $TMP_DIR/ReverseNX-Tool.nro $BUILD_DIR/switch/ReverseNX-Tool.nro
 }
 
 prepare_scripts() {
