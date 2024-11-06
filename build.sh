@@ -105,6 +105,9 @@ prepare_overclock() {
 
     $DOWNLOAD_COMMAND https://github.com/retronx-team/sys-clk/releases/download/2.0.1/sys-clk-2.0.1.zip
     $UNZIP_COMMAND $TMP_DIR/sys-clk-*.zip -d $BUILD_DIR
+
+    $DOWNLOAD_COMMAND https://github.com/masagrator/ReverseNX-Tool/releases/download/3.2.0/ReverseNX-Tool.nro
+    cp -f $TMP_DIR/ReverseNX-Tool.nro $BUILD_DIR/switch/.overlays/ReverseNX-Tool.nro
 }
 
 prepare_scripts() {
@@ -140,7 +143,6 @@ prepare_overlays() {
 
     $DOWNLOAD_COMMAND https://github.com/ppkantorski/ovl-sysmodules/releases/download/v1.3.1%2B/ovlSysmodules.ovl
     cp -f $TMP_DIR/ovlSysmodules.ovl $BUILD_DIR/switch/.overlays/ovlSysmodules.ovl
-
 
     $DOWNLOAD_COMMAND https://github.com/masagrator/SaltyNX/releases/download/0.9.4/SaltyNX-0.9.4.zip
     $UNZIP_COMMAND $TMP_DIR/SaltyNX-*.zip -d $BUILD_DIR
