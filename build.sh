@@ -223,7 +223,7 @@ prepare_emulators() {
 }
 
 prepare_cheat() {
-    $DOWNLOAD_COMMAND https://github.com/tomvita/Breeze-Beta/releases/download/beta95d/Breeze.zip
+    $DOWNLOAD_COMMAND https://github.com/tomvita/Breeze-Beta/releases/download/beta96d/Breeze.zip
     $UNZIP_COMMAND $TMP_DIR/Breeze.zip -d $BUILD_DIR
 
     # $DOWNLOAD_COMMAND https://github.com/proferabg/EdiZon-Overlay/releases/download/v1.0.8/ovlEdiZon.ovl
