@@ -154,6 +154,9 @@ prepare_overlays() {
 
     $DOWNLOAD_COMMAND https://github.com/nedex/QuickNTP/releases/download/1.2.8-1/quickntp-1.2.8-1.zip
     $UNZIP_COMMAND $TMP_DIR/quickntp-*.zip -d $BUILD_DIR
+
+    $DOWNLOAD_COMMAND https://github.com/cathery/sys-ftpd/releases/download/1.0.5/sys-ftpd-1.0.5.zip
+    $UNZIP_COMMAND $TMP_DIR/sys-ftpd-*.zip -d $BUILD_DIR
 }
 
 prepare_sx_gear() {
