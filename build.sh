@@ -105,6 +105,9 @@ prepare_overclock() {
 
     $DOWNLOAD_COMMAND https://github.com/retronx-team/sys-clk/releases/download/2.0.1/sys-clk-2.0.1.zip
     $UNZIP_COMMAND $TMP_DIR/sys-clk-*.zip -d $BUILD_DIR
+
+    $DOWNLOAD_COMMAND https://github.com/masagrator/ReverseNX-Tool/releases/download/3.2.0/ReverseNX-Tool.nro
+    cp -f $TMP_DIR/ReverseNX-Tool.nro $BUILD_DIR/switch/.overlays/ReverseNX-Tool.nro
 }
 
 prepare_scripts() {
@@ -140,7 +143,6 @@ prepare_overlays() {
 
     $DOWNLOAD_COMMAND https://github.com/ppkantorski/ovl-sysmodules/releases/download/v1.3.1%2B/ovlSysmodules.ovl
     cp -f $TMP_DIR/ovlSysmodules.ovl $BUILD_DIR/switch/.overlays/ovlSysmodules.ovl
-
 
     $DOWNLOAD_COMMAND https://github.com/masagrator/SaltyNX/releases/download/0.9.4/SaltyNX-0.9.4.zip
     $UNZIP_COMMAND $TMP_DIR/SaltyNX-*.zip -d $BUILD_DIR
@@ -201,11 +203,16 @@ prepare_homebrew() {
     $DOWNLOAD_COMMAND https://github.com/dslatt/nso-icon-tool/releases/download/v0.4.2/nso-icon-tool.nro
     cp -f $TMP_DIR/nso-icon-tool.nro $BUILD_DIR/switch/nso-icon-tool.nro
 
+    mkdir $BUILD_DIR/switch/ezremote-client || true
     $DOWNLOAD_COMMAND https://github.com/cy33hc/switch-ezremote-client/releases/download/1.05/ezremote-client.nro
-    cp -f $TMP_DIR/ezremote-client.nro $BUILD_DIR/switch/ezremote-client.nro
+    cp -f $TMP_DIR/ezremote-client.nro $BUILD_DIR/switch/ezremote-client/ezremote-client.nro
 
     $DOWNLOAD_COMMAND https://github.com/J-D-K/JKSV/releases/download/11%2F05%2F2024/JKSV.nro
     cp -f $TMP_DIR/JKSV.nro $BUILD_DIR/switch/JKSV.nro
+
+    mkdir $BUILD_DIR/switch/NX-Shell || true
+    $DOWNLOAD_COMMAND https://github.com/joel16/NX-Shell/releases/download/4.01/NX-Shell.nro
+    cp -f $TMP_DIR/NX-Shell.nro $BUILD_DIR/switch/NX-Shell/NX-Shell.nro
 }
 
 prepare_emulators() {
@@ -218,7 +225,7 @@ prepare_emulators() {
 }
 
 prepare_cheat() {
-    $DOWNLOAD_COMMAND https://github.com/tomvita/Breeze-Beta/releases/download/beta95d/Breeze.zip
+    $DOWNLOAD_COMMAND https://github.com/tomvita/Breeze-Beta/releases/download/beta96d/Breeze.zip
     $UNZIP_COMMAND $TMP_DIR/Breeze.zip -d $BUILD_DIR
 
     # $DOWNLOAD_COMMAND https://github.com/proferabg/EdiZon-Overlay/releases/download/v1.0.8/ovlEdiZon.ovl
@@ -256,7 +263,7 @@ patch_homebrew() {
     cp -f "$SRC_HOMEBREW/dbi/dbi.config" "$BUILD_DIR/switch/DBI/dbi.config"
     mkdir -p $BUILD_DIR/config/aio-switch-updater
     cp -f "$SRC_HOMEBREW/aio-switch-updater/custom_packs.json" "$BUILD_DIR/config/aio-switch-updater/custom_packs.json"
-    mkdir $BUILD_DIR/switch/ezremote-client
+    mkdir $BUILD_DIR/switch/ezremote-client || true
     cp -f "$SRC_HOMEBREW/ezremote-client/config.ini" "$BUILD_DIR/switch/ezremote-client/config.ini"
 }
 
