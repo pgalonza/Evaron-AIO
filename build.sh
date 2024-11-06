@@ -207,6 +207,10 @@ prepare_homebrew() {
 
     $DOWNLOAD_COMMAND https://github.com/J-D-K/JKSV/releases/download/11%2F05%2F2024/JKSV.nro
     cp -f $TMP_DIR/JKSV.nro $BUILD_DIR/switch/JKSV.nro
+
+    mkdir $BUILD_DIR/switch/NX-Shell || true
+    $DOWNLOAD_COMMAND https://github.com/joel16/NX-Shell/releases/download/4.01/NX-Shell.nro
+    cp -f $TMP_DIR/NX-Shell.nro $BUILD_DIR/switch/NX-Shell/NX-Shell.nro
 }
 
 prepare_emulators() {
