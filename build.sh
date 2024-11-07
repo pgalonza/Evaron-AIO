@@ -160,6 +160,7 @@ prepare_overlays() {
 
     $DOWNLOAD_COMMAND https://github.com/cathery/sys-ftpd/releases/download/1.0.5/sys-ftpd-1.0.5.zip
     $UNZIP_COMMAND $TMP_DIR/sys-ftpd-*.zip -d $BUILD_DIR
+    rm $BUILD_DIR/atmosphere/contents/420000000000000E/flags/boot2.flag
 }
 
 prepare_sx_gear() {
@@ -270,10 +271,14 @@ patch_home_menu() {
 
 patch_homebrew() {
     cp -f "$SRC_HOMEBREW/dbi/dbi.config" "$BUILD_DIR/switch/DBI/dbi.config"
+
     mkdir -p $BUILD_DIR/config/aio-switch-updater
     cp -f "$SRC_HOMEBREW/aio-switch-updater/custom_packs.json" "$BUILD_DIR/config/aio-switch-updater/custom_packs.json"
+
     mkdir $BUILD_DIR/switch/ezremote-client || true
     cp -f "$SRC_HOMEBREW/ezremote-client/config.ini" "$BUILD_DIR/switch/ezremote-client/config.ini"
+
+    cp -f "$SRC_HOMEBREW/sys-ftpd/config.ini" "$BUILD_DIR/switch/sys-ftpd/config.ini"
 }
 
 patch_splash_screen_package3() {
