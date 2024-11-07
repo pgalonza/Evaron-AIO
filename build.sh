@@ -40,6 +40,9 @@ prepare_deepsea() {
 
     $DOWNLOAD_COMMAND https://github.com/pgalonza/ns-Atmosphere/releases/download/0.2.0/fusee.bin
     cp $TMP_DIR/fusee.bin $BUILD_DIR/bootloader/payloads/fusee.bin
+
+    # rm -rf $BUILD_DIR/atmosphere/contents/420000000000000E /config/sys-ftpd
+    rm -rf $BUILD_DIR/atmosphere/contents/420000000000000F $BUILD_DIR/config/sys-ftpd-10k
 }
 
 prepare_kefir() {
