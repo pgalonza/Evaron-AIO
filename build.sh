@@ -40,6 +40,9 @@ prepare_deepsea() {
 
     $DOWNLOAD_COMMAND https://github.com/Atmosphere-NX/Atmosphere/releases/download/1.7.1/fusee.bin
     cp $TMP_DIR/fusee.bin $BUILD_DIR/bootloader/payloads/fusee.bin
+
+    # rm -rf $BUILD_DIR/atmosphere/contents/420000000000000E /config/sys-ftpd
+    rm -rf $BUILD_DIR/atmosphere/contents/420000000000000F $BUILD_DIR/config/sys-ftpd-10k
 }
 
 prepare_kefir() {
@@ -107,7 +110,7 @@ prepare_overclock() {
     $UNZIP_COMMAND $TMP_DIR/sys-clk-*.zip -d $BUILD_DIR
 
     $DOWNLOAD_COMMAND https://github.com/masagrator/ReverseNX-Tool/releases/download/3.2.0/ReverseNX-Tool.nro
-    cp -f $TMP_DIR/ReverseNX-Tool.nro $BUILD_DIR/switch/.overlays/ReverseNX-Tool.nro
+    cp -f $TMP_DIR/ReverseNX-Tool.nro $BUILD_DIR/switch/ReverseNX-Tool.nro
 }
 
 prepare_scripts() {
@@ -154,6 +157,9 @@ prepare_overlays() {
 
     $DOWNLOAD_COMMAND https://github.com/nedex/QuickNTP/releases/download/1.2.8-1/quickntp-1.2.8-1.zip
     $UNZIP_COMMAND $TMP_DIR/quickntp-*.zip -d $BUILD_DIR
+
+    $DOWNLOAD_COMMAND https://github.com/cathery/sys-ftpd/releases/download/1.0.5/sys-ftpd-1.0.5.zip
+    $UNZIP_COMMAND $TMP_DIR/sys-ftpd-*.zip -d $BUILD_DIR
 }
 
 prepare_sx_gear() {
@@ -213,6 +219,9 @@ prepare_homebrew() {
     mkdir $BUILD_DIR/switch/NX-Shell || true
     $DOWNLOAD_COMMAND https://github.com/joel16/NX-Shell/releases/download/4.01/NX-Shell.nro
     cp -f $TMP_DIR/NX-Shell.nro $BUILD_DIR/switch/NX-Shell/NX-Shell.nro
+
+    $DOWNLOAD_COMMAND https://github.com/mtheall/ftpd/releases/download/v3.1.0/ftpd-classic.nro
+    cp -f $TMP_DIR/ftpd-classic.nro $BUILD_DIR/switch/ftpd-classic.nro
 }
 
 prepare_emulators() {
