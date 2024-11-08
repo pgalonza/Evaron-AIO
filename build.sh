@@ -276,6 +276,9 @@ patch_homebrew() {
     mkdir -p $BUILD_DIR/config/aio-switch-updater
     cp -f "$SRC_HOMEBREW/aio-switch-updater/custom_packs.json" "$BUILD_DIR/config/aio-switch-updater/custom_packs.json"
 
+    mkdir $BUILD_DIR/config/AtmoPackUpdater
+    cp -f "$SRC_HOMEBREW/atmo-pack-updater/config.json" "$BUILD_DIR/config/AtmoPackUpdater/config.json"
+
     mkdir $BUILD_DIR/switch/ezremote-client || true
     cp -f "$SRC_HOMEBREW/ezremote-client/config.ini" "$BUILD_DIR/switch/ezremote-client/config.ini"
 
