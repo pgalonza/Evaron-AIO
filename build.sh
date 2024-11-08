@@ -278,7 +278,7 @@ patch_homebrew() {
     mkdir $BUILD_DIR/switch/ezremote-client || true
     cp -f "$SRC_HOMEBREW/ezremote-client/config.ini" "$BUILD_DIR/switch/ezremote-client/config.ini"
 
-    cp -f "$SRC_HOMEBREW/sys-ftpd/config.ini" "$BUILD_DIR/switch/sys-ftpd/config.ini"
+    cp -f "$SRC_HOMEBREW/sys-ftpd/config.ini" "$BUILD_DIR/config/sys-ftpd/config.ini"
 }
 
 patch_splash_screen_package3() {
