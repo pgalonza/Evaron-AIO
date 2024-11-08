@@ -9,6 +9,7 @@ SRC_ASSETS_DIR="./assets"
 SRC_HEKATE_DIR="./hekate"
 SRC_ATMOSPHERE="./atmosphere"
 SRC_HOMEBREW="./homebrew"
+SRC_OVERLAY="./overlay"
 
 UNZIP_COMMAND="unzip -o"
 DOWNLOAD_COMMAND="curl --remote-name --fail --output-dir $TMP_DIR --location"
@@ -278,7 +279,12 @@ patch_homebrew() {
     mkdir $BUILD_DIR/switch/ezremote-client || true
     cp -f "$SRC_HOMEBREW/ezremote-client/config.ini" "$BUILD_DIR/switch/ezremote-client/config.ini"
 
-    cp -f "$SRC_HOMEBREW/sys-ftpd/config.ini" "$BUILD_DIR/config/sys-ftpd/config.ini"
+}
+
+patch_overlay() {
+    cp -f "$SRC_OVERLAY/sys-ftpd/config.ini" "$BUILD_DIR/config/sys-ftpd/config.ini"
+    mkdir $BUILD_DIR/switch/.packages || true
+    cp -rf "$SRC_OVERLAY/ultrahand-overlay/"* "$BUILD_DIR/switch/.packages/"
 }
 
 patch_splash_screen_package3() {
@@ -331,5 +337,6 @@ patch_atmosphere
 patch_hekate
 patch_home_menu
 patch_homebrew
+patch_overlay
 
 cd ./build && zip -r ../Evaron-AIO.zip ./*
