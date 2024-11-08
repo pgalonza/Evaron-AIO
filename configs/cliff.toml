@@ -5,7 +5,8 @@
 # changelog header
 header = """
 # Changelog\n
-{{ message }}
+HOS: 18
+Based on CFW: DeepSea
 """
 # template for the changelog body
 # https://keats.github.io/tera/docs/#introduction
