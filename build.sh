@@ -148,7 +148,7 @@ prepare_overlays() {
     $DOWNLOAD_COMMAND https://github.com/ppkantorski/ovl-sysmodules/releases/download/v1.3.1%2B/ovlSysmodules.ovl
     cp -f $TMP_DIR/ovlSysmodules.ovl $BUILD_DIR/switch/.overlays/ovlSysmodules.ovl
 
-    $DOWNLOAD_COMMAND https://github.com/masagrator/SaltyNX/releases/download/0.9.4/SaltyNX-0.9.4.zip
+    $DOWNLOAD_COMMAND https://github.com/masagrator/SaltyNX/releases/download/1.0.5/SaltyNX-1.0.5.zip
     $UNZIP_COMMAND $TMP_DIR/SaltyNX-*.zip -d $BUILD_DIR
 
     # $DOWNLOAD_COMMAND https://github.com/ppkantorski/Status-Monitor-Overlay/releases/download/v1.1.4%2B/Status-Monitor-Overlay.ovl
