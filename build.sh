@@ -185,7 +185,7 @@ prepare_payload() {
 
 prepare_homebrew() {
     mkdir $BUILD_DIR/switch/DBI
-    $DOWNLOAD_COMMAND https://github.com/rashevskyv/dbi/releases/download/719ru/DBI.nro
+    $DOWNLOAD_COMMAND https://github.com/rashevskyv/dbi/releases/download/720ru/DBI.nro
     cp -f $TMP_DIR/DBI.nro $BUILD_DIR/switch/DBI/DBI.nro
 
     # $DOWNLOAD_COMMAND https://f38d61784492.hosting.myjino.ru/NintendoSwitch/DBI.694.ru.zip
