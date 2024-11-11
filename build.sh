@@ -208,7 +208,7 @@ prepare_homebrew() {
     # $DOWNLOAD_COMMAND https://github.com/switchbrew/nx-hbmenu/releases/download/v3.6.0/nx-hbmenu_v3.6.0.zip
     # $UNZIP_COMMAND $TMP_DIR/nx-hbmenu_* $BUILD_DIR
 
-    $DOWNLOAD_COMMAND https://github.com/dslatt/nso-icon-tool/releases/download/v0.4.2/nso-icon-tool.nro
+    $DOWNLOAD_COMMAND https://github.com/dslatt/nso-icon-tool/releases/download/v0.4.3/nso-icon-tool.nro
     cp -f $TMP_DIR/nso-icon-tool.nro $BUILD_DIR/switch/nso-icon-tool.nro
 
     mkdir $BUILD_DIR/switch/ezremote-client || true
