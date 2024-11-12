@@ -220,6 +220,9 @@ prepare_homebrew() {
 
     $DOWNLOAD_COMMAND https://github.com/mtheall/ftpd/releases/download/v3.2.0/ftpd.nro
     cp -f $TMP_DIR/ftpd.nro $BUILD_DIR/switch/ftpd.nro
+
+    $DOWNLOAD_COMMAND https://github.com/mrdude2478/Tinwoo-Release/releases/download/1.0.26/Tinwoo-Installer.zip
+    $UNZIP_COMMAND $TMP_DIR/Tinwoo-Installer.zip $BUILD_DIR
 }
 
 prepare_emulators() {
