@@ -218,8 +218,8 @@ prepare_homebrew() {
     $DOWNLOAD_COMMAND https://github.com/joel16/NX-Shell/releases/download/4.01/NX-Shell.nro
     cp -f $TMP_DIR/NX-Shell.nro $BUILD_DIR/switch/NX-Shell/NX-Shell.nro
 
-    # $DOWNLOAD_COMMAND https://github.com/mtheall/ftpd/releases/download/v3.1.0/ftpd-classic.nro
-    # cp -f $TMP_DIR/ftpd-classic.nro $BUILD_DIR/switch/ftpd-classic.nro
+    $DOWNLOAD_COMMAND https://github.com/mtheall/ftpd/releases/download/v3.2.0/ftpd.nro
+    cp -f $TMP_DIR/ftpd.nro $BUILD_DIR/switch/ftpd.nro
 }
 
 prepare_emulators() {
