@@ -104,14 +104,14 @@ prepare_overclock() {
     # $UNZIP_COMMAND $TMP_DIR/OC_Switchcraft_EOS_*.zip $TMP_DIR/Ultra
     # cp -rf "$TMP_DIR/Ultra/switch/.packages/Ultra Tuner" "$BUILD_DIR/switch/.packages/Ultra Tuner"
 
-    $DOWNLOAD_COMMAND https://github.com/masagrator/FPSLocker/releases/download/2.0.3/FPSLocker.ovl
-    cp -f $TMP_DIR/FPSLocker.ovl $BUILD_DIR/switch/.overlays/FPSLocker.ovl
+    # $DOWNLOAD_COMMAND https://github.com/masagrator/FPSLocker/releases/download/2.0.3/FPSLocker.ovl
+    # cp -f $TMP_DIR/FPSLocker.ovl $BUILD_DIR/switch/.overlays/FPSLocker.ovl
 
     $DOWNLOAD_COMMAND https://github.com/retronx-team/sys-clk/releases/download/2.0.1/sys-clk-2.0.1.zip
     $UNZIP_COMMAND $TMP_DIR/sys-clk-*.zip -d $BUILD_DIR
 
     $DOWNLOAD_COMMAND https://github.com/masagrator/ReverseNX-RT/releases/download/2.0.0/ReverseNX-RT-ovl.ovl
-    cp -f $TMP_DIR/ReverseNX-RT-ovl.ovl $BUILD_DIR/switch/.overlays/ReverseNX-RT.ovl
+    cp -f $TMP_DIR/ReverseNX-RT-ovl.ovl $BUILD_DIR/switch/.overlays/ReverseNX-RT-ovl.ovl
 }
 
 prepare_scripts() {
@@ -191,9 +191,9 @@ prepare_homebrew() {
     $DOWNLOAD_COMMAND https://f38d61784492.hosting.myjino.ru/NintendoSwitch/linkalho-v2.0.1.zip
     $UNZIP_COMMAND $TMP_DIR/linkalho-*.zip -d $BUILD_DIR/switch/linkalho
 
-    mkdir $BUILD_DIR/switch/atmo-pack-updater
-    $DOWNLOAD_COMMAND https://github.com/PoloNX/AtmoPackUpdater/releases/download/2.0.1/AtmoPackUpdater.nro
-    cp -f $TMP_DIR/AtmoPackUpdater.nro $BUILD_DIR/switch/atmo-pack-updater/AtmoPackUpdater.nro
+    # mkdir $BUILD_DIR/switch/atmo-pack-updater
+    # $DOWNLOAD_COMMAND https://github.com/PoloNX/AtmoPackUpdater/releases/download/2.0.1/AtmoPackUpdater.nro
+    # cp -f $TMP_DIR/AtmoPackUpdater.nro $BUILD_DIR/switch/atmo-pack-updater/AtmoPackUpdater.nro
 
     $DOWNLOAD_COMMAND https://github.com/HamletDuFromage/aio-switch-updater/releases/download/2.23.2/aio-switch-updater.zip
     $UNZIP_COMMAND $TMP_DIR/aio-switch-updater.zip -d $BUILD_DIR
@@ -204,25 +204,25 @@ prepare_homebrew() {
     # $DOWNLOAD_COMMAND https://github.com/switchbrew/nx-hbmenu/releases/download/v3.6.0/nx-hbmenu_v3.6.0.zip
     # $UNZIP_COMMAND $TMP_DIR/nx-hbmenu_* $BUILD_DIR
 
-    $DOWNLOAD_COMMAND https://github.com/dslatt/nso-icon-tool/releases/download/v0.4.3/nso-icon-tool.nro
-    cp -f $TMP_DIR/nso-icon-tool.nro $BUILD_DIR/switch/nso-icon-tool.nro
+    # $DOWNLOAD_COMMAND https://github.com/dslatt/nso-icon-tool/releases/download/v0.4.3/nso-icon-tool.nro
+    # cp -f $TMP_DIR/nso-icon-tool.nro $BUILD_DIR/switch/nso-icon-tool.nro
 
     mkdir $BUILD_DIR/switch/ezremote-client || true
     $DOWNLOAD_COMMAND https://github.com/cy33hc/switch-ezremote-client/releases/download/1.05/ezremote-client.nro
     cp -f $TMP_DIR/ezremote-client.nro $BUILD_DIR/switch/ezremote-client/ezremote-client.nro
 
-    $DOWNLOAD_COMMAND https://github.com/J-D-K/JKSV/releases/download/11%2F05%2F2024/JKSV.nro
-    cp -f $TMP_DIR/JKSV.nro $BUILD_DIR/switch/JKSV.nro
+    # $DOWNLOAD_COMMAND https://github.com/J-D-K/JKSV/releases/download/11%2F05%2F2024/JKSV.nro
+    # cp -f $TMP_DIR/JKSV.nro $BUILD_DIR/switch/JKSV.nro
 
-    mkdir $BUILD_DIR/switch/NX-Shell || true
-    $DOWNLOAD_COMMAND https://github.com/joel16/NX-Shell/releases/download/4.01/NX-Shell.nro
-    cp -f $TMP_DIR/NX-Shell.nro $BUILD_DIR/switch/NX-Shell/NX-Shell.nro
+    # mkdir $BUILD_DIR/switch/NX-Shell || true
+    # $DOWNLOAD_COMMAND https://github.com/joel16/NX-Shell/releases/download/4.01/NX-Shell.nro
+    # cp -f $TMP_DIR/NX-Shell.nro $BUILD_DIR/switch/NX-Shell/NX-Shell.nro
 
-    $DOWNLOAD_COMMAND https://github.com/mtheall/ftpd/releases/download/v3.2.0/ftpd.nro
-    cp -f $TMP_DIR/ftpd.nro $BUILD_DIR/switch/ftpd.nro
+    # $DOWNLOAD_COMMAND https://github.com/mtheall/ftpd/releases/download/v3.2.0/ftpd.nro
+    # cp -f $TMP_DIR/ftpd.nro $BUILD_DIR/switch/ftpd.nro
 
-    $DOWNLOAD_COMMAND https://github.com/mrdude2478/Tinwoo-Release/releases/download/1.0.26/Tinwoo-Installer.zip
-    $UNZIP_COMMAND $TMP_DIR/Tinwoo-Installer.zip $BUILD_DIR
+    # $DOWNLOAD_COMMAND https://github.com/mrdude2478/Tinwoo-Release/releases/download/1.0.26/Tinwoo-Installer.zip
+    # $UNZIP_COMMAND $TMP_DIR/Tinwoo-Installer.zip $BUILD_DIR
 }
 
 prepare_emulators() {

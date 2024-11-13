@@ -1,7 +1,49 @@
 [
     {
         "name": "DBI - latest",
-        "label": "DBI",
-        "file1": "https://github.com/rashevskyv/dbi/releases/latest/download/DBI.nro"
+        "path": "/switch/DBI/",
+        "file-url": "https://github.com/rashevskyv/dbi/releases/latest/download/DBI.nro"
+    },
+    {
+        "name": "FTPD - latest",
+        "path": "/switch/",
+        "file-url": "https://github.com/mtheall/ftpd/releases/download/latest/ftpd.nro"
+    },
+    {
+        "name": "NX-Shell - latest",
+        "path": "/switch/NX-Shell/",
+        "file-url": "https://github.com/joel16/NX-Shell/releases/download/latest/NX-Shell.nro"
+    },
+    {
+        "name": "JKSV - latest",
+        "path": "/switch/",
+        "file-url": "https://github.com/J-D-K/JKSV/releases/download/latest/JKSV.nro"
+    },
+    {
+        "name": "ezremote-client - latest",
+        "path": "/switch/ezremote-client/",
+        "file-url": "https://github.com/cy33hc/switch-ezremote-client/releases/download/latest/ezremote-client.nro"
+    },
+    {
+        "name": "nso-icon-tool - latest",
+        "path": "/switch/",
+        "file-url": "https://github.com/dslatt/nso-icon-tool/releases/download/latest/nso-icon-tool.nro"
+    },
+    {
+        "name": "AtmoPackUpdate - latest",
+        "path": "/switch/atmo-pack-updater/",
+        "file-url": "https://github.com/PoloNX/AtmoPackUpdater/releases/download/latest/AtmoPackUpdater.nro"
+    },
+    {
+        "name": "aio-switch-updater - latest",
+        "path": "/",
+        "zip-name": "aio-switch-updater.zip",
+        "zip-url": "https://github.com/HamletDuFromage/aio-switch-updater/releases/download/latest/aio-switch-updater.zip"
+    }
+    {
+        "name": "aio-switch-updater - latest",
+        "path": "/",
+        "zip-name": "Tinwoo-Installer.zip",
+        "zip-url": "https://github.com/mrdude2478/Tinwoo-Release/releases/download/latest/Tinwoo-Installer.zip"
     }
 ]
