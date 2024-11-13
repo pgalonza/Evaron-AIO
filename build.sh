@@ -141,7 +141,7 @@ prepare_overlays() {
     $DOWNLOAD_COMMAND https://github.com/ppkantorski/Ultrahand-Overlay/releases/download/v1.8.2/ovlmenu.ovl
     cp -f $TMP_DIR/ovlmenu.ovl $BUILD_DIR/switch/.overlays/ovlmenu.ovl
 
-    $DOWNLOAD_COMMAND https://github.com/ppkantorski/ovl-sysmodules/releases/download/v1.3.2%2B/ovlSysmodules.ovl
+    $DOWNLOAD_COMMAND https://github.com/ppkantorski/ovl-sysmodules/releases/download/v1.3.2/ovlSysmodules.ovl
     cp -f $TMP_DIR/ovlSysmodules.ovl $BUILD_DIR/switch/.overlays/ovlSysmodules.ovl
 
     $DOWNLOAD_COMMAND https://github.com/masagrator/SaltyNX/releases/download/1.0.5/SaltyNX-1.0.5.zip
