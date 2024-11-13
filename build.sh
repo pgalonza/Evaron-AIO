@@ -167,7 +167,7 @@ prepare_sx_gear() {
 
 prepare_payload() {
     $DOWNLOAD_COMMAND https://github.com/saneki/Lockpick_RCM/releases/download/v1.9.13/Lockpick_RCM.bin
-    cp -f $TMP_DIR/Lockpick_RCM_*.bin -d $BUILD_DIR/bootloader/payloads/Lockpick_RCM.bin
+    cp -f $TMP_DIR/Lockpick_RCM.bin -d $BUILD_DIR/bootloader/payloads/Lockpick_RCM.bin
 
     # $DOWNLOAD_COMMAND https://sigmapatches.su/Lockpick_RCM_v1.9.12.zip
     # $UNZIP_COMMAND $TMP_DIR/Lockpick_RCM_v1.9.12.zip -d $TMP_DIR/
