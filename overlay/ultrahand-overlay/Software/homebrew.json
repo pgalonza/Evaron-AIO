@@ -39,9 +39,9 @@
         "path": "/",
         "zip-name": "aio-switch-updater.zip",
         "zip-url": "https://github.com/HamletDuFromage/aio-switch-updater/releases/download/latest/aio-switch-updater.zip"
-    }
+    },
     {
-        "name": "aio-switch-updater - latest",
+        "name": "Tinwoo-Installer - latest",
         "path": "/",
         "zip-name": "Tinwoo-Installer.zip",
         "zip-url": "https://github.com/mrdude2478/Tinwoo-Release/releases/download/latest/Tinwoo-Installer.zip"
