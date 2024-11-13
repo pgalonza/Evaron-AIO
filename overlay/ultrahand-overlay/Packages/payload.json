@@ -1,0 +1,12 @@
+[
+    {
+        "name": "TegraExplorer - latest",
+        "path": "/bootloader/payloads/",
+        "file-url": "https://github.com/suchmememanyskill/TegraExplorer/releases/latest/download/TegraExplorer.bin"
+    },
+    {
+        "name": "Lockpick-RCM - latest",
+        "path": "/bootloader/payloads/",
+        "file-url": "https://github.com/saneki/Lockpick_RCM/releases/latest/download/Lockpick_RCM.bin"
+    }
+]

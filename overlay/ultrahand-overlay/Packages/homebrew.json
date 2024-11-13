@@ -1,0 +1,67 @@
+[
+    {
+        "name": "DBI - latest",
+        "path": "/switch/DBI/",
+        "file-url": "https://github.com/rashevskyv/dbi/releases/latest/download/DBI.nro"
+    },
+    {
+        "name": "FTPD - latest",
+        "path": "/switch/",
+        "file-url": "https://github.com/mtheall/ftpd/releases/latest/download/ftpd.nro"
+    },
+    {
+        "name": "NX-Shell - latest",
+        "path": "/switch/NX-Shell/",
+        "file-url": "https://github.com/joel16/NX-Shell/releases/latest/download/NX-Shell.nro"
+    },
+    {
+        "name": "JKSV - latest",
+        "path": "/switch/",
+        "file-url": "https://github.com/J-D-K/JKSV/releases/latest/download/JKSV.nro"
+    },
+    {
+        "name": "ezremote-client - latest",
+        "path": "/switch/ezremote-client/",
+        "file-url": "https://github.com/cy33hc/switch-ezremote-client/releases/latest/download/ezremote-client.nro"
+    },
+    {
+        "name": "nso-icon-tool - latest",
+        "path": "/switch/",
+        "file-url": "https://github.com/dslatt/nso-icon-tool/releases/latest/download/nso-icon-tool.nro"
+    },
+    {
+        "name": "AtmoPackUpdate - latest",
+        "path": "/switch/atmo-pack-updater/",
+        "file-url": "https://github.com/PoloNX/AtmoPackUpdater/releases/latest/download/AtmoPackUpdater.nro"
+    },
+    {
+        "name": "aio-switch-updater - latest",
+        "path": "/",
+        "zip-name": "aio-switch-updater.zip",
+        "zip-url": "https://github.com/HamletDuFromage/aio-switch-updater/releases/latest/download/aio-switch-updater.zip"
+    },
+    {
+        "name": "Tinwoo-Installer - latest",
+        "path": "/",
+        "zip-name": "Tinwoo-Installer.zip",
+        "zip-url": "https://github.com/mrdude2478/Tinwoo-Release/releases/latest/download/Tinwoo-Installer.zip"
+    },
+    {
+        "name": "linkalho - latest",
+        "path": "/switch/linkalho",
+        "zip-name": "linkalho.zip",
+        "zip-url": "https://f38d61784492.hosting.myjino.ru/NintendoSwitch/linkalho-latest.zip"
+    },
+    {
+        "name": "EdiZon-SE - latest",
+        "path": "/",
+        "zip-name": "EdiZon.zip",
+        "zip-url": "https://github.com/tomvita/EdiZon-SE/releases/latest/download/EdiZon.zip"
+    },
+    {
+        "name": "Breeze-Beta - latest",
+        "path": "/",
+        "zip-name": "Breeze.zip",
+        "zip-url": "https://github.com/tomvita/Breeze-Beta/releases/download/beta96d/Breeze.zip"
+    }
+]
