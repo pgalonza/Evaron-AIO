@@ -30,5 +30,40 @@
         "name": "ReverseNX - latest",
         "path": "/switch/.overlays/",
         "file-url": "https://github.com/masagrator/ReverseNX-RT/releases/latest/download/ReverseNX-RT-ovl.ovl"
+    },
+    {
+        "name": "EdiZon-Overlay - latest",
+        "path": "/switch/.overlays/",
+        "file-url": "https://github.com/proferabg/EdiZon-Overlay/releases/latest/download/ovlEdiZon.ovl"
+    },
+    {
+        "name": "sys-ftpd - latest",
+        "path": "/",
+        "zip-api": "https://api.github.com/repos/cathery/sys-ftpd/releases?per_page=1&sort=created&order=desc",
+        "asset-index": "0"
+    },
+    {
+        "name": "QuickNTP - latest",
+        "path": "/",
+        "zip-api": "https://api.github.com/repos/nedex/QuickNTP/releases?per_page=1&sort=created&order=desc",
+        "asset-index": "0"
+    },
+    {
+        "name": "SaltyNX - latest",
+        "path": "/",
+        "zip-api": "https://api.github.com/repos/masagrator/SaltyNX/releases?per_page=1&sort=created&order=desc",
+        "asset-index": "0"
+    },
+    {
+        "name": "sys-patch - latest",
+        "path": "/",
+        "zip-api": "https://api.github.com/repos/impeeza/sys-patch/releases?per_page=1&sort=created&order=desc",
+        "asset-index": "0"
+    },
+    {
+        "name": "sys-clk - latest",
+        "path": "/",
+        "zip-api": "https://api.github.com/repos/retronx-team/sys-clk/releases?per_page=1&sort=created&order=desc",
+        "asset-index": "0"
     }
 ]

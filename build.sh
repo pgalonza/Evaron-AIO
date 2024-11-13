@@ -152,8 +152,8 @@ prepare_overlays() {
     $DOWNLOAD_COMMAND https://github.com/masagrator/Status-Monitor-Overlay/releases/download/1.1.6/Status-Monitor-Overlay.zip
     $UNZIP_COMMAND $TMP_DIR/Status-Monitor-Overlay.zip -d $BUILD_DIR
 
-    $DOWNLOAD_COMMAND https://github.com/nedex/QuickNTP/releases/download/1.2.8-1/quickntp-1.2.8-1.zip
-    $UNZIP_COMMAND $TMP_DIR/quickntp-*.zip -d $BUILD_DIR
+    # $DOWNLOAD_COMMAND https://github.com/nedex/QuickNTP/releases/download/1.2.8-1/quickntp-1.2.8-1.zip
+    # $UNZIP_COMMAND $TMP_DIR/quickntp-*.zip -d $BUILD_DIR
 
     $DOWNLOAD_COMMAND https://github.com/cathery/sys-ftpd/releases/download/1.0.5/sys-ftpd-1.0.5.zip
     $UNZIP_COMMAND $TMP_DIR/sys-ftpd-*.zip -d $BUILD_DIR
@@ -166,7 +166,7 @@ prepare_sx_gear() {
 }
 
 prepare_payload() {
-    $DOWNLOAD_COMMAND https://f38d61784492.hosting.myjino.ru/NintendoSwitch/Lockpick_RCM_1_9_13.bin
+    $DOWNLOAD_COMMAND https://github.com/saneki/Lockpick_RCM/releases/download/v1.9.13/Lockpick_RCM.bin
     cp -f $TMP_DIR/Lockpick_RCM_*.bin -d $BUILD_DIR/bootloader/payloads/Lockpick_RCM.bin
 
     # $DOWNLOAD_COMMAND https://sigmapatches.su/Lockpick_RCM_v1.9.12.zip
@@ -187,9 +187,9 @@ prepare_homebrew() {
     # $DOWNLOAD_COMMAND https://f38d61784492.hosting.myjino.ru/NintendoSwitch/DBI.694.ru.zip
     # $UNZIP_COMMAND $TMP_DIR/DBI.694.ru.zip -d $BUILD_DIR/switch/DBI/
 
-    mkdir $BUILD_DIR/switch/linkalho
-    $DOWNLOAD_COMMAND https://f38d61784492.hosting.myjino.ru/NintendoSwitch/linkalho-v2.0.1.zip
-    $UNZIP_COMMAND $TMP_DIR/linkalho-*.zip -d $BUILD_DIR/switch/linkalho
+    # mkdir $BUILD_DIR/switch/linkalho
+    # $DOWNLOAD_COMMAND https://f38d61784492.hosting.myjino.ru/NintendoSwitch/linkalho-v2.0.1.zip
+    # $UNZIP_COMMAND $TMP_DIR/linkalho-*.zip -d $BUILD_DIR/switch/linkalho
 
     # mkdir $BUILD_DIR/switch/atmo-pack-updater
     # $DOWNLOAD_COMMAND https://github.com/PoloNX/AtmoPackUpdater/releases/download/2.0.1/AtmoPackUpdater.nro
