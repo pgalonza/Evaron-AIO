@@ -2,6 +2,6 @@
     {
         "name": "TegraExplorer - latest",
         "path": "/bootloader/payloads/",
-        "zip-url": "https://github.com/suchmememanyskill/TegraExplorer/releases/download/latest/TegraExplorer.bin"
+        "zip-url": "https://github.com/suchmememanyskill/TegraExplorer/releases/latest/download/TegraExplorer.bin"
     }
 ]
