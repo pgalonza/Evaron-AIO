@@ -1,0 +1,9 @@
+{
+    "auto-update": false,
+    "custom-pack": [
+        {
+            "name": "Evaron pack",
+            "url": "https://github.com/pgalonza/Evaron-AIO/releases/latest/download/Evaron-AIO.zip"
+        }
+    ]
+}
