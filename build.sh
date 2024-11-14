@@ -360,6 +360,6 @@ zip -r ../Evaron-AIO.zip ./*
 cd ../
 
 cd $BUILD_ULTRAHAND_DIR
-mkdir -p ./switch/.packages/ && cp -r ../overlay/ultrahand-overlay/*
+mkdir -p ./switch/.packages/ && cp -r ../overlay/ultrahand-overlay/* ./switch/.packages/
 zip -r ../Ultrahand-packages.zip ./*
 cd ../
