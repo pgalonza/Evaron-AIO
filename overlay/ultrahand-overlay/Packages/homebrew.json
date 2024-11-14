@@ -35,6 +35,16 @@
         "file-url": "https://github.com/PoloNX/AtmoPackUpdater/releases/latest/download/AtmoPackUpdater.nro"
     },
     {
+        "name": "SimpleModDownloader - latest",
+        "path": "/switch/",
+        "file-url": "https://github.com/PoloNX/SimpleModDownloader/releases/latest/download/SimpleModDownloader.nro"
+    },
+    {
+        "name": "SimpleModManager - latest",
+        "path": "/switch/",
+        "file-url": "https://github.com/nadrino/SimpleModManager/releases/latest/download/SimpleModManager.nro"
+    },
+    {
         "name": "aio-switch-updater - latest",
         "path": "/",
         "zip-name": "aio-switch-updater.zip",
@@ -63,5 +73,8 @@
         "path": "/",
         "zip-name": "Breeze.zip",
         "zip-url": "https://github.com/tomvita/Breeze-Beta/releases/download/beta96d/Breeze.zip"
+    },
+    {
+
     }
 ]
