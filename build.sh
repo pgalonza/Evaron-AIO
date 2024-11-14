@@ -223,6 +223,12 @@ prepare_homebrew() {
 
     # $DOWNLOAD_COMMAND https://github.com/mrdude2478/Tinwoo-Release/releases/download/1.0.26/Tinwoo-Installer.zip
     # $UNZIP_COMMAND $TMP_DIR/Tinwoo-Installer.zip $BUILD_DIR
+
+    # $DOWNLOAD_COMMAND https://github.com/PoloNX/SimpleModDownloader/releases/download/2.1.0/SimpleModDownloader.nro
+    # cp -f $TMP_DIR/SimpleModDownloader.nro $BUILD_DIR/switch/SimpleModDownloader.nro
+
+    # $DOWNLOAD_COMMAND https://github.com/nadrino/SimpleModManager/releases/download/2.1.2/SimpleModManager.nro
+    # cp -f $TMP_DIR/SimpleModManager.nro $BUILD_DIR/switch/SimpleModManager.nro
 }
 
 prepare_emulators() {
