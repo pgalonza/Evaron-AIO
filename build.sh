@@ -14,6 +14,8 @@ SRC_OVERLAY="./overlay"
 UNZIP_COMMAND="unzip -o"
 DOWNLOAD_COMMAND="curl --remote-name --fail --output-dir $TMP_DIR --location"
 
+ADDITIONAL_PACKAGES=false
+
 prepare_hekate() {
     $DOWNLOAD_COMMAND https://github.com/CTCaer/hekate/releases/download/v6.2.2/hekate_ctcaer_6.2.2_Nyx_1.6.4.zip
     $UNZIP_COMMAND $TMP_DIR/hekate_ctcaer_*.zip -d $BUILD_DIR
@@ -92,20 +94,23 @@ prepare_venom() {
 }
 
 prepare_overclock() {
-    # $DOWNLOAD_COMMAND https://f38d61784492.hosting.myjino.ru/NintendoSwitch/OC_Switchcraft_EOS-1.5.0-atmosphere-1.8.0-prerelease.zip
-    # mkdir $TMP_DIR/Switchcraft
-    # $DOWNLOAD_COMMAND https://github.com/halop/OC-Switchcraft-EOS/releases/download/1.5.0/OC_Switchcraft_EOS.1.5.0.-.atmosphere.1.8.0.prerelease.zip
-    # $UNZIP_COMMAND $TMP_DIR/OC_Switchcraft_EOS_*.zip $TMP_DIR/Switchcraft
-    # rm $TMP_DIR/Switchcraft/Copy_to_SD/switch/.overlays/ovlmenu.ovl
-    # cp -rf $TMP_DIR/Switchcraft/Copy_to_SD/* $BUILD_DIR
+    if [[ $ADDITIONAL_PACKAGES == true ]]
+    then
+        $DOWNLOAD_COMMAND https://f38d61784492.hosting.myjino.ru/NintendoSwitch/OC_Switchcraft_EOS-1.5.0-atmosphere-1.8.0-prerelease.zip
+        mkdir $TMP_DIR/Switchcraft
+        $DOWNLOAD_COMMAND https://github.com/halop/OC-Switchcraft-EOS/releases/download/1.5.0/OC_Switchcraft_EOS.1.5.0.-.atmosphere.1.8.0.prerelease.zip
+        $UNZIP_COMMAND $TMP_DIR/OC_Switchcraft_EOS_*.zip $TMP_DIR/Switchcraft
+        rm $TMP_DIR/Switchcraft/Copy_to_SD/switch/.overlays/ovlmenu.ovl
+        cp -rf $TMP_DIR/Switchcraft/Copy_to_SD/* $BUILD_DIR
 
-    # mkdir $TMP_DIR/Ultra
-    # $DOWNLOAD_COMMAND https://github.com/Ultra-NX/Ultra-Tuner/releases/download/18-R2/Ultra-Tuner.zip
-    # $UNZIP_COMMAND $TMP_DIR/OC_Switchcraft_EOS_*.zip $TMP_DIR/Ultra
-    # cp -rf "$TMP_DIR/Ultra/switch/.packages/Ultra Tuner" "$BUILD_DIR/switch/.packages/Ultra Tuner"
+        mkdir $TMP_DIR/Ultra
+        $DOWNLOAD_COMMAND https://github.com/Ultra-NX/Ultra-Tuner/releases/download/18-R2/Ultra-Tuner.zip
+        $UNZIP_COMMAND $TMP_DIR/OC_Switchcraft_EOS_*.zip $TMP_DIR/Ultra
+        cp -rf "$TMP_DIR/Ultra/switch/.packages/Ultra Tuner" "$BUILD_DIR/switch/.packages/Ultra Tuner"
 
-    # $DOWNLOAD_COMMAND https://github.com/masagrator/FPSLocker/releases/download/2.0.3/FPSLocker.ovl
-    # cp -f $TMP_DIR/FPSLocker.ovl $BUILD_DIR/switch/.overlays/FPSLocker.ovl
+        $DOWNLOAD_COMMAND https://github.com/masagrator/FPSLocker/releases/download/2.0.3/FPSLocker.ovl
+        cp -f $TMP_DIR/FPSLocker.ovl $BUILD_DIR/switch/.overlays/FPSLocker.ovl
+    fi
 
     $DOWNLOAD_COMMAND https://github.com/retronx-team/sys-clk/releases/download/2.0.1/sys-clk-2.0.1.zip
     $UNZIP_COMMAND $TMP_DIR/sys-clk-*.zip -d $BUILD_DIR
@@ -129,6 +134,12 @@ prepare_sigpatches() {
 }
 
 prepare_overlays() {
+    if [[ $ADDITIONAL_PACKAGES == true ]]
+    then
+        $DOWNLOAD_COMMAND https://github.com/nedex/QuickNTP/releases/download/1.2.8-1/quickntp-1.2.8-1.zip
+        $UNZIP_COMMAND $TMP_DIR/quickntp-*.zip -d $BUILD_DIR
+    fi
+
     # $DOWNLOAD_COMMAND https://sigmapatches.su/sys-patch.zip
     # $DOWNLOAD_COMMAND https://github.com/impeeza/sys-patch/releases/download/v1.5.2/sys-patch-1.5.2-88297f8.zip
     $DOWNLOAD_COMMAND https://github.com/impeeza/sys-patch/releases/download/v1.5.4/sys-patch-1.5.4.zip
@@ -151,9 +162,6 @@ prepare_overlays() {
     # cp -f $TMP_DIR/Status-Monitor-Overlay.ovl $BUILD_DIR/switch/.overlays/Status-Monitor-Overlay.ovl
     $DOWNLOAD_COMMAND https://github.com/masagrator/Status-Monitor-Overlay/releases/download/1.1.6/Status-Monitor-Overlay.zip
     $UNZIP_COMMAND $TMP_DIR/Status-Monitor-Overlay.zip -d $BUILD_DIR
-
-    # $DOWNLOAD_COMMAND https://github.com/nedex/QuickNTP/releases/download/1.2.8-1/quickntp-1.2.8-1.zip
-    # $UNZIP_COMMAND $TMP_DIR/quickntp-*.zip -d $BUILD_DIR
 
     $DOWNLOAD_COMMAND https://github.com/cathery/sys-ftpd/releases/download/1.0.5/sys-ftpd-1.0.5.zip
     $UNZIP_COMMAND $TMP_DIR/sys-ftpd-*.zip -d $BUILD_DIR
@@ -180,6 +188,45 @@ prepare_payload() {
 }
 
 prepare_homebrew() {
+    if [[ $ADDITIONAL_PACKAGES == true ]]
+    then
+        mkdir $BUILD_DIR/switch/atmo-pack-updater
+        $DOWNLOAD_COMMAND https://github.com/PoloNX/AtmoPackUpdater/releases/download/2.0.1/AtmoPackUpdater.nro
+        cp -f $TMP_DIR/AtmoPackUpdater.nro $BUILD_DIR/switch/atmo-pack-updater/AtmoPackUpdater.nro
+
+        mkdir $BUILD_DIR/switch/linkalho
+        $DOWNLOAD_COMMAND https://f38d61784492.hosting.myjino.ru/NintendoSwitch/linkalho-v2.0.1.zip
+        $UNZIP_COMMAND $TMP_DIR/linkalho-*.zip -d $BUILD_DIR/switch/linkalho
+
+        $DOWNLOAD_COMMAND https://github.com/switchbrew/nx-hbloader/releases/download/v2.4.4/hbl.nsp
+        cp $TMP_DIR/hbl.nsp $BUILD_DIR/atmosphere/hbl.nsp
+
+        $DOWNLOAD_COMMAND https://github.com/switchbrew/nx-hbmenu/releases/download/v3.6.0/nx-hbmenu_v3.6.0.zip
+        $UNZIP_COMMAND $TMP_DIR/nx-hbmenu_* $BUILD_DIR
+
+        $DOWNLOAD_COMMAND https://github.com/dslatt/nso-icon-tool/releases/download/v0.4.3/nso-icon-tool.nro
+        cp -f $TMP_DIR/nso-icon-tool.nro $BUILD_DIR/switch/nso-icon-tool.nro
+
+        $DOWNLOAD_COMMAND https://github.com/J-D-K/JKSV/releases/download/11%2F05%2F2024/JKSV.nro
+        cp -f $TMP_DIR/JKSV.nro $BUILD_DIR/switch/JKSV.nro
+
+        mkdir $BUILD_DIR/switch/NX-Shell || true
+        $DOWNLOAD_COMMAND https://github.com/joel16/NX-Shell/releases/download/4.01/NX-Shell.nro
+        cp -f $TMP_DIR/NX-Shell.nro $BUILD_DIR/switch/NX-Shell/NX-Shell.nro
+
+        $DOWNLOAD_COMMAND https://github.com/mtheall/ftpd/releases/download/v3.2.0/ftpd.nro
+        cp -f $TMP_DIR/ftpd.nro $BUILD_DIR/switch/ftpd.nro
+
+        $DOWNLOAD_COMMAND https://github.com/mrdude2478/Tinwoo-Release/releases/download/1.0.26/Tinwoo-Installer.zip
+        $UNZIP_COMMAND $TMP_DIR/Tinwoo-Installer.zip $BUILD_DIR
+
+        $DOWNLOAD_COMMAND https://github.com/PoloNX/SimpleModDownloader/releases/download/2.1.0/SimpleModDownloader.nro
+        cp -f $TMP_DIR/SimpleModDownloader.nro $BUILD_DIR/switch/SimpleModDownloader.nro
+
+        $DOWNLOAD_COMMAND https://github.com/nadrino/SimpleModManager/releases/download/2.1.2/SimpleModManager.nro
+        cp -f $TMP_DIR/SimpleModManager.nro $BUILD_DIR/switch/SimpleModManager.nro
+    fi
+
     mkdir $BUILD_DIR/switch/DBI
     $DOWNLOAD_COMMAND https://github.com/rashevskyv/dbi/releases/download/720ru/DBI.nro
     cp -f $TMP_DIR/DBI.nro $BUILD_DIR/switch/DBI/DBI.nro
@@ -187,48 +234,12 @@ prepare_homebrew() {
     # $DOWNLOAD_COMMAND https://f38d61784492.hosting.myjino.ru/NintendoSwitch/DBI.694.ru.zip
     # $UNZIP_COMMAND $TMP_DIR/DBI.694.ru.zip -d $BUILD_DIR/switch/DBI/
 
-    # mkdir $BUILD_DIR/switch/linkalho
-    # $DOWNLOAD_COMMAND https://f38d61784492.hosting.myjino.ru/NintendoSwitch/linkalho-v2.0.1.zip
-    # $UNZIP_COMMAND $TMP_DIR/linkalho-*.zip -d $BUILD_DIR/switch/linkalho
-
-    # mkdir $BUILD_DIR/switch/atmo-pack-updater
-    # $DOWNLOAD_COMMAND https://github.com/PoloNX/AtmoPackUpdater/releases/download/2.0.1/AtmoPackUpdater.nro
-    # cp -f $TMP_DIR/AtmoPackUpdater.nro $BUILD_DIR/switch/atmo-pack-updater/AtmoPackUpdater.nro
-
     $DOWNLOAD_COMMAND https://github.com/HamletDuFromage/aio-switch-updater/releases/download/2.23.2/aio-switch-updater.zip
     $UNZIP_COMMAND $TMP_DIR/aio-switch-updater.zip -d $BUILD_DIR
-
-    # $DOWNLOAD_COMMAND https://github.com/switchbrew/nx-hbloader/releases/download/v2.4.4/hbl.nsp
-    # cp $TMP_DIR/hbl.nsp $BUILD_DIR/atmosphere/hbl.nsp
-
-    # $DOWNLOAD_COMMAND https://github.com/switchbrew/nx-hbmenu/releases/download/v3.6.0/nx-hbmenu_v3.6.0.zip
-    # $UNZIP_COMMAND $TMP_DIR/nx-hbmenu_* $BUILD_DIR
-
-    # $DOWNLOAD_COMMAND https://github.com/dslatt/nso-icon-tool/releases/download/v0.4.3/nso-icon-tool.nro
-    # cp -f $TMP_DIR/nso-icon-tool.nro $BUILD_DIR/switch/nso-icon-tool.nro
 
     mkdir $BUILD_DIR/switch/ezremote-client || true
     $DOWNLOAD_COMMAND https://github.com/cy33hc/switch-ezremote-client/releases/download/1.05/ezremote-client.nro
     cp -f $TMP_DIR/ezremote-client.nro $BUILD_DIR/switch/ezremote-client/ezremote-client.nro
-
-    # $DOWNLOAD_COMMAND https://github.com/J-D-K/JKSV/releases/download/11%2F05%2F2024/JKSV.nro
-    # cp -f $TMP_DIR/JKSV.nro $BUILD_DIR/switch/JKSV.nro
-
-    # mkdir $BUILD_DIR/switch/NX-Shell || true
-    # $DOWNLOAD_COMMAND https://github.com/joel16/NX-Shell/releases/download/4.01/NX-Shell.nro
-    # cp -f $TMP_DIR/NX-Shell.nro $BUILD_DIR/switch/NX-Shell/NX-Shell.nro
-
-    # $DOWNLOAD_COMMAND https://github.com/mtheall/ftpd/releases/download/v3.2.0/ftpd.nro
-    # cp -f $TMP_DIR/ftpd.nro $BUILD_DIR/switch/ftpd.nro
-
-    # $DOWNLOAD_COMMAND https://github.com/mrdude2478/Tinwoo-Release/releases/download/1.0.26/Tinwoo-Installer.zip
-    # $UNZIP_COMMAND $TMP_DIR/Tinwoo-Installer.zip $BUILD_DIR
-
-    # $DOWNLOAD_COMMAND https://github.com/PoloNX/SimpleModDownloader/releases/download/2.1.0/SimpleModDownloader.nro
-    # cp -f $TMP_DIR/SimpleModDownloader.nro $BUILD_DIR/switch/SimpleModDownloader.nro
-
-    # $DOWNLOAD_COMMAND https://github.com/nadrino/SimpleModManager/releases/download/2.1.2/SimpleModManager.nro
-    # cp -f $TMP_DIR/SimpleModManager.nro $BUILD_DIR/switch/SimpleModManager.nro
 }
 
 prepare_emulators() {
