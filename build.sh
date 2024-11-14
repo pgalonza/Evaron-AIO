@@ -5,6 +5,7 @@ set -o xtrace
 
 TMP_DIR="./tmp"
 BUILD_DIR="./build"
+BUILD_ULTRAHAND_DIR="./packages"
 SRC_ASSETS_DIR="./assets"
 SRC_HEKATE_DIR="./hekate"
 SRC_ATMOSPHERE="./atmosphere"
@@ -337,7 +338,7 @@ patch_icons() {
 }
 
 
-mkdir $TMP_DIR $BUILD_DIR
+mkdir $TMP_DIR $BUILD_DIR $BUILD_ULTRAHAND_DIR
 prepare_deepsea
 prepare_sigpatches
 prepare_sx_gear
@@ -354,4 +355,11 @@ patch_home_menu
 patch_homebrew
 patch_overlay
 
-cd ./build && zip -r ../Evaron-AIO.zip ./*
+cd $BUILD_DIR
+zip -r ../Evaron-AIO.zip ./*
+cd ../
+
+cd $BUILD_ULTRAHAND_DIR
+mkdir -p ./switch/.packages/ && cp -r ../overlay/ultrahand-overlay/*
+zip -r ../Ultrahand-packages.zip ./*
+cd ../

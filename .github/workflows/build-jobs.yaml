@@ -20,4 +20,6 @@ jobs:
           retention-days: 1
           compression-level: 0
           name: evaron-aio-artifact
-          path: "./Evaron-AIO.zip"
+          path: |
+            ./Evaron-AIO.zip
+            ./Ultrahand-packages.zip
