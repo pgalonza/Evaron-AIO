@@ -1,5 +1,11 @@
 [
     {
+        "name": "Ultrahand Packages - latest",
+        "path": "/",
+        "zip-name": "Ultrahand-packages.zip",
+        "zip-url": "https://github.com/pgalonza/Evaron-AIO/releases/latest/download/Ultrahand-packages.zip"
+    },
+    {
         "name": "HBL - latest",
         "path": "/atmosphere/",
         "file-url": "https://github.com/switchbrew/nx-hbloader/releases/latest/download/hbl.nsp"
