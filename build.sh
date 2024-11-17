@@ -224,6 +224,10 @@ prepare_homebrew() {
 
         $DOWNLOAD_COMMAND https://github.com/nadrino/SimpleModManager/releases/download/2.1.2/SimpleModManager.nro
         cp -f $TMP_DIR/SimpleModManager.nro $BUILD_DIR/switch/SimpleModManager.nro
+
+        mkdir $BUILD_DIR/switch/appstore || true
+        $DOWNLOAD_COMMAND https://github.com/fortheusers/hb-appstore/releases/download/v2.3.2/appstore.nro
+        cp -f $TMP_DIR/appstore.nro $BUILD_DIR/switch/appstore/appstore.nro
     fi
 
     mkdir $BUILD_DIR/switch/DBI

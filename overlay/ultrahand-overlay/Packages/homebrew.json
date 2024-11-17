@@ -45,6 +45,11 @@
         "file-url": "https://github.com/nadrino/SimpleModManager/releases/latest/download/SimpleModManager.nro"
     },
     {
+        "name": "hb-appstore - latest",
+        "path": "/switch/appstore/",
+        "file-url": "https://github.com/fortheusers/hb-appstore/releases/latest/download/appstore.nro"
+    },
+    {
         "name": "aio-switch-updater - latest",
         "path": "/",
         "zip-name": "aio-switch-updater.zip",
