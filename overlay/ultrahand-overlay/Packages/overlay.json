@@ -37,6 +37,11 @@
         "file-url": "https://github.com/proferabg/EdiZon-Overlay/releases/latest/download/ovlEdiZon.ovl"
     },
     {
+        "name": "sys-botbase - latest",
+        "path": "/",
+        "file-url": "https://github.com/olliz0r/sys-botbase/releases/latest/download/sys-botbase.nsp"
+    },
+    {
         "name": "sys-ftpd - latest",
         "path": "/",
         "zip-api": "https://api.github.com/repos/cathery/sys-ftpd/releases?per_page=1&sort=created&order=desc",
