@@ -33,5 +33,5 @@ jobs:
       - name: Create release
         uses: ncipollo/release-action@v1
         with:
-          artifacts: "./Evaron-AIO.zip"
+          artifacts: "./Evaron-AIO.zip,./Ultrahand-packages.zip"
           bodyFile: "git-cliff/CHANGELOG.md"
