@@ -115,7 +115,7 @@ prepare_overclock() {
 
     # alternative source > https://github.com/retronx-team/sys-clk/releases/download/2.0.1/sys-clk-2.0.1.zip
     $DOWNLOAD_COMMAND https://f38d61784492.hosting.myjino.ru/NintendoSwitch/sys-clk_1.1.4_eos.zip
-    $UNZIP_COMMAND $TMP_DIR/sys-clk-*.zip -d $BUILD_DIR
+    $UNZIP_COMMAND $TMP_DIR/sys-clk_*.zip -d $BUILD_DIR
 
     $DOWNLOAD_COMMAND https://github.com/masagrator/ReverseNX-RT/releases/download/2.1.0/ReverseNX-RT-ovl.ovl
     cp -f $TMP_DIR/ReverseNX-RT-ovl.ovl $BUILD_DIR/switch/.overlays/ReverseNX-RT-ovl.ovl
@@ -144,7 +144,7 @@ prepare_overlays() {
     # alternative source > https://sigmapatches.su/sys-patch.zip
     # alternative source > https://github.com/impeeza/sys-patch/releases/download/v1.5.2/sys-patch-1.5.2-88297f8.zip
     $DOWNLOAD_COMMAND https://github.com/borntohonk/sys-patch/releases/download/v1.5.6/sys-patch.zip
-    $UNZIP_COMMAND $TMP_DIR/sys-patch-*.zip -d $BUILD_DIR
+    $UNZIP_COMMAND $TMP_DIR/sys-patch.zip -d $BUILD_DIR
     rm $BUILD_DIR/atmosphere/contents/420000000000000B/flags/boot2.flag
 
     $DOWNLOAD_COMMAND https://github.com/ppkantorski/nx-ovlloader/releases/download/v1.0.9/nx-ovlloader.zip
