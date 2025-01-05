@@ -23,10 +23,10 @@ prepare_hekate() {
 }
 
 prepare_atmosphere() {
-    $DOWNLOAD_COMMAND https://github.com/Atmosphere-NX/Atmosphere/releases/download/1.7.1/atmosphere-1.7.1-master-39c201e37+hbl-2.4.4+hbmenu-3.6.0.zip
+    $DOWNLOAD_COMMAND https://github.com/Atmosphere-NX/Atmosphere/releases/download/1.8.0-prerelease/atmosphere-1.8.0-master-c6014b533+hbl-2.4.4+hbmenu-3.6.0.zip
     $UNZIP_COMMAND $TMP_DIR/atmosphere-*.zip -d $BUILD_DIR
 
-    $DOWNLOAD_COMMAND https://github.com/Atmosphere-NX/Atmosphere/releases/download/1.7.1/fusee.bin
+    $DOWNLOAD_COMMAND https://github.com/Atmosphere-NX/Atmosphere/releases/download/1.8.0-prerelease/fusee.bin
     cp $TMP_DIR/fusee.bin $BUILD_DIR/bootloader/payloads/fusee.bin
 }
 
@@ -50,54 +50,54 @@ prepare_deepsea() {
 }
 
 prepare_kefir() {
-    $DOWNLOAD_COMMAND https://github.com/rashevskyv/kefir/releases/download/746/kefir746.zip
+    $DOWNLOAD_COMMAND https://github.com/rashevskyv/kefir/releases/download/758/kefir758.zip
     $UNZIP_COMMAND $TMP_DIR/kefir_*.zip -d $BUILD_DIR
 }
 
 prepare_gnx() {
-    $DOWNLOAD_COMMAND https://github.com/vncsmnl/GNX/releases/download/18.1.0-02/2024.07.06.GNX.v18.1.0-02.zip
+    $DOWNLOAD_COMMAND https://github.com/vncsmnl/GNX/releases/download/19.0.1-01/2024.12.23.GNX.19.0.1-01.zip
     $UNZIP_COMMAND $TMP_DIR/*.GNC.*.zip -d $BUILD_DIR
 }
 
 prepare_ultra() {
-    $DOWNLOAD_COMMAND https://github.com/Ultra-NX/Ultra/releases/download/2.2-R4%2B/Ultra.zip
+    $DOWNLOAD_COMMAND https://github.com/Ultra-NX/UltraNX/releases/download/2.3-R3/Ultra.zip
     $UNZIP_COMMAND $TMP_DIR/Ultra.zip -d $BUILD_DIR
 }
 
 prepare_next() {
-    $DOWNLOAD_COMMAND https://codeberg.org/vampitech/NeXT/releases/download/3.20/NeXT.zip
+    $DOWNLOAD_COMMAND https://codeberg.org/vampitech/NeXT/releases/download/3.33/NeXT.zip
     $UNZIP_COMMAND $TMP_DIR/Next.zip -d $BUILD_DIR
 }
 
 prepare_shallowsea() {
-    $DOWNLOAD_COMMAND https://codeberg.org/carcaschoi/Shallowsea/releases/download/v2.23.0/ShallowSea-ams.zip
+    $DOWNLOAD_COMMAND https://codeberg.org/carcaschoi/Shallowsea/releases/download/v2.24.2/ShallowSea-ams.zip
     $UNZIP_COMMAND $TMP_DIR/ShallowSea-*.zip -d $BUILD_DIR
 }
 
 prepare_4ifir() {
-    $DOWNLOAD_COMMAND https://github.com/rashevskyv/4ifir-checker/raw/9791c36/github/4IFIR.zip
+    $DOWNLOAD_COMMAND https://github.com/rashevskyv/4ifir-checker/raw/1631819/github/4IFIR.zip
     $UNZIP_COMMAND $TMP_DIR/4IFIR-*.zip -d $BUILD_DIR
 }
 
 prepare_hats() {
-    $DOWNLOAD_COMMAND https://www.mediafire.com/file_premium/p6vnazz54xwl31n/HATS-1.71-5.zip/file
+    $DOWNLOAD_COMMAND https://www.mediafire.com/file_premium/rg6pbf52fvgp4fo/HATS-1.8.0-V1.3.zip/file
     $UNZIP_COMMAND $TMP_DIR/HATS-*.zip -d $BUILD_DIR
 }
 
 prepare_santa_atmo() {
-    $DOWNLOAD_COMMAND https://santa-atmo.ru/nintendo/atmo-1.7.1-150624.zip
+    $DOWNLOAD_COMMAND https://santa-atmo.ru/nintendo/atmo-1.8.0-161024.zip
     $UNZIP_COMMAND $TMP_DIR/atmo-*.zip -d $BUILD_DIR
 }
 
 prepare_venom() {
-    $DOWNLOAD_COMMAND https://github.com/CatcherITGF/NX-Venom/releases/download/4.9.1/NXVenom.zip
+    $DOWNLOAD_COMMAND https://github.com/CatcherITGF/NX-Venom/releases/download/5.2.0/NXVenom.zip
     $UNZIP_COMMAND $TMP_DIR/NXVenom.zip -d $BUILD_DIR
 }
 
 prepare_overclock() {
     if [[ $ADDITIONAL_PACKAGES == true ]]
     then
-        $DOWNLOAD_COMMAND https://f38d61784492.hosting.myjino.ru/NintendoSwitch/OC_Switchcraft_EOS-1.5.0-atmosphere-1.8.0-prerelease.zip
+        # alternative source > https://f38d61784492.hosting.myjino.ru/NintendoSwitch/OC_Switchcraft_EOS-1.5.0-atmosphere-1.8.0-prerelease.zip
         mkdir $TMP_DIR/Switchcraft
         $DOWNLOAD_COMMAND https://github.com/halop/OC-Switchcraft-EOS/releases/download/1.5.0/OC_Switchcraft_EOS.1.5.0.-.atmosphere.1.8.0.prerelease.zip
         $UNZIP_COMMAND $TMP_DIR/OC_Switchcraft_EOS_*.zip $TMP_DIR/Switchcraft
@@ -105,18 +105,19 @@ prepare_overclock() {
         cp -rf $TMP_DIR/Switchcraft/Copy_to_SD/* $BUILD_DIR
 
         mkdir $TMP_DIR/Ultra
-        $DOWNLOAD_COMMAND https://github.com/Ultra-NX/Ultra-Tuner/releases/download/18-R2/Ultra-Tuner.zip
+        $DOWNLOAD_COMMAND https://github.com/Ultra-NX/Ultra-Tuner/releases/download/19-R1/Ultra-Tuner.zip
         $UNZIP_COMMAND $TMP_DIR/OC_Switchcraft_EOS_*.zip $TMP_DIR/Ultra
         cp -rf "$TMP_DIR/Ultra/switch/.packages/Ultra Tuner" "$BUILD_DIR/switch/.packages/Ultra Tuner"
 
-        $DOWNLOAD_COMMAND https://github.com/masagrator/FPSLocker/releases/download/2.0.3/FPSLocker.ovl
+        $DOWNLOAD_COMMAND https://github.com/masagrator/FPSLocker/releases/download/2.1.0/FPSLocker.ovl
         cp -f $TMP_DIR/FPSLocker.ovl $BUILD_DIR/switch/.overlays/FPSLocker.ovl
     fi
 
-    $DOWNLOAD_COMMAND https://github.com/retronx-team/sys-clk/releases/download/2.0.1/sys-clk-2.0.1.zip
+    # alternative source > https://github.com/retronx-team/sys-clk/releases/download/2.0.1/sys-clk-2.0.1.zip
+    $DOWNLOAD_COMMAND https://f38d61784492.hosting.myjino.ru/NintendoSwitch/sys-clk_1.1.4_eos.zip
     $UNZIP_COMMAND $TMP_DIR/sys-clk-*.zip -d $BUILD_DIR
 
-    $DOWNLOAD_COMMAND https://github.com/masagrator/ReverseNX-RT/releases/download/2.0.0/ReverseNX-RT-ovl.ovl
+    $DOWNLOAD_COMMAND https://github.com/masagrator/ReverseNX-RT/releases/download/2.1.0/ReverseNX-RT-ovl.ovl
     cp -f $TMP_DIR/ReverseNX-RT-ovl.ovl $BUILD_DIR/switch/.overlays/ReverseNX-RT-ovl.ovl
 }
 
@@ -142,7 +143,7 @@ prepare_overlays() {
 
     # alternative source > https://sigmapatches.su/sys-patch.zip
     # alternative source > https://github.com/impeeza/sys-patch/releases/download/v1.5.2/sys-patch-1.5.2-88297f8.zip
-    $DOWNLOAD_COMMAND https://github.com/impeeza/sys-patch/releases/download/v1.5.4/sys-patch-1.5.4.zip
+    $DOWNLOAD_COMMAND https://github.com/borntohonk/sys-patch/releases/download/v1.5.6/sys-patch.zip
     $UNZIP_COMMAND $TMP_DIR/sys-patch-*.zip -d $BUILD_DIR
     rm $BUILD_DIR/atmosphere/contents/420000000000000B/flags/boot2.flag
 
@@ -155,12 +156,12 @@ prepare_overlays() {
     $DOWNLOAD_COMMAND https://github.com/ppkantorski/ovl-sysmodules/releases/download/v1.3.2/ovlSysmodules.ovl
     cp -f $TMP_DIR/ovlSysmodules.ovl $BUILD_DIR/switch/.overlays/ovlSysmodules.ovl
 
-    $DOWNLOAD_COMMAND https://github.com/masagrator/SaltyNX/releases/download/1.0.5/SaltyNX-1.0.5.zip
+    $DOWNLOAD_COMMAND https://github.com/masagrator/SaltyNX/releases/download/1.2.0/SaltyNX-1.2.0.zip
     $UNZIP_COMMAND $TMP_DIR/SaltyNX-*.zip -d $BUILD_DIR
 
     # alternative source > https://github.com/ppkantorski/Status-Monitor-Overlay/releases/download/v1.1.4%2B/Status-Monitor-Overlay.ovl
     # cp -f $TMP_DIR/Status-Monitor-Overlay.ovl $BUILD_DIR/switch/.overlays/Status-Monitor-Overlay.ovl
-    $DOWNLOAD_COMMAND https://github.com/masagrator/Status-Monitor-Overlay/releases/download/1.1.6/Status-Monitor-Overlay.zip
+    $DOWNLOAD_COMMAND https://github.com/masagrator/Status-Monitor-Overlay/releases/download/1.1.7a/Status-Monitor-Overlay.zip
     $UNZIP_COMMAND $TMP_DIR/Status-Monitor-Overlay.zip -d $BUILD_DIR
 
     $DOWNLOAD_COMMAND https://github.com/cathery/sys-ftpd/releases/download/1.0.5/sys-ftpd-1.0.5.zip
@@ -203,7 +204,7 @@ prepare_homebrew() {
         $DOWNLOAD_COMMAND https://github.com/switchbrew/nx-hbmenu/releases/download/v3.6.0/nx-hbmenu_v3.6.0.zip
         $UNZIP_COMMAND $TMP_DIR/nx-hbmenu_* $BUILD_DIR
 
-        $DOWNLOAD_COMMAND https://github.com/dslatt/nso-icon-tool/releases/download/v0.4.3/nso-icon-tool.nro
+        $DOWNLOAD_COMMAND https://github.com/dslatt/nso-icon-tool/releases/download/v0.4.4/nso-icon-tool.nro
         cp -f $TMP_DIR/nso-icon-tool.nro $BUILD_DIR/switch/nso-icon-tool.nro
 
         $DOWNLOAD_COMMAND https://github.com/J-D-K/JKSV/releases/download/11%2F05%2F2024/JKSV.nro
@@ -213,10 +214,10 @@ prepare_homebrew() {
         $DOWNLOAD_COMMAND https://github.com/joel16/NX-Shell/releases/download/4.01/NX-Shell.nro
         cp -f $TMP_DIR/NX-Shell.nro $BUILD_DIR/switch/NX-Shell/NX-Shell.nro
 
-        $DOWNLOAD_COMMAND https://github.com/mtheall/ftpd/releases/download/v3.2.0/ftpd.nro
+        $DOWNLOAD_COMMAND https://github.com/mtheall/ftpd/releases/download/v3.2.1/ftpd.nro
         cp -f $TMP_DIR/ftpd.nro $BUILD_DIR/switch/ftpd.nro
 
-        $DOWNLOAD_COMMAND https://github.com/mrdude2478/Tinwoo-Release/releases/download/1.0.26/Tinwoo-Installer.zip
+        $DOWNLOAD_COMMAND https://github.com/mrdude2478/Tinwoo-Release/releases/download/1.0.27/Tinwoo-Installer.zip
         $UNZIP_COMMAND $TMP_DIR/Tinwoo-Installer.zip $BUILD_DIR
 
         $DOWNLOAD_COMMAND https://github.com/PoloNX/SimpleModDownloader/releases/download/2.1.0/SimpleModDownloader.nro
@@ -231,14 +232,14 @@ prepare_homebrew() {
     fi
 
     mkdir $BUILD_DIR/switch/DBI
-    $DOWNLOAD_COMMAND https://github.com/rashevskyv/dbi/releases/download/720ru/DBI.nro
+    $DOWNLOAD_COMMAND https://github.com/rashevskyv/dbi/releases/download/749ru/DBI.nro
     cp -f $TMP_DIR/DBI.nro $BUILD_DIR/switch/DBI/DBI.nro
 
     $DOWNLOAD_COMMAND https://github.com/HamletDuFromage/aio-switch-updater/releases/download/2.23.2/aio-switch-updater.zip
     $UNZIP_COMMAND $TMP_DIR/aio-switch-updater.zip -d $BUILD_DIR
 
     mkdir $BUILD_DIR/switch/ezremote-client || true
-    $DOWNLOAD_COMMAND https://github.com/cy33hc/switch-ezremote-client/releases/download/1.05/ezremote-client.nro
+    $DOWNLOAD_COMMAND https://github.com/cy33hc/switch-ezremote-client/releases/download/1.06/ezremote-client.nro
     cp -f $TMP_DIR/ezremote-client.nro $BUILD_DIR/switch/ezremote-client/ezremote-client.nro
 }
 
@@ -247,12 +248,12 @@ prepare_emulators() {
     7z x $TMP_DIR/Release_PPSSPP_Standalone_*.7z -o"$BUILD_DIR" -aoa
     rm $BUILD_DIR/README.txt $BUILD_DIR/LICENSE.txt
 
-    $DOWNLOAD_COMMAND https://buildbot.libretro.com/stable/1.19.1/nintendo/switch/libnx/RetroArch.7z
+    $DOWNLOAD_COMMAND https://buildbot.libretro.com/stable/1.20.0/nintendo/switch/libnx/RetroArch.7z
     7z x $TMP_DIR/RetroArch.7z -o"$BUILD_DIR" -aoa
 }
 
 prepare_cheat() {
-    $DOWNLOAD_COMMAND https://github.com/tomvita/Breeze-Beta/releases/download/beta96d/Breeze.zip
+    $DOWNLOAD_COMMAND https://github.com/tomvita/Breeze-Beta/releases/download/beta98a/Breeze.zip
     $UNZIP_COMMAND $TMP_DIR/Breeze.zip -d $BUILD_DIR
 
     $DOWNLOAD_COMMAND https://github.com/tomvita/EdiZon-SE/releases/download/3.8.37/EdiZon.zip
