@@ -2,8 +2,12 @@
     "auto-update": false,
     "custom-pack": [
         {
-            "name": "Evaron pack",
+            "name": "Evaron GIT",
             "url": "https://github.com/pgalonza/Evaron-AIO/releases/latest/download/Evaron-AIO.zip"
+        },
+        {
+            "name": "Evaron 18",
+            "url": "https://f38d61784492.hosting.myjino.ru/NintendoSwitch/Evaron-AIO/Evaron-AIO-18.zip"
         }
     ]
 }
