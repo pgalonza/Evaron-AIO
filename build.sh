@@ -115,7 +115,7 @@ prepare_overclock() {
 
     # alternative source > https://f38d61784492.hosting.myjino.ru/NintendoSwitch/sys-clk_1.1.4_eos.zip
     $DOWNLOAD_COMMAND https://github.com/retronx-team/sys-clk/releases/download/2.0.1/sys-clk-2.0.1.zip
-    $UNZIP_COMMAND $TMP_DIR/sys-clk_*.zip -d $BUILD_DIR
+    $UNZIP_COMMAND $TMP_DIR/sys-clk-*.zip -d $BUILD_DIR
 
     $DOWNLOAD_COMMAND https://github.com/masagrator/ReverseNX-RT/releases/download/2.1.0/ReverseNX-RT-ovl.ovl
     cp -f $TMP_DIR/ReverseNX-RT-ovl.ovl $BUILD_DIR/switch/.overlays/ReverseNX-RT-ovl.ovl
