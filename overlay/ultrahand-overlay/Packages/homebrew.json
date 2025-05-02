@@ -1,8 +1,14 @@
 [
     {
-        "name": "DBI - latest",
+        "name": "DBI[rashevskyv] - latest",
         "path": "/switch/DBI/",
         "file-url": "https://github.com/rashevskyv/dbi/releases/latest/download/DBI.nro"
+    },
+    {
+        "name": "DBI[Ultra-NX] - latest",
+        "path": "/switch/DBI/",
+        "zip-name": "DBI.RU.zip",
+        "zip-url": "https://github.com/Ultra-NX/Ultra-Resources/releases/download/Homebrews/DBI.RU.zip"
     },
     {
         "name": "FTPD - latest",
