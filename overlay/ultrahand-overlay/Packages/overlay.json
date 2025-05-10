@@ -22,6 +22,12 @@
         "zip-url": "https://github.com/masagrator/Status-Monitor-Overlay/releases/latest/download/Status-Monitor-Overlay.zip"
     },
     {
+        "name": "sys-patch - latest",
+        "path": "/",
+        "zip-name": "sys-patch.zip",
+        "zip-api": "https://github.com/impeeza/sys-patch/releases/latest/download/sys-patch.zip"
+    },
+    {
         "name": "FPSLocker - latest",
         "path": "/switch/.overlays/",
         "file-url": "https://github.com/masagrator/FPSLocker/releases/latest/download/FPSLocker.ovl"
@@ -57,12 +63,6 @@
         "name": "SaltyNX - latest",
         "path": "/",
         "zip-api": "https://api.github.com/repos/masagrator/SaltyNX/releases?per_page=1&sort=created&order=desc",
-        "asset-index": "0"
-    },
-    {
-        "name": "sys-patch - latest",
-        "path": "/",
-        "zip-api": "https://api.github.com/repos/impeeza/sys-patch/releases?per_page=1&sort=created&order=desc",
         "asset-index": "0"
     },
     {

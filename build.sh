@@ -18,7 +18,7 @@ DOWNLOAD_COMMAND="curl --remote-name --fail --output-dir $TMP_DIR --location"
 ADDITIONAL_PACKAGES=false
 
 prepare_hekate() {
-    $DOWNLOAD_COMMAND https://github.com/CTCaer/hekate/releases/download/v6.2.2/hekate_ctcaer_6.2.2_Nyx_1.6.4.zip
+    $DOWNLOAD_COMMAND https://github.com/CTCaer/hekate/releases/download/v6.3.0/hekate_ctcaer_6.3.0_Nyx_1.7.0.zip
     $UNZIP_COMMAND $TMP_DIR/hekate_ctcaer_*.zip -d $BUILD_DIR
 }
 
@@ -109,13 +109,14 @@ prepare_overclock() {
         $UNZIP_COMMAND $TMP_DIR/OC_Switchcraft_EOS_*.zip $TMP_DIR/Ultra
         cp -rf "$TMP_DIR/Ultra/switch/.packages/Ultra Tuner" "$BUILD_DIR/switch/.packages/Ultra Tuner"
 
-        $DOWNLOAD_COMMAND https://github.com/masagrator/FPSLocker/releases/download/2.1.0/FPSLocker.ovl
+        $DOWNLOAD_COMMAND https://github.com/masagrator/FPSLocker/releases/download/2.1.1/FPSLocker.ovl
         cp -f $TMP_DIR/FPSLocker.ovl $BUILD_DIR/switch/.overlays/FPSLocker.ovl
     fi
 
     # alternative source > https://github.com/retronx-team/sys-clk/releases/download/2.0.1/sys-clk-2.0.1.zip
-    $DOWNLOAD_COMMAND https://f38d61784492.hosting.myjino.ru/NintendoSwitch/sys-clk_1.1.4_eos.zip
-    $UNZIP_COMMAND $TMP_DIR/sys-clk_*.zip -d $BUILD_DIR
+    # alternative source > https://f38d61784492.hosting.myjino.ru/NintendoSwitch/sys-clk_1.1.4_eos.zip
+    $DOWNLOAD_COMMAND https://github.com/halop/OC_Toolkit_SC_EOS/releases/download/1.6.0/sys-clk.zip
+    $UNZIP_COMMAND $TMP_DIR/sys-clk.zip -d $BUILD_DIR
 
     $DOWNLOAD_COMMAND https://github.com/masagrator/ReverseNX-RT/releases/download/2.1.0/ReverseNX-RT-ovl.ovl
     cp -f $TMP_DIR/ReverseNX-RT-ovl.ovl $BUILD_DIR/switch/.overlays/ReverseNX-RT-ovl.ovl
@@ -130,7 +131,7 @@ prepare_scripts() {
 prepare_sigpatches() {
     # alternative source > https://sigmapatches.su/sigpatches.zip
     # $UNZIP_COMMAND $TMP_DIR/sigpatches.zip -d $BUILD_DIR
-    $DOWNLOAD_COMMAND https://f38d61784492.hosting.myjino.ru/NintendoSwitch/Hekate+AMS-package3-sigpatches-1.8.0P2-cfw-19.0.0_V4.zip
+    $DOWNLOAD_COMMAND https://f38d61784492.hosting.myjino.ru/NintendoSwitch/atmosphere-1.9.0-master-1d3f3c6e5+ReenableSigpatches.zip
     $UNZIP_COMMAND $TMP_DIR/Hekate+AMS-package3-sigpatches-*.zip -d $BUILD_DIR
 }
 
@@ -143,25 +144,25 @@ prepare_overlays() {
 
     # alternative source > https://sigmapatches.su/sys-patch.zip
     # alternative source > https://github.com/impeeza/sys-patch/releases/download/v1.5.2/sys-patch-1.5.2-88297f8.zip
-    $DOWNLOAD_COMMAND https://github.com/borntohonk/sys-patch/releases/download/v1.5.6/sys-patch.zip
+    $DOWNLOAD_COMMAND https://github.com/impeeza/sys-patch/releases/download/v1.5.6/sys-patch.zip
     $UNZIP_COMMAND $TMP_DIR/sys-patch.zip -d $BUILD_DIR
     rm $BUILD_DIR/atmosphere/contents/420000000000000B/flags/boot2.flag
 
     $DOWNLOAD_COMMAND https://github.com/ppkantorski/nx-ovlloader/releases/download/v1.0.9/nx-ovlloader.zip
     $UNZIP_COMMAND $TMP_DIR/nx-ovlloader.zip -d $BUILD_DIR
 
-    $DOWNLOAD_COMMAND https://github.com/ppkantorski/Ultrahand-Overlay/releases/download/v1.8.2/ovlmenu.ovl
+    $DOWNLOAD_COMMAND https://github.com/ppkantorski/Ultrahand-Overlay/releases/download/v1.8.3/ovlmenu.ovl
     cp -f $TMP_DIR/ovlmenu.ovl $BUILD_DIR/switch/.overlays/ovlmenu.ovl
 
-    $DOWNLOAD_COMMAND https://github.com/ppkantorski/ovl-sysmodules/releases/download/v1.3.2/ovlSysmodules.ovl
+    $DOWNLOAD_COMMAND https://github.com/ppkantorski/ovl-sysmodules/releases/download/v1.3.3/ovlSysmodules.ovl
     cp -f $TMP_DIR/ovlSysmodules.ovl $BUILD_DIR/switch/.overlays/ovlSysmodules.ovl
 
-    $DOWNLOAD_COMMAND https://github.com/masagrator/SaltyNX/releases/download/1.2.0/SaltyNX-1.2.0.zip
+    $DOWNLOAD_COMMAND https://github.com/masagrator/SaltyNX/releases/download/1.2.2/SaltyNX-1.2.2.zip
     $UNZIP_COMMAND $TMP_DIR/SaltyNX-*.zip -d $BUILD_DIR
 
     # alternative source > https://github.com/ppkantorski/Status-Monitor-Overlay/releases/download/v1.1.4%2B/Status-Monitor-Overlay.ovl
     # cp -f $TMP_DIR/Status-Monitor-Overlay.ovl $BUILD_DIR/switch/.overlays/Status-Monitor-Overlay.ovl
-    $DOWNLOAD_COMMAND https://github.com/masagrator/Status-Monitor-Overlay/releases/download/1.1.7a/Status-Monitor-Overlay.zip
+    $DOWNLOAD_COMMAND https://github.com/masagrator/Status-Monitor-Overlay/releases/download/1.1.8/Status-Monitor-Overlay.zip
     $UNZIP_COMMAND $TMP_DIR/Status-Monitor-Overlay.zip -d $BUILD_DIR
 
     $DOWNLOAD_COMMAND https://github.com/cathery/sys-ftpd/releases/download/1.0.5/sys-ftpd-1.0.5.zip
@@ -177,8 +178,9 @@ prepare_sx_gear() {
 prepare_payload() {
     # alternative source > https://sigmapatches.su/Lockpick_RCM_v1.9.12.zip
     # $UNZIP_COMMAND $TMP_DIR/Lockpick_RCM_v1.9.12.zip -d $TMP_DIR/
-    $DOWNLOAD_COMMAND https://github.com/saneki/Lockpick_RCM/releases/download/v1.9.13/Lockpick_RCM.bin
-    cp -f $TMP_DIR/Lockpick_RCM.bin -d $BUILD_DIR/bootloader/payloads/Lockpick_RCM.bin
+    $DOWNLOAD_COMMAND https://github.com/impeeza/Lockpick_RCMDecScots/releases/download/v1.9.15/Lockpick_RCM_1.9.15b.zip
+    $UNZIP_COMMAND $TMP_DIR/Lockpick_RCM_*.zip -d $BUILD_DIR/bootloader/payloads/
+    # cp -f $TMP_DIR/Lockpick_RCM.bin -d $BUILD_DIR/bootloader/payloads/Lockpick_RCM.bin
 
     $DOWNLOAD_COMMAND https://f38d61784492.hosting.myjino.ru/NintendoSwitch/mod_chip_toolbox.zip
     $UNZIP_COMMAND $TMP_DIR/mod_chip_toolbox.zip -d $BUILD_DIR/bootloader/payloads/
@@ -239,8 +241,11 @@ prepare_homebrew() {
     $UNZIP_COMMAND $TMP_DIR/aio-switch-updater.zip -d $BUILD_DIR
 
     mkdir $BUILD_DIR/switch/ezremote-client || true
-    $DOWNLOAD_COMMAND https://github.com/cy33hc/switch-ezremote-client/releases/download/1.06/ezremote-client.nro
+    $DOWNLOAD_COMMAND https://github.com/cy33hc/switch-ezremote-client/releases/download/1.13/ezremote-client.nro
     cp -f $TMP_DIR/ezremote-client.nro $BUILD_DIR/switch/ezremote-client/ezremote-client.nro
+
+    $DOWNLOAD_COMMAND https://github.com/ITotalJustice/sphaira/releases/download/0.9.1/sphaira.zip
+    $UNZIP_COMMAND $TMP_DIR/sphaira.zip $BUILD_DIR
 }
 
 prepare_emulators() {
@@ -253,7 +258,7 @@ prepare_emulators() {
 }
 
 prepare_cheat() {
-    $DOWNLOAD_COMMAND https://github.com/tomvita/Breeze-Beta/releases/download/beta98a/Breeze.zip
+    $DOWNLOAD_COMMAND https://github.com/tomvita/Breeze-Beta/releases/download/beta99d/Breeze.zip
     $UNZIP_COMMAND $TMP_DIR/Breeze.zip -d $BUILD_DIR
 
     $DOWNLOAD_COMMAND https://github.com/tomvita/EdiZon-SE/releases/download/3.8.37/EdiZon.zip
@@ -262,6 +267,13 @@ prepare_cheat() {
     # alternative source > https://github.com/ppkantorski/EdiZon-Overlay/releases/download/v1.0.9/ovlEdiZon.ovl
     $DOWNLOAD_COMMAND https://github.com/proferabg/EdiZon-Overlay/releases/download/v1.0.9/ovlEdiZon.ovl
     cp -f $TMP_DIR/ovlEdiZon.ovl $BUILD_DIR/switch/.overlays/ovlEdiZon.ovl
+}
+
+prepare_mariko() {
+    mkdir $BUILD_DIR/warmboot_mariko || true
+    $DOWNLOAD_COMMAND https://f38d61784492.hosting.myjino.ru/NintendoSwitch/warmboot-mariko/wb_14.bin
+    $DOWNLOAD_COMMAND https://f38d61784492.hosting.myjino.ru/NintendoSwitch/warmboot-mariko/wb_15.bin
+    cp -f $TMP_DIR/wb_*.bin $BUILD_DIR/warmboot_mariko/
 }
 
 patch_atmosphere() {
@@ -284,7 +296,7 @@ patch_home_menu() {
     cp $TMP_DIR/hbmenu.nsp -d $BUILD_DIR/games/hbmenu.nsp
     $DOWNLOAD_COMMAND "https://f38d61784492.hosting.myjino.ru/NintendoSwitch/hbmenu_19.nsp"
     cp $TMP_DIR/hbmenu_19.nsp -d $BUILD_DIR/games/hbmenu_19.nsp
-    $DOWNLOAD_COMMAND https://github.com/cy33hc/switch-ezremote-client/releases/download/1.05/ezremote-client.nsp
+    $DOWNLOAD_COMMAND https://github.com/cy33hc/switch-ezremote-client/releases/download/1.13/ezremote-client.nsp
     cp -f $TMP_DIR/ezremote-client.nsp $BUILD_DIR/games/ezremote-client.nsp
 }
 
@@ -353,6 +365,7 @@ prepare_homebrew
 prepare_overlays
 prepare_cheat
 prepare_overclock
+prepare_mariko
 
 patch_atmosphere
 patch_hekate

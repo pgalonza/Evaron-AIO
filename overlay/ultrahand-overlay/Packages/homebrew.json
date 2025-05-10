@@ -82,7 +82,19 @@
     {
         "name": "Breeze-Beta - latest",
         "path": "/",
-        "zip-api": "https://api.github.com/repos/tomvita/Breeze-Beta/releases?per_page=1&sort=created&order=desc",
+        "zip-name": "Breeze.zip",
+        "zip-api": "https://github.com/tomvita/Breeze-Beta/releases/latest/download/Breeze.zip"
+    },
+    {
+        "name": "Sphaira - latest",
+        "path": "/",
+        "zip-name": "sphaira.zip",
+        "zip-url": "https://github.com/ITotalJustice/sphaira/releases/latest/download/sphaira.zip"
+    },
+    {
+        "name": "nx-hbmenu - latest",
+        "path": "/",
+        "zip-api": "https://api.github.com/repos/switchbrew/nx-hbmenu/releases?per_page=1&sort=created&order=desc",
         "asset-index": "0"
     }
 ]

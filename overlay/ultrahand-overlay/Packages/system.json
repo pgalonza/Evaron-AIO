@@ -11,12 +11,6 @@
         "file-url": "https://github.com/switchbrew/nx-hbloader/releases/latest/download/hbl.nsp"
     },
     {
-        "name": "nx-hbmenu - latest",
-        "path": "/",
-        "zip-api": "https://api.github.com/repos/switchbrew/nx-hbmenu/releases?per_page=1&sort=created&order=desc",
-        "asset-index": "0"
-    },
-    {
         "name": "sigpatches - latest",
         "path": "/",
         "zip-name": "Hekate+AMS-package3-sigpatches-latest.zip",
