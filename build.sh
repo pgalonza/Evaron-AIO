@@ -239,7 +239,7 @@ prepare_homebrew() {
     cp -f $TMP_DIR/ezremote-client.nro $BUILD_DIR/switch/ezremote-client/ezremote-client.nro
 
     $DOWNLOAD_COMMAND https://github.com/ITotalJustice/sphaira/releases/download/0.10.2/sphaira.zip
-    $UNZIP_COMMAND $TMP_DIR/sphaira.zip $BUILD_DIR
+    $UNZIP_COMMAND $TMP_DIR/sphaira.zip -d $BUILD_DIR
 }
 
 prepare_emulators() {
