@@ -235,7 +235,7 @@ prepare_homebrew() {
     $UNZIP_COMMAND $TMP_DIR/aio-switch-updater.zip -d $BUILD_DIR
 
     mkdir $BUILD_DIR/switch/ezremote-client || true
-    $DOWNLOAD_COMMAND https://github.com/cy33hc/switch-ezremote-client/releases/download/1.13/ezremote-client.nro
+    $DOWNLOAD_COMMAND https://github.com/cy33hc/switch-ezremote-client/releases/download/1%2C13/ezremote-client.nro
     cp -f $TMP_DIR/ezremote-client.nro $BUILD_DIR/switch/ezremote-client/ezremote-client.nro
 
     $DOWNLOAD_COMMAND https://github.com/ITotalJustice/sphaira/releases/download/0.10.2/sphaira.zip
@@ -290,7 +290,7 @@ patch_home_menu() {
     cp $TMP_DIR/hbmenu.nsp -d $BUILD_DIR/games/hbmenu.nsp
     $DOWNLOAD_COMMAND "https://f38d61784492.hosting.myjino.ru/NintendoSwitch/hbmenu_19.nsp"
     cp $TMP_DIR/hbmenu_19.nsp -d $BUILD_DIR/games/hbmenu_19.nsp
-    $DOWNLOAD_COMMAND https://github.com/cy33hc/switch-ezremote-client/releases/download/1.13/ezremote-client.nsp
+    $DOWNLOAD_COMMAND https://github.com/cy33hc/switch-ezremote-client/releases/download/1%2C13/ezremote-client.nsp
     cp -f $TMP_DIR/ezremote-client.nsp $BUILD_DIR/games/ezremote-client.nsp
 }
 
@@ -305,7 +305,6 @@ patch_homebrew() {
 
     mkdir $BUILD_DIR/switch/ezremote-client || true
     cp -f "$SRC_HOMEBREW/ezremote-client/config.ini" "$BUILD_DIR/switch/ezremote-client/config.ini"
-
 }
 
 patch_overlay() {
