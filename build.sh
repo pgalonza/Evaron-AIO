@@ -216,7 +216,7 @@ prepare_homebrew() {
         $UNZIP_COMMAND $TMP_DIR/aio-switch-updater.zip -d $BUILD_DIR
 
         $DOWNLOAD_COMMAND https://github.com/ITotalJustice/sphaira/releases/download/0.10.2/sphaira.zip
-        $UNZIP_COMMAND $TMP_DIR/sphaira.zip $BUILD_DIR
+        $UNZIP_COMMAND $TMP_DIR/sphaira.zip -d $BUILD_DIR
     fi
 
     mkdir $BUILD_DIR/switch/ezremote-client || true
