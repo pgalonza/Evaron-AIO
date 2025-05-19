@@ -6,7 +6,7 @@
 header = """
 # Changelog\n
 HOS: 19
-Based on CFW: DeepSea
+Based on CFW: UltraNX
 """
 # template for the changelog body
 # https://keats.github.io/tera/docs/#introduction

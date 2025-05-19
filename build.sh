@@ -116,30 +116,30 @@ prepare_overlays() {
     then
         $DOWNLOAD_COMMAND https://github.com/nedex/QuickNTP/releases/download/1.2.8-1/quickntp-1.2.8-1.zip
         $UNZIP_COMMAND $TMP_DIR/quickntp-*.zip -d $BUILD_DIR
+
+        # alternative source > https://sigmapatches.su/sys-patch.zip
+        # alternative source > https://github.com/impeeza/sys-patch/releases/download/v1.5.2/sys-patch-1.5.2-88297f8.zip
+        $DOWNLOAD_COMMAND https://github.com/impeeza/sys-patch/releases/download/v1.5.6/sys-patch.zip
+        $UNZIP_COMMAND $TMP_DIR/sys-patch.zip -d $BUILD_DIR
+        rm $BUILD_DIR/atmosphere/contents/420000000000000B/flags/boot2.flag
+
+        $DOWNLOAD_COMMAND https://github.com/ppkantorski/nx-ovlloader/releases/download/v1.0.9/nx-ovlloader.zip
+        $UNZIP_COMMAND $TMP_DIR/nx-ovlloader.zip -d $BUILD_DIR
+
+        $DOWNLOAD_COMMAND https://github.com/ppkantorski/Ultrahand-Overlay/releases/download/v1.8.3/ovlmenu.ovl
+        cp -f $TMP_DIR/ovlmenu.ovl $BUILD_DIR/switch/.overlays/ovlmenu.ovl
+
+        $DOWNLOAD_COMMAND https://github.com/ppkantorski/ovl-sysmodules/releases/download/v1.3.3/ovlSysmodules.ovl
+        cp -f $TMP_DIR/ovlSysmodules.ovl $BUILD_DIR/switch/.overlays/ovlSysmodules.ovl
+
+        $DOWNLOAD_COMMAND https://github.com/masagrator/SaltyNX/releases/download/1.2.3/SaltyNX-1.2.3.zip
+        $UNZIP_COMMAND $TMP_DIR/SaltyNX-*.zip -d $BUILD_DIR
+
+        # alternative source > https://github.com/ppkantorski/Status-Monitor-Overlay/releases/download/v1.1.4%2B/Status-Monitor-Overlay.ovl
+        # cp -f $TMP_DIR/Status-Monitor-Overlay.ovl $BUILD_DIR/switch/.overlays/Status-Monitor-Overlay.ovl
+        $DOWNLOAD_COMMAND https://github.com/masagrator/Status-Monitor-Overlay/releases/download/1.1.8/Status-Monitor-Overlay.zip
+        $UNZIP_COMMAND $TMP_DIR/Status-Monitor-Overlay.zip -d $BUILD_DIR
     fi
-
-    # alternative source > https://sigmapatches.su/sys-patch.zip
-    # alternative source > https://github.com/impeeza/sys-patch/releases/download/v1.5.2/sys-patch-1.5.2-88297f8.zip
-    $DOWNLOAD_COMMAND https://github.com/impeeza/sys-patch/releases/download/v1.5.6/sys-patch.zip
-    $UNZIP_COMMAND $TMP_DIR/sys-patch.zip -d $BUILD_DIR
-    rm $BUILD_DIR/atmosphere/contents/420000000000000B/flags/boot2.flag
-
-    $DOWNLOAD_COMMAND https://github.com/ppkantorski/nx-ovlloader/releases/download/v1.0.9/nx-ovlloader.zip
-    $UNZIP_COMMAND $TMP_DIR/nx-ovlloader.zip -d $BUILD_DIR
-
-    $DOWNLOAD_COMMAND https://github.com/ppkantorski/Ultrahand-Overlay/releases/download/v1.8.3/ovlmenu.ovl
-    cp -f $TMP_DIR/ovlmenu.ovl $BUILD_DIR/switch/.overlays/ovlmenu.ovl
-
-    $DOWNLOAD_COMMAND https://github.com/ppkantorski/ovl-sysmodules/releases/download/v1.3.3/ovlSysmodules.ovl
-    cp -f $TMP_DIR/ovlSysmodules.ovl $BUILD_DIR/switch/.overlays/ovlSysmodules.ovl
-
-    $DOWNLOAD_COMMAND https://github.com/masagrator/SaltyNX/releases/download/1.2.3/SaltyNX-1.2.3.zip
-    $UNZIP_COMMAND $TMP_DIR/SaltyNX-*.zip -d $BUILD_DIR
-
-    # alternative source > https://github.com/ppkantorski/Status-Monitor-Overlay/releases/download/v1.1.4%2B/Status-Monitor-Overlay.ovl
-    # cp -f $TMP_DIR/Status-Monitor-Overlay.ovl $BUILD_DIR/switch/.overlays/Status-Monitor-Overlay.ovl
-    $DOWNLOAD_COMMAND https://github.com/masagrator/Status-Monitor-Overlay/releases/download/1.1.8/Status-Monitor-Overlay.zip
-    $UNZIP_COMMAND $TMP_DIR/Status-Monitor-Overlay.zip -d $BUILD_DIR
 
     $DOWNLOAD_COMMAND https://github.com/cathery/sys-ftpd/releases/download/1.0.5/sys-ftpd-1.0.5.zip
     $UNZIP_COMMAND $TMP_DIR/sys-ftpd-*.zip -d $BUILD_DIR
@@ -152,17 +152,20 @@ prepare_sx_gear() {
 }
 
 prepare_payload() {
-    # alternative source > https://sigmapatches.su/Lockpick_RCM_v1.9.12.zip
-    # $UNZIP_COMMAND $TMP_DIR/Lockpick_RCM_v1.9.12.zip -d $TMP_DIR/
-    $DOWNLOAD_COMMAND https://github.com/impeeza/Lockpick_RCMDecScots/releases/download/v1.9.15/Lockpick_RCM_1.9.15b.zip
-    $UNZIP_COMMAND $TMP_DIR/Lockpick_RCM_*.zip -d $BUILD_DIR/bootloader/payloads/
-    # cp -f $TMP_DIR/Lockpick_RCM.bin -d $BUILD_DIR/bootloader/payloads/Lockpick_RCM.bin
+    if [[ $ADDITIONAL_PACKAGES == true ]]
+    then
+        # alternative source > https://sigmapatches.su/Lockpick_RCM_v1.9.12.zip
+        # $UNZIP_COMMAND $TMP_DIR/Lockpick_RCM_v1.9.12.zip -d $TMP_DIR/
+        $DOWNLOAD_COMMAND https://github.com/impeeza/Lockpick_RCMDecScots/releases/download/v1.9.15/Lockpick_RCM_1.9.15b.zip
+        $UNZIP_COMMAND $TMP_DIR/Lockpick_RCM_*.zip -d $BUILD_DIR/bootloader/payloads/
+        # cp -f $TMP_DIR/Lockpick_RCM.bin -d $BUILD_DIR/bootloader/payloads/Lockpick_RCM.bin
+
+        $DOWNLOAD_COMMAND https://github.com/suchmememanyskill/TegraExplorer/releases/download/4.2.0/TegraExplorer.bin
+        cp -f $TMP_DIR/TegraExplorer.bin  -d $BUILD_DIR/bootloader/payloads/TegraExplorer.bin
+    fi
 
     $DOWNLOAD_COMMAND https://f38d61784492.hosting.myjino.ru/NintendoSwitch/mod_chip_toolbox.zip
     $UNZIP_COMMAND $TMP_DIR/mod_chip_toolbox.zip -d $BUILD_DIR/bootloader/payloads/
-
-    $DOWNLOAD_COMMAND https://github.com/suchmememanyskill/TegraExplorer/releases/download/4.2.0/TegraExplorer.bin
-    cp -f $TMP_DIR/TegraExplorer.bin  -d $BUILD_DIR/bootloader/payloads/TegraExplorer.bin
 }
 
 prepare_homebrew() {
@@ -204,21 +207,21 @@ prepare_homebrew() {
         mkdir $BUILD_DIR/switch/appstore || true
         $DOWNLOAD_COMMAND https://github.com/fortheusers/hb-appstore/releases/download/v2.3.2/appstore.nro
         cp -f $TMP_DIR/appstore.nro $BUILD_DIR/switch/appstore/appstore.nro
+
+        mkdir $BUILD_DIR/switch/DBI
+        $DOWNLOAD_COMMAND https://github.com/rashevskyv/dbi/releases/download/788ru/DBI.nro
+        cp -f $TMP_DIR/DBI.nro $BUILD_DIR/switch/DBI/DBI.nro
+
+        $DOWNLOAD_COMMAND https://github.com/HamletDuFromage/aio-switch-updater/releases/download/2.23.2/aio-switch-updater.zip
+        $UNZIP_COMMAND $TMP_DIR/aio-switch-updater.zip -d $BUILD_DIR
+
+        $DOWNLOAD_COMMAND https://github.com/ITotalJustice/sphaira/releases/download/0.10.2/sphaira.zip
+        $UNZIP_COMMAND $TMP_DIR/sphaira.zip $BUILD_DIR
     fi
-
-    mkdir $BUILD_DIR/switch/DBI
-    $DOWNLOAD_COMMAND https://github.com/rashevskyv/dbi/releases/download/749ru/DBI.nro
-    cp -f $TMP_DIR/DBI.nro $BUILD_DIR/switch/DBI/DBI.nro
-
-    $DOWNLOAD_COMMAND https://github.com/HamletDuFromage/aio-switch-updater/releases/download/2.23.2/aio-switch-updater.zip
-    $UNZIP_COMMAND $TMP_DIR/aio-switch-updater.zip -d $BUILD_DIR
 
     mkdir $BUILD_DIR/switch/ezremote-client || true
     $DOWNLOAD_COMMAND https://github.com/cy33hc/switch-ezremote-client/releases/download/1.13/ezremote-client.nro
     cp -f $TMP_DIR/ezremote-client.nro $BUILD_DIR/switch/ezremote-client/ezremote-client.nro
-
-    $DOWNLOAD_COMMAND https://github.com/ITotalJustice/sphaira/releases/download/0.10.2/sphaira.zip
-    $UNZIP_COMMAND $TMP_DIR/sphaira.zip $BUILD_DIR
 }
 
 prepare_emulators() {
@@ -250,9 +253,12 @@ prepare_mariko() {
 }
 
 patch_atmosphere() {
-    cp -f $SRC_ATMOSPHERE/exosphere.ini $BUILD_DIR/exosphere.ini
-    cp -f $SRC_ATMOSPHERE/config/override_config.ini $BUILD_DIR/atmosphere/config/override_config.ini
-    cp -f $SRC_ATMOSPHERE/config/system_settings.ini $BUILD_DIR/atmosphere/config/system_settings.ini
+    if [[ $ADDITIONAL_PACKAGES == true ]]; then
+        cp -f $SRC_ATMOSPHERE/exosphere.ini $BUILD_DIR/exosphere.ini
+        cp -f $SRC_ATMOSPHERE/config/override_config.ini $BUILD_DIR/atmosphere/config/override_config.ini
+        cp -f $SRC_ATMOSPHERE/config/system_settings.ini $BUILD_DIR/atmosphere/config/system_settings.ini
+    fi
+
     mkdir $BUILD_DIR/atmosphere/hosts || true
     cp -f $SRC_ATMOSPHERE/hosts/* $BUILD_DIR/atmosphere/hosts
 }
@@ -264,27 +270,31 @@ patch_hekate() {
 }
 
 patch_home_menu() {
-    mkdir $BUILD_DIR/games
-    $DOWNLOAD_COMMAND "https://f38d61784492.hosting.myjino.ru/NintendoSwitch/hbmenu.nsp"
-    cp $TMP_DIR/hbmenu.nsp -d $BUILD_DIR/games/hbmenu.nsp
-    $DOWNLOAD_COMMAND "https://f38d61784492.hosting.myjino.ru/NintendoSwitch/hbmenu_19.nsp"
-    cp $TMP_DIR/hbmenu_19.nsp -d $BUILD_DIR/games/hbmenu_19.nsp
+    if [[ $ADDITIONAL_PACKAGES == true ]]; then
+        mkdir $BUILD_DIR/games
+        $DOWNLOAD_COMMAND "https://f38d61784492.hosting.myjino.ru/NintendoSwitch/hbmenu.nsp"
+        cp $TMP_DIR/hbmenu.nsp -d $BUILD_DIR/games/hbmenu.nsp
+        $DOWNLOAD_COMMAND "https://f38d61784492.hosting.myjino.ru/NintendoSwitch/hbmenu_19.nsp"
+        cp $TMP_DIR/hbmenu_19.nsp -d $BUILD_DIR/games/hbmenu_19.nsp
+    fi
+
     $DOWNLOAD_COMMAND https://github.com/cy33hc/switch-ezremote-client/releases/download/1.13/ezremote-client.nsp
     cp -f $TMP_DIR/ezremote-client.nsp $BUILD_DIR/games/ezremote-client.nsp
 }
 
 patch_homebrew() {
-    cp -f "$SRC_HOMEBREW/dbi/dbi.config" "$BUILD_DIR/switch/DBI/dbi.config"
+    if [[ $ADDITIONAL_PACKAGES == true ]]; then
+        cp -f "$SRC_HOMEBREW/dbi/dbi.config" "$BUILD_DIR/switch/DBI/dbi.config"
+
+        mkdir $BUILD_DIR/config/AtmoPackUpdater
+        cp -f "$SRC_HOMEBREW/atmo-pack-updater/config.json" "$BUILD_DIR/config/AtmoPackUpdater/config.json"
+    fi
 
     mkdir -p $BUILD_DIR/config/aio-switch-updater
     cp -f "$SRC_HOMEBREW/aio-switch-updater/custom_packs.json" "$BUILD_DIR/config/aio-switch-updater/custom_packs.json"
 
-    mkdir $BUILD_DIR/config/AtmoPackUpdater
-    cp -f "$SRC_HOMEBREW/atmo-pack-updater/config.json" "$BUILD_DIR/config/AtmoPackUpdater/config.json"
-
     mkdir $BUILD_DIR/switch/ezremote-client || true
     cp -f "$SRC_HOMEBREW/ezremote-client/config.ini" "$BUILD_DIR/switch/ezremote-client/config.ini"
-
 }
 
 patch_overlay() {
@@ -329,19 +339,18 @@ patch_icons() {
 
 
 mkdir $TMP_DIR $BUILD_DIR $BUILD_ULTRAHAND_DIR
-prepare_deepsea
-prepare_sigpatches
-prepare_sx_gear
+prepare_ultra
+# prepare_sigpatches
+# prepare_sx_gear
 prepare_payload
 prepare_homebrew
-# prepare_emulators
 prepare_overlays
 prepare_cheat
-prepare_overclock
+# prepare_overclock
 prepare_mariko
 
 patch_atmosphere
-patch_hekate
+# patch_hekate
 patch_home_menu
 patch_homebrew
 patch_overlay
