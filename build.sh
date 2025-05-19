@@ -134,12 +134,13 @@ prepare_overlays() {
     then
         $DOWNLOAD_COMMAND https://github.com/nedex/QuickNTP/releases/download/1.2.8-1/quickntp-1.2.8-1.zip
         $UNZIP_COMMAND $TMP_DIR/quickntp-*.zip -d $BUILD_DIR
+
+        # alternative source > https://sigmapatches.su/sys-patch.zip
+        $DOWNLOAD_COMMAND https://github.com/impeeza/sys-patch/releases/download/v1.5.2/sys-patch-1.5.2-88297f8.zip
+        $UNZIP_COMMAND $TMP_DIR/sys-patch-*.zip -d $BUILD_DIR
+        rm $BUILD_DIR/atmosphere/contents/420000000000000B/flags/boot2.flag
     fi
 
-    # alternative source > https://sigmapatches.su/sys-patch.zip
-    $DOWNLOAD_COMMAND https://github.com/impeeza/sys-patch/releases/download/v1.5.2/sys-patch-1.5.2-88297f8.zip
-    $UNZIP_COMMAND $TMP_DIR/sys-patch-*.zip -d $BUILD_DIR
-    rm $BUILD_DIR/atmosphere/contents/420000000000000B/flags/boot2.flag
 
     $DOWNLOAD_COMMAND https://github.com/ppkantorski/nx-ovlloader/releases/download/v1.0.8/nx-ovlloader.zip
     $UNZIP_COMMAND $TMP_DIR/nx-ovlloader.zip -d $BUILD_DIR
