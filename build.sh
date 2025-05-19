@@ -30,27 +30,8 @@ prepare_atmosphere() {
     cp $TMP_DIR/fusee.bin $BUILD_DIR/bootloader/payloads/fusee.bin
 }
 
-prepare_evaron_atmosphere() {
-    $DOWNLOAD_COMMAND https://github.com/pgalonza/ns-Atmosphere/releases/download/0.1.0/atmosphere-1.7.0-notbranch-dd29b60c3-hbl-2.4.4+hbmenu-3.6.0.zip
-    $UNZIP_COMMAND $TMP_DIR/atmosphere-*.zip -d $BUILD_DIR
-
-    $DOWNLOAD_COMMAND https://github.com/pgalonza/ns-Atmosphere/releases/download/0.1.0/fusee.bin
-    cp $TMP_DIR/fusee.bin $BUILD_DIR/bootloader/payloads/fusee.bin
-}
-
-prepare_deepsea() {
-    $DOWNLOAD_COMMAND https://github.com/Team-Neptune/DeepSea/releases/download/v4.11.0/deepsea-advanced_v4.11.0.zip
-    $UNZIP_COMMAND $TMP_DIR/deepsea-advanced_*.zip -d $BUILD_DIR
-
-    $DOWNLOAD_COMMAND https://github.com/pgalonza/ns-Atmosphere/releases/download/0.2.0/fusee.bin
-    cp $TMP_DIR/fusee.bin $BUILD_DIR/bootloader/payloads/fusee.bin
-
-    # rm -rf $BUILD_DIR/atmosphere/contents/420000000000000E /config/sys-ftpd
-    rm -rf $BUILD_DIR/atmosphere/contents/420000000000000F $BUILD_DIR/config/sys-ftpd-10k
-}
-
 prepare_kefir() {
-    $DOWNLOAD_COMMAND https://github.com/rashevskyv/kefir/releases/download/758/kefir758.zip
+    $DOWNLOAD_COMMAND https://github.com/rashevskyv/kefir/releases/download/765/kefir765.zip
     $UNZIP_COMMAND $TMP_DIR/kefir_*.zip -d $BUILD_DIR
 }
 
@@ -60,22 +41,22 @@ prepare_gnx() {
 }
 
 prepare_ultra() {
-    $DOWNLOAD_COMMAND https://github.com/Ultra-NX/UltraNX/releases/download/2.3-R3/Ultra.zip
+    $DOWNLOAD_COMMAND https://github.com/Ultra-NX/UltraNX/releases/download/2.4-R1/Ultra.zip
     $UNZIP_COMMAND $TMP_DIR/Ultra.zip -d $BUILD_DIR
 }
 
 prepare_next() {
-    $DOWNLOAD_COMMAND https://codeberg.org/vampitech/NeXT/releases/download/3.33/NeXT.zip
+    $DOWNLOAD_COMMAND https://codeberg.org/vampitech/NeXT/releases/download/3.34/NeXT.zip
     $UNZIP_COMMAND $TMP_DIR/Next.zip -d $BUILD_DIR
 }
 
 prepare_shallowsea() {
-    $DOWNLOAD_COMMAND https://codeberg.org/carcaschoi/Shallowsea/releases/download/v2.24.2/ShallowSea-ams.zip
+    $DOWNLOAD_COMMAND https://codeberg.org/carcaschoi/Shallowsea/releases/download/v2.25.1/ShallowSea-ams.zip
     $UNZIP_COMMAND $TMP_DIR/ShallowSea-*.zip -d $BUILD_DIR
 }
 
 prepare_4ifir() {
-    $DOWNLOAD_COMMAND https://github.com/rashevskyv/4ifir-checker/raw/1631819/github/4IFIR.zip
+    $DOWNLOAD_COMMAND https://github.com/rashevskyv/4ifir-checker/releases/download/v2025.05.13-19.03/4IFIR.zip
     $UNZIP_COMMAND $TMP_DIR/4IFIR-*.zip -d $BUILD_DIR
 }
 
@@ -84,13 +65,8 @@ prepare_hats() {
     $UNZIP_COMMAND $TMP_DIR/HATS-*.zip -d $BUILD_DIR
 }
 
-prepare_santa_atmo() {
-    $DOWNLOAD_COMMAND https://santa-atmo.ru/nintendo/atmo-1.8.0-161024.zip
-    $UNZIP_COMMAND $TMP_DIR/atmo-*.zip -d $BUILD_DIR
-}
-
 prepare_venom() {
-    $DOWNLOAD_COMMAND https://github.com/CatcherITGF/NX-Venom/releases/download/5.2.0/NXVenom.zip
+    $DOWNLOAD_COMMAND https://github.com/CatcherITGF/NX-Venom/releases/download/6.0.0/NXVenom.zip
     $UNZIP_COMMAND $TMP_DIR/NXVenom.zip -d $BUILD_DIR
 }
 
@@ -131,7 +107,7 @@ prepare_scripts() {
 prepare_sigpatches() {
     # alternative source > https://sigmapatches.su/sigpatches.zip
     # $UNZIP_COMMAND $TMP_DIR/sigpatches.zip -d $BUILD_DIR
-    $DOWNLOAD_COMMAND https://f38d61784492.hosting.myjino.ru/NintendoSwitch/atmosphere-1.9.0-master-1d3f3c6e5+ReenableSigpatches.zip
+    $DOWNLOAD_COMMAND https://f38d61784492.hosting.myjino.ru/NintendoSwitch/Hekate+AMS-package3-sigpatches-1.9.0P-cfw-20.0.1_V1.zip
     $UNZIP_COMMAND $TMP_DIR/Hekate+AMS-package3-sigpatches-*.zip -d $BUILD_DIR
 }
 
@@ -157,7 +133,7 @@ prepare_overlays() {
     $DOWNLOAD_COMMAND https://github.com/ppkantorski/ovl-sysmodules/releases/download/v1.3.3/ovlSysmodules.ovl
     cp -f $TMP_DIR/ovlSysmodules.ovl $BUILD_DIR/switch/.overlays/ovlSysmodules.ovl
 
-    $DOWNLOAD_COMMAND https://github.com/masagrator/SaltyNX/releases/download/1.2.2/SaltyNX-1.2.2.zip
+    $DOWNLOAD_COMMAND https://github.com/masagrator/SaltyNX/releases/download/1.2.3/SaltyNX-1.2.3.zip
     $UNZIP_COMMAND $TMP_DIR/SaltyNX-*.zip -d $BUILD_DIR
 
     # alternative source > https://github.com/ppkantorski/Status-Monitor-Overlay/releases/download/v1.1.4%2B/Status-Monitor-Overlay.ovl
@@ -219,9 +195,6 @@ prepare_homebrew() {
         $DOWNLOAD_COMMAND https://github.com/mtheall/ftpd/releases/download/v3.2.1/ftpd.nro
         cp -f $TMP_DIR/ftpd.nro $BUILD_DIR/switch/ftpd.nro
 
-        $DOWNLOAD_COMMAND https://github.com/mrdude2478/Tinwoo-Release/releases/download/1.0.27/Tinwoo-Installer.zip
-        $UNZIP_COMMAND $TMP_DIR/Tinwoo-Installer.zip $BUILD_DIR
-
         $DOWNLOAD_COMMAND https://github.com/PoloNX/SimpleModDownloader/releases/download/2.1.0/SimpleModDownloader.nro
         cp -f $TMP_DIR/SimpleModDownloader.nro $BUILD_DIR/switch/SimpleModDownloader.nro
 
@@ -244,7 +217,7 @@ prepare_homebrew() {
     $DOWNLOAD_COMMAND https://github.com/cy33hc/switch-ezremote-client/releases/download/1.13/ezremote-client.nro
     cp -f $TMP_DIR/ezremote-client.nro $BUILD_DIR/switch/ezremote-client/ezremote-client.nro
 
-    $DOWNLOAD_COMMAND https://github.com/ITotalJustice/sphaira/releases/download/0.9.1/sphaira.zip
+    $DOWNLOAD_COMMAND https://github.com/ITotalJustice/sphaira/releases/download/0.10.2/sphaira.zip
     $UNZIP_COMMAND $TMP_DIR/sphaira.zip $BUILD_DIR
 }
 
@@ -253,7 +226,7 @@ prepare_emulators() {
     7z x $TMP_DIR/Release_PPSSPP_Standalone_*.7z -o"$BUILD_DIR" -aoa
     rm $BUILD_DIR/README.txt $BUILD_DIR/LICENSE.txt
 
-    $DOWNLOAD_COMMAND https://buildbot.libretro.com/stable/1.20.0/nintendo/switch/libnx/RetroArch.7z
+    $DOWNLOAD_COMMAND https://buildbot.libretro.com/stable/1.21.0/nintendo/switch/libnx/RetroArch.7z
     7z x $TMP_DIR/RetroArch.7z -o"$BUILD_DIR" -aoa
 }
 
