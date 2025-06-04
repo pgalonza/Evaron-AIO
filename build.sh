@@ -17,58 +17,58 @@ DOWNLOAD_COMMAND="curl --remote-name --fail --output-dir $TMP_DIR --location"
 
 ADDITIONAL_PACKAGES=false
 
-prepare_hekate() {
-    $DOWNLOAD_COMMAND https://github.com/CTCaer/hekate/releases/download/v6.3.0/hekate_ctcaer_6.3.0_Nyx_1.7.0.zip
-    $UNZIP_COMMAND $TMP_DIR/hekate_ctcaer_*.zip -d $BUILD_DIR
-}
+# prepare_hekate() {
+#     $DOWNLOAD_COMMAND https://github.com/CTCaer/hekate/releases/download/v6.3.0/hekate_ctcaer_6.3.0_Nyx_1.7.0.zip
+#     $UNZIP_COMMAND $TMP_DIR/hekate_ctcaer_*.zip -d $BUILD_DIR
+# }
 
-prepare_atmosphere() {
-    $DOWNLOAD_COMMAND https://github.com/Atmosphere-NX/Atmosphere/releases/download/1.8.0-prerelease/atmosphere-1.8.0-master-c6014b533+hbl-2.4.4+hbmenu-3.6.0.zip
-    $UNZIP_COMMAND $TMP_DIR/atmosphere-*.zip -d $BUILD_DIR
+# prepare_atmosphere() {
+#     $DOWNLOAD_COMMAND https://github.com/Atmosphere-NX/Atmosphere/releases/download/1.8.0-prerelease/atmosphere-1.8.0-master-c6014b533+hbl-2.4.4+hbmenu-3.6.0.zip
+#     $UNZIP_COMMAND $TMP_DIR/atmosphere-*.zip -d $BUILD_DIR
 
-    $DOWNLOAD_COMMAND https://github.com/Atmosphere-NX/Atmosphere/releases/download/1.8.0-prerelease/fusee.bin
-    cp $TMP_DIR/fusee.bin $BUILD_DIR/bootloader/payloads/fusee.bin
-}
+#     $DOWNLOAD_COMMAND https://github.com/Atmosphere-NX/Atmosphere/releases/download/1.8.0-prerelease/fusee.bin
+#     cp $TMP_DIR/fusee.bin $BUILD_DIR/bootloader/payloads/fusee.bin
+# }
 
-prepare_kefir() {
-    $DOWNLOAD_COMMAND https://github.com/rashevskyv/kefir/releases/download/765/kefir765.zip
-    $UNZIP_COMMAND $TMP_DIR/kefir_*.zip -d $BUILD_DIR
-}
+# prepare_kefir() {
+#     $DOWNLOAD_COMMAND https://github.com/rashevskyv/kefir/releases/download/765/kefir765.zip
+#     $UNZIP_COMMAND $TMP_DIR/kefir_*.zip -d $BUILD_DIR
+# }
 
-prepare_gnx() {
-    $DOWNLOAD_COMMAND https://github.com/vncsmnl/GNX/releases/download/19.0.1-01/2024.12.23.GNX.19.0.1-01.zip
-    $UNZIP_COMMAND $TMP_DIR/*.GNC.*.zip -d $BUILD_DIR
-}
+# prepare_gnx() {
+#     $DOWNLOAD_COMMAND https://github.com/vncsmnl/GNX/releases/download/19.0.1-01/2024.12.23.GNX.19.0.1-01.zip
+#     $UNZIP_COMMAND $TMP_DIR/*.GNC.*.zip -d $BUILD_DIR
+# }
 
 prepare_ultra() {
     $DOWNLOAD_COMMAND https://github.com/Ultra-NX/UltraNX/releases/download/2.4-R1/Ultra.zip
     $UNZIP_COMMAND $TMP_DIR/Ultra.zip -d $BUILD_DIR
 }
 
-prepare_next() {
-    $DOWNLOAD_COMMAND https://codeberg.org/vampitech/NeXT/releases/download/3.34/NeXT.zip
-    $UNZIP_COMMAND $TMP_DIR/Next.zip -d $BUILD_DIR
-}
+# prepare_next() {
+#     $DOWNLOAD_COMMAND https://codeberg.org/vampitech/NeXT/releases/download/3.34/NeXT.zip
+#     $UNZIP_COMMAND $TMP_DIR/Next.zip -d $BUILD_DIR
+# }
 
-prepare_shallowsea() {
-    $DOWNLOAD_COMMAND https://codeberg.org/carcaschoi/Shallowsea/releases/download/v2.25.1/ShallowSea-ams.zip
-    $UNZIP_COMMAND $TMP_DIR/ShallowSea-*.zip -d $BUILD_DIR
-}
+# prepare_shallowsea() {
+#     $DOWNLOAD_COMMAND https://codeberg.org/carcaschoi/Shallowsea/releases/download/v2.25.1/ShallowSea-ams.zip
+#     $UNZIP_COMMAND $TMP_DIR/ShallowSea-*.zip -d $BUILD_DIR
+# }
 
-prepare_4ifir() {
-    $DOWNLOAD_COMMAND https://github.com/rashevskyv/4ifir-checker/releases/download/v2025.05.13-19.03/4IFIR.zip
-    $UNZIP_COMMAND $TMP_DIR/4IFIR-*.zip -d $BUILD_DIR
-}
+# prepare_4ifir() {
+#     $DOWNLOAD_COMMAND https://github.com/rashevskyv/4ifir-checker/releases/download/v2025.05.13-19.03/4IFIR.zip
+#     $UNZIP_COMMAND $TMP_DIR/4IFIR-*.zip -d $BUILD_DIR
+# }
 
-prepare_hats() {
-    $DOWNLOAD_COMMAND https://www.mediafire.com/file_premium/rg6pbf52fvgp4fo/HATS-1.8.0-V1.3.zip/file
-    $UNZIP_COMMAND $TMP_DIR/HATS-*.zip -d $BUILD_DIR
-}
+# prepare_hats() {
+#     $DOWNLOAD_COMMAND https://www.mediafire.com/file_premium/rg6pbf52fvgp4fo/HATS-1.8.0-V1.3.zip/file
+#     $UNZIP_COMMAND $TMP_DIR/HATS-*.zip -d $BUILD_DIR
+# }
 
-prepare_venom() {
-    $DOWNLOAD_COMMAND https://github.com/CatcherITGF/NX-Venom/releases/download/6.0.0/NXVenom.zip
-    $UNZIP_COMMAND $TMP_DIR/NXVenom.zip -d $BUILD_DIR
-}
+# prepare_venom() {
+#     $DOWNLOAD_COMMAND https://github.com/CatcherITGF/NX-Venom/releases/download/6.0.0/NXVenom.zip
+#     $UNZIP_COMMAND $TMP_DIR/NXVenom.zip -d $BUILD_DIR
+# }
 
 prepare_overclock() {
     if [[ $ADDITIONAL_PACKAGES == true ]]
@@ -87,15 +87,16 @@ prepare_overclock() {
 
         $DOWNLOAD_COMMAND https://github.com/masagrator/FPSLocker/releases/download/2.1.1/FPSLocker.ovl
         cp -f $TMP_DIR/FPSLocker.ovl $BUILD_DIR/switch/.overlays/FPSLocker.ovl
+
+        # alternative source > https://github.com/retronx-team/sys-clk/releases/download/2.0.1/sys-clk-2.0.1.zip
+        # alternative source > https://f38d61784492.hosting.myjino.ru/NintendoSwitch/sys-clk_1.1.4_eos.zip
+        $DOWNLOAD_COMMAND https://github.com/halop/OC_Toolkit_SC_EOS/releases/download/1.6.0/sys-clk.zip
+        $UNZIP_COMMAND $TMP_DIR/sys-clk.zip -d $BUILD_DIR
+
+        $DOWNLOAD_COMMAND https://github.com/masagrator/ReverseNX-RT/releases/download/2.1.0/ReverseNX-RT-ovl.ovl
+        cp -f $TMP_DIR/ReverseNX-RT-ovl.ovl $BUILD_DIR/switch/.overlays/ReverseNX-RT-ovl.ovl
     fi
 
-    # alternative source > https://github.com/retronx-team/sys-clk/releases/download/2.0.1/sys-clk-2.0.1.zip
-    # alternative source > https://f38d61784492.hosting.myjino.ru/NintendoSwitch/sys-clk_1.1.4_eos.zip
-    $DOWNLOAD_COMMAND https://github.com/halop/OC_Toolkit_SC_EOS/releases/download/1.6.0/sys-clk.zip
-    $UNZIP_COMMAND $TMP_DIR/sys-clk.zip -d $BUILD_DIR
-
-    $DOWNLOAD_COMMAND https://github.com/masagrator/ReverseNX-RT/releases/download/2.1.0/ReverseNX-RT-ovl.ovl
-    cp -f $TMP_DIR/ReverseNX-RT-ovl.ovl $BUILD_DIR/switch/.overlays/ReverseNX-RT-ovl.ovl
 }
 
 prepare_scripts() {
