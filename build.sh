@@ -256,12 +256,16 @@ patch_homebrew() {
 }
 
 patch_overlay() {
+    if [[ $ADDITIONAL_PACKAGES == true ]]; then
+        e-curl https://github.com/halop/OC_Toolkit_SC_EOS/releases/download/1.6.1/OC.Toolkit.zip
+        e-unzip $TMP_DIR/OC.Toolkit.zip -d $BUILD_DIR/switch/.packages/
+    fi
+
+    mkdir $BUILD_DIR/config/sys-ftpd || true
     cp -f "$SRC_OVERLAY/sys-ftpd/config.ini" "$BUILD_DIR/config/sys-ftpd/config.ini"
 
     mkdir $BUILD_DIR/switch/.packages || true
     cp -rf "$SRC_OVERLAY/ultrahand-overlay/"* "$BUILD_DIR/switch/.packages/"
-    e-curl https://github.com/halop/OC_Toolkit_SC_EOS/releases/download/1.6.1/OC.Toolkit.zip
-    UNZIP_COMMAND $TMP_DIR/OC.Toolkit.zip -d $BUILD_DIR/switch/.packages/
 }
 
 patch_splash_screen_package3() {
