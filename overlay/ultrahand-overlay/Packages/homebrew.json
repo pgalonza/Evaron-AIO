@@ -56,6 +56,11 @@
         "file-url": "https://github.com/fortheusers/hb-appstore/releases/latest/download/appstore.nro"
     },
     {
+        "name": "Goldleaf - latest",
+        "path": "/switch/",
+        "file-url": "https://github.com/XorTroll/Goldleaf/releases/latest/download/Goldleaf.nro"
+    },
+    {
         "name": "aio-switch-updater - latest",
         "path": "/",
         "zip-name": "aio-switch-updater.zip",
