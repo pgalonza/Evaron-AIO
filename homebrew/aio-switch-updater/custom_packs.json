@@ -4,6 +4,7 @@
         "[PACK] UltraNX": "https://github.com/Ultra-NX/Ultra/releases/latest/download/Ultra.zip"
     },
     "misc": {
-        "Refresh AIO": "https://github.com/Ultra-NX/Ultra-Resources/releases/download/Homebrews/AIO.zip"
+        "Refresh AIO": "https://github.com/Ultra-NX/Ultra-Resources/releases/download/Homebrews/AIO.zip",
+        "Ultrahand Packages": "https://github.com/pgalonza/Evaron-AIO/releases/latest/download/Ultrahand-packages.zip"
     }
 }
