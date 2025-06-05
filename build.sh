@@ -301,13 +301,10 @@ patch_icons() {
 
 mkdir $TMP_DIR $BUILD_DIR $BUILD_ULTRAHAND_DIR
 prepare_ultra
-# prepare_sigpatches
-# prepare_sx_gear
 prepare_payload
 prepare_homebrew
 prepare_overlays
 prepare_cheat
-prepare_overclock
 prepare_mariko
 
 patch_atmosphere
