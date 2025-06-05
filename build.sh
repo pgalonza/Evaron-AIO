@@ -17,58 +17,10 @@ DOWNLOAD_COMMAND="curl --remote-name --fail --output-dir $TMP_DIR --location"
 
 ADDITIONAL_PACKAGES=false
 
-# prepare_hekate() {
-#     $DOWNLOAD_COMMAND https://github.com/CTCaer/hekate/releases/download/v6.3.0/hekate_ctcaer_6.3.0_Nyx_1.7.0.zip
-#     $UNZIP_COMMAND $TMP_DIR/hekate_ctcaer_*.zip -d $BUILD_DIR
-# }
-
-# prepare_atmosphere() {
-#     $DOWNLOAD_COMMAND https://github.com/Atmosphere-NX/Atmosphere/releases/download/1.8.0-prerelease/atmosphere-1.8.0-master-c6014b533+hbl-2.4.4+hbmenu-3.6.0.zip
-#     $UNZIP_COMMAND $TMP_DIR/atmosphere-*.zip -d $BUILD_DIR
-
-#     $DOWNLOAD_COMMAND https://github.com/Atmosphere-NX/Atmosphere/releases/download/1.8.0-prerelease/fusee.bin
-#     cp $TMP_DIR/fusee.bin $BUILD_DIR/bootloader/payloads/fusee.bin
-# }
-
-# prepare_kefir() {
-#     $DOWNLOAD_COMMAND https://github.com/rashevskyv/kefir/releases/download/765/kefir765.zip
-#     $UNZIP_COMMAND $TMP_DIR/kefir_*.zip -d $BUILD_DIR
-# }
-
-# prepare_gnx() {
-#     $DOWNLOAD_COMMAND https://github.com/vncsmnl/GNX/releases/download/19.0.1-01/2024.12.23.GNX.19.0.1-01.zip
-#     $UNZIP_COMMAND $TMP_DIR/*.GNC.*.zip -d $BUILD_DIR
-# }
-
 prepare_ultra() {
     $DOWNLOAD_COMMAND https://github.com/Ultra-NX/UltraNX/releases/download/2.4-R2/Ultra.zip
     $UNZIP_COMMAND $TMP_DIR/Ultra.zip -d $BUILD_DIR
 }
-
-# prepare_next() {
-#     $DOWNLOAD_COMMAND https://codeberg.org/vampitech/NeXT/releases/download/3.34/NeXT.zip
-#     $UNZIP_COMMAND $TMP_DIR/Next.zip -d $BUILD_DIR
-# }
-
-# prepare_shallowsea() {
-#     $DOWNLOAD_COMMAND https://codeberg.org/carcaschoi/Shallowsea/releases/download/v2.25.1/ShallowSea-ams.zip
-#     $UNZIP_COMMAND $TMP_DIR/ShallowSea-*.zip -d $BUILD_DIR
-# }
-
-# prepare_4ifir() {
-#     $DOWNLOAD_COMMAND https://github.com/rashevskyv/4ifir-checker/releases/download/v2025.05.13-19.03/4IFIR.zip
-#     $UNZIP_COMMAND $TMP_DIR/4IFIR-*.zip -d $BUILD_DIR
-# }
-
-# prepare_hats() {
-#     $DOWNLOAD_COMMAND https://www.mediafire.com/file_premium/rg6pbf52fvgp4fo/HATS-1.8.0-V1.3.zip/file
-#     $UNZIP_COMMAND $TMP_DIR/HATS-*.zip -d $BUILD_DIR
-# }
-
-# prepare_venom() {
-#     $DOWNLOAD_COMMAND https://github.com/CatcherITGF/NX-Venom/releases/download/6.0.0/NXVenom.zip
-#     $UNZIP_COMMAND $TMP_DIR/NXVenom.zip -d $BUILD_DIR
-# }
 
 prepare_overclock() {
     if [[ $ADDITIONAL_PACKAGES == true ]]
