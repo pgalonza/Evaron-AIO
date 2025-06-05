@@ -5,7 +5,7 @@
 # changelog header
 header = """
 # Changelog\n
-HOS: 19
+HOS: 20
 Based on CFW: UltraNX
 """
 # template for the changelog body
