@@ -74,12 +74,6 @@
         "zip-url": "https://f38d61784492.hosting.myjino.ru/NintendoSwitch/linkalho-latest.zip"
     },
     {
-        "name": "EdiZon-SE - latest",
-        "path": "/",
-        "zip-name": "EdiZon.zip",
-        "zip-url": "https://github.com/tomvita/EdiZon-SE/releases/latest/download/EdiZon.zip"
-    },
-    {
         "name": "Breeze-Beta - latest",
         "path": "/",
         "zip-name": "Breeze.zip",
