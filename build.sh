@@ -17,6 +17,11 @@ DOWNLOAD_COMMAND="curl --remote-name --fail --output-dir $TMP_DIR --location"
 
 ADDITIONAL_PACKAGES=false
 
+prepare_hekate() {
+     $DOWNLOAD_COMMAND https://github.com/CTCaer/hekate/releases/download/v6.3.0/hekate_ctcaer_6.3.0_Nyx_1.7.0.zip
+     $UNZIP_COMMAND $TMP_DIR/hekate_ctcaer_*.zip -d $BUILD_DIR
+}
+
 prepare_ultra() {
     $DOWNLOAD_COMMAND https://github.com/Ultra-NX/UltraNX/releases/download/2.4-R2/Ultra.zip
     $UNZIP_COMMAND $TMP_DIR/Ultra.zip -d $BUILD_DIR
