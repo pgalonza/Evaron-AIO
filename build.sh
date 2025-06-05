@@ -48,7 +48,6 @@ prepare_overclock() {
         $DOWNLOAD_COMMAND https://github.com/masagrator/ReverseNX-RT/releases/download/2.1.0/ReverseNX-RT-ovl.ovl
         cp -f $TMP_DIR/ReverseNX-RT-ovl.ovl $BUILD_DIR/switch/.overlays/ReverseNX-RT-ovl.ovl
     fi
-
 }
 
 prepare_scripts() {
@@ -249,8 +248,11 @@ patch_homebrew() {
 
 patch_overlay() {
     cp -f "$SRC_OVERLAY/sys-ftpd/config.ini" "$BUILD_DIR/config/sys-ftpd/config.ini"
+
     mkdir $BUILD_DIR/switch/.packages || true
     cp -rf "$SRC_OVERLAY/ultrahand-overlay/"* "$BUILD_DIR/switch/.packages/"
+    $DOWNLOAD_COMMAND https://github.com/halop/OC_Toolkit_SC_EOS/releases/download/1.6.1/OC.Toolkit.zip
+    UNZIP_COMMAND $TMP_DIR/OC.Toolkit.zip -d $BUILD_DIR/switch/.packages/
 }
 
 patch_splash_screen_package3() {
@@ -296,7 +298,7 @@ prepare_payload
 prepare_homebrew
 prepare_overlays
 prepare_cheat
-# prepare_overclock
+prepare_overclock
 prepare_mariko
 
 patch_atmosphere
