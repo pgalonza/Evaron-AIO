@@ -1,0 +1,10 @@
+[
+    {
+        "name": "The-Witcher",
+        "path": "/bootloader/res/bootscreen-witcher.bmp"
+    },
+    {
+        "name": "Gachi",
+        "path": "/bootloader/res/bootscreen-gachi.bmp"
+    }
+]

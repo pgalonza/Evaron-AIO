@@ -213,9 +213,13 @@ patch_atmosphere() {
 }
 
 patch_hekate() {
-    cp $BUILD_DIR/hekate_ctcaer_*.bin $BUILD_DIR/payload.bin || true
-    rm $BUILD_DIR/hekate_ctcaer_*.bin || true
-    cp -f $SRC_HEKATE_DIR/hekate_ipl.ini $BUILD_DIR/bootloader/hekate_ipl.ini
+    if [[ $ADDITIONAL_PACKAGES == true ]]; then
+        cp $BUILD_DIR/hekate_ctcaer_*.bin $BUILD_DIR/payload.bin || true
+        rm $BUILD_DIR/hekate_ctcaer_*.bin || true
+        cp -f $SRC_HEKATE_DIR/hekate_ipl.ini $BUILD_DIR/bootloader/hekate_ipl.ini
+    fi
+
+    cp $SRC_HEKATE_DIR/bootscreen/* $BUILD_DIR/bootloader/res/
 }
 
 patch_home_menu() {
@@ -302,7 +306,7 @@ prepare_overclock
 prepare_mariko
 
 patch_atmosphere
-# patch_hekate
+patch_hekate
 patch_home_menu
 patch_homebrew
 patch_overlay
