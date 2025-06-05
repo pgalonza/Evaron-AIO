@@ -5,6 +5,7 @@ set -o xtrace
 
 TMP_DIR="./tmp"
 BUILD_DIR="./build"
+BUILD_ULTRAHAND_DIR="./packages"
 SRC_ASSETS_DIR="./assets"
 SRC_HEKATE_DIR="./hekate"
 SRC_ATMOSPHERE="./atmosphere"
@@ -302,7 +303,7 @@ patch_icons() {
 }
 
 
-mkdir $TMP_DIR $BUILD_DIR
+mkdir $TMP_DIR $BUILD_DIR $BUILD_ULTRAHAND_DIR
 prepare_ultra
 prepare_payload
 prepare_homebrew
