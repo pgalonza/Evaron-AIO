@@ -12,8 +12,8 @@ SRC_ATMOSPHERE="./atmosphere"
 SRC_HOMEBREW="./homebrew"
 SRC_OVERLAY="./overlay"
 
-alias e-unzip="unzip -o"
-alias e-curl="curl --remote-name --fail --output-dir $TMP_DIR --location"
+alias e-unzip='unzip -o'
+alias e-curl='curl --remote-name --fail --output-dir $TMP_DIR --location'
 
 ADDITIONAL_PACKAGES=false
 
