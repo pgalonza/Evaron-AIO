@@ -228,13 +228,6 @@ patch_hekate() {
 }
 
 patch_home_menu() {
-    if [[ $ADDITIONAL_PACKAGES == true ]]; then
-        $DOWNLOAD_COMMAND "https://f38d61784492.hosting.myjino.ru/NintendoSwitch/hbmenu.nsp"
-        cp $TMP_DIR/hbmenu.nsp -d $BUILD_DIR/games/hbmenu.nsp
-        $DOWNLOAD_COMMAND "https://f38d61784492.hosting.myjino.ru/NintendoSwitch/hbmenu_19.nsp"
-        cp $TMP_DIR/hbmenu_19.nsp -d $BUILD_DIR/games/hbmenu_19.nsp
-    fi
-
     mkdir $BUILD_DIR/games
     $DOWNLOAD_COMMAND https://github.com/cy33hc/switch-ezremote-client/releases/download/1%2C13/ezremote-client.nsp
     cp -f $TMP_DIR/ezremote-client.nsp $BUILD_DIR/games/ezremote-client.nsp
