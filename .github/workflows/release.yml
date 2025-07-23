@@ -13,7 +13,6 @@ jobs:
     uses: ./.github/workflows/build-jobs.yaml
   create-release:
     runs-on: ubuntu-latest
-    container: ghcr.io/${{ github.repository_owner }}/aio-build:latest
     needs: build-workflow
     steps:
       - name: Checkout
@@ -22,6 +21,7 @@ jobs:
           fetch-depth: 0
       - name: Generate a changelog
         uses: orhun/git-cliff-action@v4
+        id: git-cliff
         with:
           config: ./configs/cliff.toml
           args: --verbose --current
