@@ -18,12 +18,12 @@ DOWNLOAD_COMMAND="curl --remote-name --fail --output-dir $TMP_DIR --location"
 ADDITIONAL_PACKAGES=false
 
 prepare_hekate() {
-     $DOWNLOAD_COMMAND https://github.com/CTCaer/hekate/releases/download/v6.3.0/hekate_ctcaer_6.3.0_Nyx_1.7.0.zip
+     $DOWNLOAD_COMMAND https://github.com/CTCaer/hekate/releases/download/v6.3.1/hekate_ctcaer_6.3.1_Nyx_1.7.0.zip
      $UNZIP_COMMAND $TMP_DIR/hekate_ctcaer_*.zip -d $BUILD_DIR
 }
 
 prepare_ultra() {
-    $DOWNLOAD_COMMAND https://github.com/Ultra-NX/UltraNX/releases/download/2.4-R2.1/Ultra.zip
+    $DOWNLOAD_COMMAND https://github.com/Ultra-NX/UltraNX/releases/download/2.5-R1/Ultra.zip
     $UNZIP_COMMAND $TMP_DIR/Ultra.zip -d $BUILD_DIR
 }
 
@@ -191,12 +191,15 @@ prepare_emulators() {
 }
 
 prepare_cheat() {
-    $DOWNLOAD_COMMAND https://github.com/tomvita/Breeze-Beta/releases/download/beta99d/Breeze.zip
-    $UNZIP_COMMAND $TMP_DIR/Breeze.zip -d $BUILD_DIR
+    if [[ $ADDITIONAL_PACKAGES == true ]]
+    then
+        # alternative source > https://github.com/ppkantorski/EdiZon-Overlay/releases/download/v1.0.9/ovlEdiZon.ovl
+        $DOWNLOAD_COMMAND https://github.com/proferabg/EdiZon-Overlay/releases/download/v1.0.10/ovlEdiZon.ovl
+        cp -f $TMP_DIR/ovlEdiZon.ovl $BUILD_DIR/switch/.overlays/ovlEdiZon.ovl
+    fi
 
-    # alternative source > https://github.com/ppkantorski/EdiZon-Overlay/releases/download/v1.0.9/ovlEdiZon.ovl
-    $DOWNLOAD_COMMAND https://github.com/proferabg/EdiZon-Overlay/releases/download/v1.0.10/ovlEdiZon.ovl
-    cp -f $TMP_DIR/ovlEdiZon.ovl $BUILD_DIR/switch/.overlays/ovlEdiZon.ovl
+    $DOWNLOAD_COMMAND https://github.com/tomvita/Breeze-Beta/releases/download/beta99i/Breeze.zip
+    $UNZIP_COMMAND $TMP_DIR/Breeze.zip -d $BUILD_DIR
 }
 
 prepare_mariko() {
