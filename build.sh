@@ -23,7 +23,7 @@ prepare_hekate() {
 }
 
 prepare_ultra() {
-    $DOWNLOAD_COMMAND https://github.com/Ultra-NX/UltraNX/releases/download/2.6-R2/Ultra.zip
+    $DOWNLOAD_COMMAND https://github.com/Ultra-NX/UltraNX/releases/download/2.6-R3/Ultra.zip
     $UNZIP_COMMAND $TMP_DIR/Ultra.zip -d $BUILD_DIR
 }
 
@@ -198,7 +198,7 @@ prepare_cheat() {
         cp -f $TMP_DIR/ovlEdiZon.ovl $BUILD_DIR/switch/.overlays/ovlEdiZon.ovl
     fi
 
-    $DOWNLOAD_COMMAND https://github.com/tomvita/Breeze-Beta/releases/download/beta99k/Breeze.zip
+    $DOWNLOAD_COMMAND https://github.com/tomvita/Breeze-Beta/releases/download/beta99p/Breeze.zip
     $UNZIP_COMMAND $TMP_DIR/Breeze.zip -d $BUILD_DIR
 }
 

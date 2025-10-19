@@ -6,7 +6,7 @@
 header = """
 # Changelog\n
 HOS: 20.5.0
-Based on CFW: UltraNX 2.6|R2
+Based on CFW: UltraNX 2.6|R3
 """
 # template for the changelog body
 # https://keats.github.io/tera/docs/#introduction
