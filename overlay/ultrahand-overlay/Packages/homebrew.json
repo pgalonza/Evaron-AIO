@@ -61,6 +61,11 @@
         "file-url": "https://github.com/XorTroll/Goldleaf/releases/latest/download/Goldleaf.nro"
     },
     {
+        "name": "Neumann - latest",
+        "path": "/switch/",
+        "file-url": "https://github.com/turtle-insect/Neumann/releases/latest/download/Neumann.nro"
+    },
+    {
         "name": "aio-switch-updater - latest",
         "path": "/",
         "zip-name": "aio-switch-updater.zip",
@@ -91,10 +96,10 @@
         "zip-url": "https://github.com/ITotalJustice/sphaira/releases/latest/download/sphaira.zip"
     },
     {
-        "name": "nx-hbmenu - latest",
+        "name": "Edizon[tomvita] - latest",
         "path": "/",
-        "zip-api": "https://api.github.com/repos/switchbrew/nx-hbmenu/releases?per_page=1&sort=created&order=desc",
-        "asset-index": "0"
+        "zip-name": "sphaira.zip",
+        "zip-url": "https://github.com/tomvita/EdiZon-SE/releases/latest/download/edizon.zip"
     },
     {
         "name": "nx-hbmenu - latest",
