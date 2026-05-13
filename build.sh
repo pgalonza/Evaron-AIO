@@ -23,7 +23,7 @@ prepare_hekate() {
 }
 
 prepare_ultra() {
-    $DOWNLOAD_COMMAND https://github.com/Ultra-NX/UltraNX/releases/download/2.6-R3/Ultra.zip
+    $DOWNLOAD_COMMAND https://github.com/Ultra-NX/UltraNX/releases/download/2.8-R1/Ultra.zip
     $UNZIP_COMMAND $TMP_DIR/Ultra.zip -d $BUILD_DIR
 }
 
@@ -177,7 +177,7 @@ prepare_homebrew() {
     fi
 
     mkdir $BUILD_DIR/switch/ezremote-client || true
-    $DOWNLOAD_COMMAND https://github.com/cy33hc/switch-ezremote-client/releases/download/1%2C13/ezremote-client.nro
+    $DOWNLOAD_COMMAND https://github.com/cy33hc/switch-ezremote-client/releases/download/1.14/ezremote-client.nro
     cp -f $TMP_DIR/ezremote-client.nro $BUILD_DIR/switch/ezremote-client/ezremote-client.nro
 }
 
@@ -198,7 +198,7 @@ prepare_cheat() {
         cp -f $TMP_DIR/ovlEdiZon.ovl $BUILD_DIR/switch/.overlays/ovlEdiZon.ovl
     fi
 
-    $DOWNLOAD_COMMAND https://github.com/tomvita/Breeze-Beta/releases/download/beta99s/Breeze.zip
+    $DOWNLOAD_COMMAND https://github.com/tomvita/Breeze-Beta/releases/download/beta104.4/Breeze.zip
     $UNZIP_COMMAND $TMP_DIR/Breeze.zip -d $BUILD_DIR
 }
 
@@ -232,7 +232,7 @@ patch_hekate() {
 
 patch_home_menu() {
     mkdir $BUILD_DIR/games
-    $DOWNLOAD_COMMAND https://github.com/cy33hc/switch-ezremote-client/releases/download/1%2C13/ezremote-client.nsp
+    $DOWNLOAD_COMMAND https://github.com/cy33hc/switch-ezremote-client/releases/download/1.14/ezremote-client.nsp
     cp -f $TMP_DIR/ezremote-client.nsp $BUILD_DIR/games/ezremote-client.nsp
 }
 
