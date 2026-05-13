@@ -16,7 +16,7 @@ jobs:
     needs: build-workflow
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
       - name: Generate a changelog
@@ -26,7 +26,7 @@ jobs:
           config: ./configs/cliff.toml
           args: --verbose --current
       - name: Download artifact
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: evaron-aio-artifact
           path: "./"
