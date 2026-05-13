@@ -23,7 +23,7 @@ prepare_hekate() {
 }
 
 prepare_ultra() {
-    $DOWNLOAD_COMMAND https://github.com/Ultra-NX/UltraNX/releases/download/2.8-R1/Ultra.zip
+    $DOWNLOAD_COMMAND https://github.com/Ultra-NX/UltraNX/releases/download/3.0-R1/Ultra.zip
     $UNZIP_COMMAND $TMP_DIR/Ultra.zip -d $BUILD_DIR
 }
 
