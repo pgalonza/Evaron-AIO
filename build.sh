@@ -18,12 +18,12 @@ DOWNLOAD_COMMAND="curl --remote-name --fail --output-dir $TMP_DIR --location"
 ADDITIONAL_PACKAGES=false
 
 prepare_hekate() {
-     $DOWNLOAD_COMMAND https://github.com/CTCaer/hekate/releases/download/v6.3.1/hekate_ctcaer_6.3.1_Nyx_1.7.0.zip
+     $DOWNLOAD_COMMAND https://github.com/CTCaer/hekate/releases/download/v6.5.3/hekate_ctcaer_6.5.3_Nyx_1.9.3.zip
      $UNZIP_COMMAND $TMP_DIR/hekate_ctcaer_*.zip -d $BUILD_DIR
 }
 
 prepare_ultra() {
-    $DOWNLOAD_COMMAND https://github.com/Ultra-NX/UltraNX/releases/download/3.0-R1/Ultra.zip
+    $DOWNLOAD_COMMAND https://github.com/Ultra-NX/UltraNX/releases/download/3.0-R2/Ultra.zip
     $UNZIP_COMMAND $TMP_DIR/Ultra.zip -d $BUILD_DIR
 }
 
@@ -198,7 +198,7 @@ prepare_cheat() {
         cp -f $TMP_DIR/ovlEdiZon.ovl $BUILD_DIR/switch/.overlays/ovlEdiZon.ovl
     fi
 
-    $DOWNLOAD_COMMAND https://github.com/tomvita/Breeze-Beta/releases/download/beta104.4/Breeze.zip
+    $DOWNLOAD_COMMAND https://github.com/tomvita/Breeze-Beta/releases/download/beta108.4c/Breeze.zip
     $UNZIP_COMMAND $TMP_DIR/Breeze.zip -d $BUILD_DIR
 }
 
