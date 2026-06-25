@@ -28,24 +28,6 @@ BREEZE_VERSION="beta108.4c"
 # Additional packages (set to true to enable)
 ADDITIONAL_PACKAGES=false
 
-# ── Dependency Checks ──────────────────────────────────────────────────────────
-
-check_deps() {
-    local deps=("curl" "unzip" "7z" "convert" "python3" "git")
-    local missing=()
-
-    for dep in "${deps[@]}"; do
-        if ! command -v "$dep" &>/dev/null; then
-            missing+=("$dep")
-        fi
-    done
-
-    if [[ ${#missing[@]} -gt 0 ]]; then
-        echo "ERROR: Missing dependencies: ${missing[*]}"
-        exit 1
-    fi
-}
-
 # ── Cleanup ────────────────────────────────────────────────────────────────────
 
 cleanup() {
@@ -178,9 +160,6 @@ patch_icons() {
 # ── Main ───────────────────────────────────────────────────────────────────────
 
 main() {
-    check_deps
-
-    trap cleanup EXIT
 
     mkdir -p "$TMP_DIR" "$BUILD_DIR" "$BUILD_ULTRAHAND_DIR"
 
