@@ -72,6 +72,9 @@ patch_atmosphere() {
 
 patch_hekate() {
     if [[ $ADDITIONAL_PACKAGES == true ]]; then
+        cp $BUILD_DIR/hekate_ctcaer_*.bin $BUILD_DIR/payload.bin || true
+        cp $BUILD_DIR/hekate_ctcaer_*.bin $BUILD_DIR/bootloader/update.bin || true
+        rm $BUILD_DIR/hekate_ctcaer_*.bin || true
         cp -f $SRC_HEKATE_DIR/hekate_ipl.ini $BUILD_DIR/bootloader/hekate_ipl.ini
     fi
 
