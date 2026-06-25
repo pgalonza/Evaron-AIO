@@ -58,13 +58,13 @@ sudo parted --script "$DEVICE_PATH" rm 2 2>/dev/null || true
 
 # ── Create Partitions ──────────────────────────────────────────────────────────
 
-PART1_END=$((DEVICE_SIZE - EMUNAND_SIZE_BYTES - (OFFSET * 2)))
+PART1_END=$((DEVICE_SIZE - EMUNAND_SIZE_BYTES - OFFSET * 2 - 1))
 
 sudo parted --script "$DEVICE_PATH" unit B mkpart primary fat32 "${OFFSET}B" "${PART1_END}B"
 sudo parted --script "$DEVICE_PATH" set 1 lba on
 
 PART2_START=$((DEVICE_SIZE - EMUNAND_SIZE_BYTES - OFFSET))
-PART2_END=$((DEVICE_SIZE - OFFSET))
+PART2_END=$((DEVICE_SIZE - OFFSET - 1))
 
 sudo parted --script "$DEVICE_PATH" unit B mkpart primary "${PART2_START}B" "${PART2_END}B"
 sudo sfdisk --part-type "$DEVICE_PATH" 2 E0
