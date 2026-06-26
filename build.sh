@@ -128,12 +128,12 @@ patch_atmosphere() {
 
 patch_hekate() {
     if [[ $ADDITIONAL_PACKAGES == true ]]; then
-        cp "$BUILD_DIR/hekate_ctcaer_*.bin" "$BUILD_DIR/bootloader/update.bin" 2>/dev/null || true
+        cp "$BUILD_DIR"/hekate_ctcaer_*.bin "$BUILD_DIR/bootloader/update.bin" || true
         cp -f "$SRC_HEKATE_DIR/hekate_ipl.ini" "$BUILD_DIR/bootloader/hekate_ipl.ini"
     fi
 
-    cp "$BUILD_DIR/hekate_ctcaer_*.bin" "$BUILD_DIR/payload.bin" 2>/dev/null || true
-    rm -f "$BUILD_DIR/hekate_ctcaer_*.bin"
+    cp "$BUILD_DIR"/hekate_ctcaer_*.bin "$BUILD_DIR/payload.bin" || true
+    rm -f "$BUILD_DIR"/hekate_ctcaer_*.bin
     mkdir -p "$BUILD_DIR/bootloader/res"
     cp "$SRC_HEKATE_DIR/bootscreen/"* "$BUILD_DIR/bootloader/res/"
 }
