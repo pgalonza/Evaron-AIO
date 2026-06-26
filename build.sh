@@ -197,7 +197,7 @@ main() {
 
     prepare_ultra
     prepare_hekate
-    prepare_payload
+    #prepare_payload
     prepare_homebrew
     prepare_overlays
     prepare_cheat
