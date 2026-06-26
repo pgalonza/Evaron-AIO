@@ -90,7 +90,7 @@ prepare_homebrew() {
     $DOWNLOAD_COMMAND "https://github.com/Ultra-NX/Ultra-Resources/releases/download/Homebrews/AIO.zip"
     $UNZIP_COMMAND "$TMP_DIR/AIO.zip" -d "$BUILD_DIR"
 
-    mkdir $BUILD_DIR/switch/DBI
+    mkdir -p $BUILD_DIR/switch/DBI
     $DOWNLOAD_COMMAND https://github.com/Ultra-NX/Ultra-Resources/releases/download/Homebrews/DBI.RU.zip
     UNZIP_COMMAND "$TMP_DIR/DBI.RU.zip" -d "$TMP_DIR"
     cp -f $TMP_DIR/DBI.nro $BUILD_DIR/switch/DBI/DBI.nro
