@@ -205,7 +205,6 @@ main() {
 
     patch_hekate
     patch_atmosphere
-    patch_hekate
     patch_home_menu
     patch_homebrew
     patch_overlay
