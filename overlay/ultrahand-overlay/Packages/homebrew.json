@@ -61,6 +61,11 @@
         "file-url": "https://github.com/turtle-insect/Neumann/releases/latest/download/Neumann.nro"
     },
     {
+        "name": "SaltyNX-Tool - latest",
+        "path": "/switch/",
+        "file-url": "https://github.com/masagrator/SaltyNX-Tool/releases/latest/download/SaltyNX-Tool.nro"
+    },
+    {
         "name": "aio-switch-updater - latest",
         "path": "/",
         "zip-name": "aio-switch-updater.zip",

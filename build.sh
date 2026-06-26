@@ -30,6 +30,8 @@ NX_OVLLOADER_VERSION=2.0.2
 SYS_PATCH_VERSION=1.6.2.3
 STATUS_MONITOR_OVERLAY_VERSION="1.4.1%2Br2"
 EDIZON_OVERLAY_VERSION=1.0.15
+SALTYNX_VERSION=1.8.1
+SALTYNX_TOOL_VERSION=1.1.1
 
 # Additional packages (set to true to enable)
 ADDITIONAL_PACKAGES=false
@@ -75,6 +77,9 @@ prepare_overlays() {
     $DOWNLOAD_COMMAND https://github.com/ppkantorski/Status-Monitor-Overlay/releases/download/v${STATUS_MONITOR_OVERLAY_VERSION}/Status-Monitor-Overlay.ovl
     cp -f $TMP_DIR/Status-Monitor-Overlay.ovl $BUILD_DIR/switch/.overlays/Status-Monitor-Overlay.ovl
 
+    $DOWNLOAD_COMMAND https://github.com/masagrator/SaltyNX/releases/download/${SALTYNX_VERSION}/SaltyNX.zip
+    $UNZIP_COMMAND $TMP_DIR/SaltyNX.zip -d $BUILD_DIR
+
 }
 
 prepare_payload() {
@@ -94,6 +99,9 @@ prepare_homebrew() {
     $DOWNLOAD_COMMAND https://github.com/Ultra-NX/Ultra-Resources/releases/download/Homebrews/DBI.RU.zip
     $UNZIP_COMMAND "$TMP_DIR/DBI.RU.zip" -d "$TMP_DIR"
     cp -f $TMP_DIR/DBI.nro $BUILD_DIR/switch/DBI/DBI.nro
+
+    $DOWNLOAD_COMMAND https://github.com/masagrator/SaltyNX-Tool/releases/download/${SALTYNX_TOOL_VERSION}/SaltyNX-Tool.nro
+    cp -f $TMP_DIR/SaltyNX-Tool.nro $BUILD_DIR/switch/SaltyNX-Tool.nro
 }
 
 prepare_cheat() {
