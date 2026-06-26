@@ -72,6 +72,12 @@
         "zip-url": "https://github.com/HamletDuFromage/aio-switch-updater/releases/latest/download/aio-switch-updater.zip"
     },
     {
+        "name": "AIO[Ultra-NX] - latest",
+        "path": "/",
+        "zip-name": "AIO.zip",
+        "zip-url": "https://github.com/Ultra-NX/Ultra-Resources/releases/download/Homebrews/AIO.zip"
+    },
+    {
         "name": "Tinwoo-Installer - latest",
         "path": "/",
         "zip-name": "Tinwoo-Installer.zip",

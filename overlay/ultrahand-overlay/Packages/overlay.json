@@ -17,15 +17,20 @@
     },
     {
         "name": "Status-Monitor - latest",
-        "path": "/",
-        "zip-name": "Status-Monitor-Overlay.zip",
-        "zip-url": "https://github.com/masagrator/Status-Monitor-Overlay/releases/latest/download/Status-Monitor-Overlay.zip"
+        "path": "/switch/.overlays/",
+        "file-url": " https://github.com/ppkantorski/Status-Monitor-Overlay/releases/latest/download/Status-Monitor-Overlay.ovl"
     },
     {
-        "name": "sys-patch - latest",
+        "name": "sys-patch[impeeza] - latest",
         "path": "/",
         "zip-name": "sys-patch.zip",
-        "zip-api": "https://github.com/impeeza/sys-patch/releases/latest/download/sys-patch.zip"
+        "zip-url": "https://github.com/impeeza/sys-patch/releases/latest/download/sys-patch.zip"
+    },
+    {
+        "name": "sys-patch[borntohonk] - latest",
+        "path": "/",
+        "zip-api": "https://github.com/borntohonk/sys-patch/releases?per_page=1&sort=created&order=desc",
+        "asset-index": "0"
     },
     {
         "name": "FPSLocker - latest",

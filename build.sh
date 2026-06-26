@@ -24,6 +24,13 @@ NYX_VERSION="1.9.3"
 ULTRA_VERSION="3.0-R2"
 EZREMOTE_VERSION="1.14"
 BREEZE_VERSION="beta108.4c"
+ULTRAHAND_VERSION=2.5.1
+OVL_SYSMODULES_VERSION=1.5.3
+NX_OVLLOADER_VERSION=2.0.2
+SYS_PATCH_VERSION=1.6.2.3
+STATUS_MONITOR_OVERLAY_VERSION="1.4.1%2Br2"
+DBI_VERSION=902ru
+EDIZON_OVERLAY_VERSION=1.0.15
 
 # Additional packages (set to true to enable)
 ADDITIONAL_PACKAGES=false
@@ -53,7 +60,22 @@ prepare_scripts() {
 }
 
 prepare_overlays() {
-    :
+    $DOWNLOAD_COMMAND https://github.com/ppkantorski/Ultrahand-Overlay/releases/download/v${ULTRAHAND_VERSION}/ovlmenu.ovl
+    cp -f $TMP_DIR/ovlmenu.ovl $BUILD_DIR/switch/.overlays/ovlmenu.ovl
+
+    $DOWNLOAD_COMMAND https://github.com/ppkantorski/ovl-sysmodules/releases/download/v${OVL_SYSMODULES_VERSION}/ovlSysmodules.ovl
+    cp -f $TMP_DIR/ovlSysmodules.ovl $BUILD_DIR/switch/.overlays/ovlSysmodules.ovl
+
+    $DOWNLOAD_COMMAND https://github.com/ppkantorski/nx-ovlloader/releases/download/v${NX_OVLLOADER_VERSION}/nx-ovlloader.zip
+    $UNZIP_COMMAND $TMP_DIR/nx-ovlloader.zip -d $BUILD_DIR
+
+    #https://github.com/impeeza/sys-patch/
+    $DOWNLOAD_COMMAND https://github.com/borntohonk/sys-patch/releases/download/v${SYS_PATCH_VERSION}/sys-patch-v${SYS_PATCH_VERSION}.zip
+    $UNZIP_COMMAND $TMP_DIR/sys-patch.zip -d $BUILD_DIR
+
+    $DOWNLOAD_COMMAND https://github.com/ppkantorski/Status-Monitor-Overlay/releases/download/v{STATUS_MONITOR_OVERLAY_VERSION}/Status-Monitor-Overlay.ovl
+    cp -f $TMP_DIR/Status-Monitor-Overlay.ovl $BUILD_DIR/switch/.overlays/Status-Monitor-Overlay.ovl
+
 }
 
 prepare_payload() {
@@ -65,11 +87,22 @@ prepare_homebrew() {
     mkdir -p "$BUILD_DIR/switch/ezremote-client"
     $DOWNLOAD_COMMAND "https://github.com/cy33hc/switch-ezremote-client/releases/download/${EZREMOTE_VERSION}/ezremote-client.nro"
     cp -f "$TMP_DIR/ezremote-client.nro" "$BUILD_DIR/switch/ezremote-client/ezremote-client.nro"
+
+    DOWNLOAD_COMMAND "https://github.com/Ultra-NX/Ultra-Resources/releases/download/Homebrews/AIO.zip"
+    $UNZIP_COMMAND "$TMP_DIR/AIO.zip" -d "$BUILD_DIR"
+
+    mkdir $BUILD_DIR/switch/DBI
+    $DOWNLOAD_COMMAND https://github.com/Ultra-NX/Ultra-Resources/releases/download/Homebrews/DBI.RU.zip
+    UNZIP_COMMAND "$TMP_DIR/DBI.RU.zip" -d "$TMP_DIR"
+    cp -f $TMP_DIR/DBI.nro $BUILD_DIR/switch/DBI/DBI.nro
 }
 
 prepare_cheat() {
     $DOWNLOAD_COMMAND "https://github.com/tomvita/Breeze-Beta/releases/download/${BREEZE_VERSION}/Breeze.zip"
     $UNZIP_COMMAND "$TMP_DIR/Breeze.zip" -d "$BUILD_DIR"
+
+    $DOWNLOAD_COMMAND https://github.com/proferabg/EdiZon-Overlay/releases/download/v${EDIZON_OVERLAY_VERSION}/ovlEdiZon.ovl
+    cp -f $TMP_DIR/ovlEdiZon.ovl $BUILD_DIR/switch/.overlays/ovlEdiZon.ovl
 }
 
 prepare_mariko() {
@@ -88,12 +121,12 @@ patch_atmosphere() {
 
 patch_hekate() {
     if [[ $ADDITIONAL_PACKAGES == true ]]; then
-        cp "$BUILD_DIR/hekate_ctcaer_*.bin" "$BUILD_DIR/payload.bin" 2>/dev/null || true
         cp "$BUILD_DIR/hekate_ctcaer_*.bin" "$BUILD_DIR/bootloader/update.bin" 2>/dev/null || true
-        rm -f "$BUILD_DIR/hekate_ctcaer_*.bin"
         cp -f "$SRC_HEKATE_DIR/hekate_ipl.ini" "$BUILD_DIR/bootloader/hekate_ipl.ini"
     fi
 
+    cp "$BUILD_DIR/hekate_ctcaer_*.bin" "$BUILD_DIR/payload.bin" 2>/dev/null || true
+    rm -f "$BUILD_DIR/hekate_ctcaer_*.bin"
     mkdir -p "$BUILD_DIR/bootloader/res"
     cp "$SRC_HEKATE_DIR/bootscreen/"* "$BUILD_DIR/bootloader/res/"
 }
@@ -164,11 +197,14 @@ main() {
     mkdir -p "$TMP_DIR" "$BUILD_DIR" "$BUILD_ULTRAHAND_DIR"
 
     prepare_ultra
+    prepare_hekate
     prepare_payload
     prepare_homebrew
+    prepare_overlays
     prepare_cheat
     prepare_mariko
 
+    patch_hekate
     patch_atmosphere
     patch_hekate
     patch_home_menu
