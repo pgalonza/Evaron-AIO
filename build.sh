@@ -92,7 +92,7 @@ prepare_homebrew() {
 
     mkdir -p $BUILD_DIR/switch/DBI
     $DOWNLOAD_COMMAND https://github.com/Ultra-NX/Ultra-Resources/releases/download/Homebrews/DBI.RU.zip
-    UNZIP_COMMAND "$TMP_DIR/DBI.RU.zip" -d "$TMP_DIR"
+    $UNZIP_COMMAND "$TMP_DIR/DBI.RU.zip" -d "$TMP_DIR"
     cp -f $TMP_DIR/DBI.nro $BUILD_DIR/switch/DBI/DBI.nro
 }
 
