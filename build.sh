@@ -29,7 +29,6 @@ OVL_SYSMODULES_VERSION=1.5.3
 NX_OVLLOADER_VERSION=2.0.2
 SYS_PATCH_VERSION=1.6.2.3
 STATUS_MONITOR_OVERLAY_VERSION="1.4.1%2Br2"
-DBI_VERSION=902ru
 EDIZON_OVERLAY_VERSION=1.0.15
 
 # Additional packages (set to true to enable)
@@ -73,7 +72,7 @@ prepare_overlays() {
     $DOWNLOAD_COMMAND https://github.com/borntohonk/sys-patch/releases/download/v${SYS_PATCH_VERSION}/sys-patch-v${SYS_PATCH_VERSION}.zip
     $UNZIP_COMMAND $TMP_DIR/sys-patch.zip -d $BUILD_DIR
 
-    $DOWNLOAD_COMMAND https://github.com/ppkantorski/Status-Monitor-Overlay/releases/download/v{STATUS_MONITOR_OVERLAY_VERSION}/Status-Monitor-Overlay.ovl
+    $DOWNLOAD_COMMAND https://github.com/ppkantorski/Status-Monitor-Overlay/releases/download/v${STATUS_MONITOR_OVERLAY_VERSION}/Status-Monitor-Overlay.ovl
     cp -f $TMP_DIR/Status-Monitor-Overlay.ovl $BUILD_DIR/switch/.overlays/Status-Monitor-Overlay.ovl
 
 }
@@ -88,7 +87,7 @@ prepare_homebrew() {
     $DOWNLOAD_COMMAND "https://github.com/cy33hc/switch-ezremote-client/releases/download/${EZREMOTE_VERSION}/ezremote-client.nro"
     cp -f "$TMP_DIR/ezremote-client.nro" "$BUILD_DIR/switch/ezremote-client/ezremote-client.nro"
 
-    DOWNLOAD_COMMAND "https://github.com/Ultra-NX/Ultra-Resources/releases/download/Homebrews/AIO.zip"
+    $DOWNLOAD_COMMAND "https://github.com/Ultra-NX/Ultra-Resources/releases/download/Homebrews/AIO.zip"
     $UNZIP_COMMAND "$TMP_DIR/AIO.zip" -d "$BUILD_DIR"
 
     mkdir $BUILD_DIR/switch/DBI
