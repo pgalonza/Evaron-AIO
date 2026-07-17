@@ -21,7 +21,7 @@ DOWNLOAD_COMMAND="curl --remote-name --fail --output-dir $TMP_DIR --location"
 # Versions (bump here to update)
 HEKATE_VERSION="6.5.3"
 NYX_VERSION="1.9.3"
-ULTRA_VERSION="3.0-R2"
+ULTRA_VERSION="2.8-R1"
 EZREMOTE_VERSION="1.14"
 BREEZE_VERSION="beta108.4c"
 ULTRAHAND_VERSION=2.5.2
