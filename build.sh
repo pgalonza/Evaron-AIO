@@ -70,7 +70,7 @@ prepare_overlays() {
     $DOWNLOAD_COMMAND https://github.com/ppkantorski/nx-ovlloader/releases/download/v${NX_OVLLOADER_VERSION}/nx-ovlloader.zip
     $UNZIP_COMMAND $TMP_DIR/nx-ovlloader.zip -d $BUILD_DIR
 
-    $DOWNLOAD_COMMAND https://github.com/impeeza/sys-patch/releases/download/v${SYS_PATCH_VERSION}/sys-patch-v{SYS_PATCH_VERSION}.zip
+    $DOWNLOAD_COMMAND https://github.com/impeeza/sys-patch/releases/download/v${SYS_PATCH_VERSION}/sys-patch-v${SYS_PATCH_VERSION}.zip
     $UNZIP_COMMAND $TMP_DIR/sys-patch-*.zip -d $BUILD_DIR
 
     $DOWNLOAD_COMMAND https://github.com/ppkantorski/Status-Monitor-Overlay/releases/download/v${STATUS_MONITOR_OVERLAY_VERSION}/Status-Monitor-Overlay.ovl
