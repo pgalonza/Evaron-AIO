@@ -19,19 +19,19 @@ UNZIP_COMMAND="unzip -o"
 DOWNLOAD_COMMAND="curl --remote-name --fail --output-dir $TMP_DIR --location"
 
 # Versions (bump here to update)
-HEKATE_VERSION="6.5.3"
-NYX_VERSION="1.9.3"
+HEKATE_VERSION="6.5.4"
+NYX_VERSION="1.9.4"
 ULTRA_VERSION="3.0-R2"
 EZREMOTE_VERSION="1.14"
 BREEZE_VERSION="beta108.4c"
-ULTRAHAND_VERSION=2.5.2
+ULTRAHAND_VERSION=2.5.4
 OVL_SYSMODULES_VERSION=1.5.3
-NX_OVLLOADER_VERSION=2.0.2
-SYS_PATCH_VERSION=1.6.2.3
-STATUS_MONITOR_OVERLAY_VERSION="1.4.1%2Br2"
+NX_OVLLOADER_VERSION=2.0.3
+SYS_PATCH_VERSION=1.6.3.0
+STATUS_MONITOR_OVERLAY_VERSION="1.4.1%2Br5"
 EDIZON_OVERLAY_VERSION=1.0.15
-SALTYNX_VERSION=1.8.1
-SALTYNX_TOOL_VERSION=1.1.1
+SALTYNX_VERSION=2.1.4
+SALTYNX_TOOL_VERSION=1.2.0
 
 # Additional packages (set to true to enable)
 ADDITIONAL_PACKAGES=false
@@ -70,8 +70,7 @@ prepare_overlays() {
     $DOWNLOAD_COMMAND https://github.com/ppkantorski/nx-ovlloader/releases/download/v${NX_OVLLOADER_VERSION}/nx-ovlloader.zip
     $UNZIP_COMMAND $TMP_DIR/nx-ovlloader.zip -d $BUILD_DIR
 
-    #https://github.com/impeeza/sys-patch/
-    $DOWNLOAD_COMMAND https://github.com/borntohonk/sys-patch/releases/download/v${SYS_PATCH_VERSION}/sys-patch-v${SYS_PATCH_VERSION}.zip
+    $DOWNLOAD_COMMAND https://github.com/impeeza/sys-patch/releases/download/v${SYS_PATCH_VERSION}/sys-patch-v{SYS_PATCH_VERSION}.zip
     $UNZIP_COMMAND $TMP_DIR/sys-patch-*.zip -d $BUILD_DIR
 
     $DOWNLOAD_COMMAND https://github.com/ppkantorski/Status-Monitor-Overlay/releases/download/v${STATUS_MONITOR_OVERLAY_VERSION}/Status-Monitor-Overlay.ovl
