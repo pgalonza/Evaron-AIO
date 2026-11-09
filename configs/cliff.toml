@@ -5,8 +5,8 @@
 # changelog header
 header = """
 # Changelog\n
-HOS: 22.5.0
-Based on CFW: UltraNX 3.0|R2+
+HOS: 23.0.1
+Based on CFW: UltraNX 3.1|R2+
 """
 # template for the changelog body
 # https://keats.github.io/tera/docs/#introduction
