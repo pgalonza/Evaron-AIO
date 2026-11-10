@@ -15,7 +15,7 @@ jobs:
           chmod +x ./build.sh
           ./build.sh
       - name: Upload artifacts
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           retention-days: 1
           compression-level: 0
